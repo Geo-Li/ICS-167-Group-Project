@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Small Chipper
   m_EditorClassIdentifier: 
   m_Damage: 4
-  m_KForce: 1.5
-  m_InvulSeconds: 0.5
+  m_KForce: 2
+  m_InvulSeconds: 5
