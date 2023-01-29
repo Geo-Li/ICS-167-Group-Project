@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// William Min
 [System.Serializable]
 public struct LootDropScript : LootInterface
 {
-    public string m_ItemName;
+    [SerializeField]
+    private string m_ItemName;
 
-    public int m_MinCount, m_MaxCount;
+    [SerializeField]
+    private int m_MinCount, m_MaxCount;
 
+    [SerializeField]
     [Range(0f, 1f)]
-    public float m_Probability;
+    private float m_Probability;
 
     public List<string> GenerateLootDrops()
     {
