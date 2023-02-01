@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13463fc417415d498f80c9c0d6cbc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 1293652448551069563}
+  Sprite: {fileID: 1293652448551069566}
 --- !u!114 &286989480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
       propertyPath: m_LocalPosition.y

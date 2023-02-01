@@ -8,7 +8,7 @@ public class HitInvulScript : MonoBehaviour
     private float m_HitInvulTime;
 
     [SerializeField]
-    private GameObject Sprite;
+    private MeshRenderer Sprite;
 
     public float HitInvulnerabilityTime
     {
@@ -49,13 +49,13 @@ public class HitInvulScript : MonoBehaviour
     {
         if (Sprite == null || !HasInvulFrames())
         {
-            Sprite.SetActive(true);
+            Sprite.enabled = true;
             return;
         }
 
-        if (Sprite.activeInHierarchy)
-            Sprite.SetActive(false);
+        if (Sprite.enabled)
+            Sprite.enabled = false;
         else
-            Sprite.SetActive(true);
+            Sprite.enabled = true;
     }
 }
