@@ -69,6 +69,9 @@ MonoBehaviour:
   m_IsMoving:
     m_ParameterValue: 0
     m_ParameterName: IsMoving
+  m_IsDead:
+    m_ParameterValue: 0
+    m_ParameterName: IsDead
 --- !u!95 &7483710748810696296
 Animator:
   serializedVersion: 3
