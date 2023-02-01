@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &395326360 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1293652448551069563, guid: 117f81c0e736119438250610fbfdaaf5, type: 3}
-  m_PrefabInstance: {fileID: 8261967944407839182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,10 +536,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 286989480, guid: 117f81c0e736119438250610fbfdaaf5, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 395326360}
     - target: {fileID: 1293652447999182993, guid: 117f81c0e736119438250610fbfdaaf5, type: 3}
       propertyPath: m_Name
       value: Animated Entity

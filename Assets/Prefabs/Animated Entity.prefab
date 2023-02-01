@@ -63,6 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Reference: {fileID: 7483710748810696296}
+  sprite: {fileID: 1293652448551069563}
   m_ActionState:
     m_ParameterValue: 0
     m_ParameterName: ActionState
