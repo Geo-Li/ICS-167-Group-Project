@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // William Min
+
+/*
+ * Represents a variable for changing states of an AnimatorController
+ */
 [System.Serializable]
 public struct ParameterRep<T>
 {
-    // Value of parameter
+    // The value of the parameter
     [SerializeField]
     private T m_ParameterValue;
 
+    // Public version of m_ParameterValue
     public T ParameterValue
     {
         get
@@ -22,10 +27,11 @@ public struct ParameterRep<T>
         }
     }
 
-    // Name of parameter
+    // The name of the parameter
     [SerializeField]
     private string m_ParameterName;
 
+    // Public version of m_ParameterName
     public string ParameterName
     {
         get

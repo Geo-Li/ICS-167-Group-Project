@@ -3,26 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // William Min
+
+/*
+ * Manages the general customly-made animation system of an entity
+ */
 public class AnimationManager : MonoBehaviour
 {
     // Reference to an entity's animator
     [SerializeField]
     protected Animator m_Reference;
 
-    // Reference to Mesh Sprite
+    // Reference to the sprite of the entity that is being animated
     [SerializeField]
     private GameObject sprite;
 
+    // The parameter representation of the Action State of the animator
     [SerializeField]
     private ParameterRep<int> m_ActionState;
 
+    // The parameter representation of the IsMoving boolean of the animator
     [SerializeField]
     private ParameterRep<bool> m_IsMoving;
 
+    // The parameter representation of the IsDead trigger of the animator
     [SerializeField]
     private ParameterRep<bool> m_IsDead;
 
-    //Updates ResponseState to the animation's state
+    // Updates Action State, IsMoving, and IsDead according to the parameter reps
+    // Destroys the entity after finishing its death animation
     void Update()
     {
         UpdateAction();

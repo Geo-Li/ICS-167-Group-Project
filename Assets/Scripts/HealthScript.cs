@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Not in use yet!
+
+
 // TankHealth Script from Tanks Tutorial
 [CreateAssetMenu]
 public class HealthScript : ScriptableObject
