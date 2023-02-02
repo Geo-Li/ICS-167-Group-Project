@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c780db05f98b73b43986c0157e72f93d, type: 3}
   m_Name: Wheat Drop
   m_EditorClassIdentifier: 
-  Items:
-  - m_ItemName: Wheat
+  m_Items:
+  - m_ItemPrefab: {fileID: 5651615007885294031, guid: dbfd9258417d7eb489d9002bd34b46cf, type: 3}
     m_MinCount: 1
     m_MaxCount: 3
     m_Probability: 1
+  m_DropPosition: {x: 5, y: 0, z: 2}

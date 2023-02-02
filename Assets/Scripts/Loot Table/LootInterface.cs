@@ -10,5 +10,5 @@ using UnityEngine;
 public interface LootInterface
 {
     // Generates loot drops
-    public List<string> GenerateLootDrops();
+    public List<GameObject> GenerateLootDrops();
 }

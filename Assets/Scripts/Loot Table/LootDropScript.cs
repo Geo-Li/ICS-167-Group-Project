@@ -13,7 +13,7 @@ public struct LootDropScript : LootInterface
 {
     // The collectible that will drop
     [SerializeField]
-    private string m_ItemName;
+    private GameObject m_ItemPrefab;
 
     // The integer values of the minimum and maximum number of collectibles that can spawn per roll
     [SerializeField]
@@ -25,21 +25,20 @@ public struct LootDropScript : LootInterface
     private float m_Probability;
 
     // Generates a random number of m_ItemName and returns it as a list
-    // (Temporarily as string, but will be actual collectible objects later on)
-    public List<string> GenerateLootDrops()
+    public List<GameObject> GenerateLootDrops()
     {
-        List<string> result = null;
+        List<GameObject> result = null;
 
         bool willDrop = WillDrop();
 
         if (willDrop)
         {
-            result = new List<string>();
+            result = new List<GameObject>();
             int count = getRandomCount();
 
             for (int i = 0; i < count; i++)
             {
-                string temp = (string)m_ItemName.Clone();
+                GameObject temp = GameObject.Instantiate(m_ItemPrefab);
                 result.Add(temp);
             }
         }
