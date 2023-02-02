@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725963eedd994144b8be122f5c9d135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeXZAxis: 0
+  freezeXZAxis: 1
 --- !u!1001 &1293652449450770969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,6 +231,14 @@ PrefabInstance:
     - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 3284116032132928434, guid: d599e111ae946d14cacdc0dab1ce8541, type: 3}
       propertyPath: m_LocalPosition.x
