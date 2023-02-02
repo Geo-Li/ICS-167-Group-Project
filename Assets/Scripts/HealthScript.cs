@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// TankHealth Script
+// TankHealth Script from Tanks Tutorial
+[CreateAssetMenu]
 public class HealthScript : ScriptableObject
 {
     public float m_StartingHealth = 100f;
-    public Slider m_Slider;
-    public Image m_FillImage;
+    //public Slider m_Slider;
+    //public Image m_FillImage;
     public Color m_FullHealthColor = Color.green;
     public Color m_ZeroHealthColor = Color.red;
     //public GameObject m_ExplosionPrefab;
@@ -31,7 +32,7 @@ public class HealthScript : ScriptableObject
         m_CurrentHealth = m_StartingHealth;
         m_Dead = false;
 
-        SetHealthUI();
+        //SetHealthUI();
     }
 
     public void TakeDamage(float amount)
@@ -42,10 +43,10 @@ public class HealthScript : ScriptableObject
         else
             m_Dead = true;
 
-        SetHealthUI();
+        //SetHealthUI();
     }
 
-
+    /*
     private void SetHealthUI()
     {
         // Adjust the value and colour of the slider.
@@ -53,4 +54,5 @@ public class HealthScript : ScriptableObject
 
         m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
     }
+    */
 }
