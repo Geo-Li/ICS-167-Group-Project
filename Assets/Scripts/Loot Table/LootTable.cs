@@ -14,16 +14,33 @@ public class LootTable : ScriptableObject, LootInterface
 {
     // The list of loot drops
     [SerializeField]
-    private List<LootDropScript> Items;
+    private List<LootDropScript> m_Items;
+
+    // The location where all the collectibles will spawn
+    [SerializeField]
+    private Vector3 m_DropPosition;
+
+    // Public version of m_DropPosition
+    public Vector3 DropPosition
+    {
+        get
+        {
+            return m_DropPosition;
+        }
+        set
+        {
+            m_DropPosition = value;
+        }
+    }
 
     // Generates a list of the randomly generated loot for each roll
-    public List<string> GenerateLootDrops()
+    public List<GameObject> GenerateLootDrops()
     {
-        List<string> result = new List<string>();
+        List<GameObject> result = new List<GameObject>();
 
-        foreach (LootDropScript item in Items)
+        foreach (LootDropScript item in m_Items)
         {
-            List<string> temp = item.GenerateLootDrops();
+            List<GameObject> temp = item.GenerateLootDrops();
 
             if (temp != null)
                 result.AddRange(temp);
@@ -31,6 +48,13 @@ public class LootTable : ScriptableObject, LootInterface
 
         if (result.Count == 0)
             result = null;
+        else
+        {
+            foreach (GameObject obj in result)
+            {
+                obj.transform.position = m_DropPosition;
+            }
+        }
 
         return result;
     }
@@ -40,15 +64,16 @@ public class LootTable : ScriptableObject, LootInterface
     {
         string result = "";
 
-        List<string> list = GenerateLootDrops();
+        List<GameObject> list = GenerateLootDrops();
 
         if (list == null)
             result = "No Items";
         else
         {
-            foreach (string item in list)
+            foreach (GameObject item in list)
             {
-                result += item + " ";
+                string itemName = item.name;
+                result += " [ " + item + " ], ";
             }
         }
 
