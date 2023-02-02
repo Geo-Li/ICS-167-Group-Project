@@ -3,14 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // William Min
+
+/*
+ * Represents the stats of damaging hitboxes
+ * - Damage
+ * - Knockback Force
+ * - Invulnerability time in seconds
+ */
 [CreateAssetMenu]
 public class DamageScript : ScriptableObject
 {
+    // The values of damage, knockback force,
+    // and invulnerability time in seconds represented by floats
     [SerializeField]
     private float m_Damage, m_KForce, m_InvulSeconds;
 
+    // The knockback force mulitplier to make m_KForce make a more noticeable force
     private static float m_ForceMultiplier = 100;
 
+    // Public version of the damage float value
     public float Damage
     {
         get
@@ -26,6 +37,7 @@ public class DamageScript : ScriptableObject
         }
     }
 
+    // Public version of the knockback force float value
     public float KnockbackForce
     {
         get
@@ -41,6 +53,7 @@ public class DamageScript : ScriptableObject
         }
     }
 
+    // Public version of the invulnerability time float value
     public float InvulnerabilityInSeconds
     {
         get
@@ -56,6 +69,7 @@ public class DamageScript : ScriptableObject
         }
     }
 
+    // Applies the gameObject of other with the knockback force by a certain angle
     public void ApplyKnockback(Collider other, Vector3 angle)
     {
         Rigidbody rb = other.GetComponent<Rigidbody>();
@@ -69,6 +83,7 @@ public class DamageScript : ScriptableObject
         rb.AddForce(kVector);
     }
 
+    // Applies the gameObject of other with the invulnerability time
     public void ApplyInvulFrames(Collider other)
     {
         HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
