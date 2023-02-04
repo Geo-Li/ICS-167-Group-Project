@@ -13,21 +13,17 @@ public class AnimationManager : MonoBehaviour
     [SerializeField]
     protected Animator m_Reference;
 
-    // Reference to the sprite of the entity that is being animated
-    [SerializeField]
-    private GameObject sprite;
-
     // The parameter representation of the Action State of the animator
     [SerializeField]
-    private ParameterRep<int> m_ActionState;
+    public ParameterRep<int> ActionState;
 
     // The parameter representation of the IsMoving boolean of the animator
     [SerializeField]
-    private ParameterRep<bool> m_IsMoving;
+    public ParameterRep<bool> IsMoving;
 
     // The parameter representation of the IsDead trigger of the animator
     [SerializeField]
-    private ParameterRep<bool> m_IsDead;
+    public ParameterRep<bool> IsDead;
 
     // Updates Action State, IsMoving, and IsDead according to the parameter reps
     // Destroys the entity after finishing its death animation
@@ -36,9 +32,6 @@ public class AnimationManager : MonoBehaviour
         UpdateAction();
         UpdateMovement();
         UpdateDeath();
-
-        if (sprite != null && !sprite.activeInHierarchy)
-            Destroy(m_Reference.gameObject);
     }
 
     private void UpdateAction()
@@ -46,7 +39,9 @@ public class AnimationManager : MonoBehaviour
         if (m_Reference == null)
             return;
 
-        m_Reference.SetInteger(m_ActionState.ParameterName, m_ActionState.ParameterValue);
+        m_Reference.SetInteger(ActionState.ParameterName, ActionState.ParameterValue);
+
+        ActionState.ParameterValue = 0;
     }
 
     private void UpdateMovement()
@@ -54,7 +49,7 @@ public class AnimationManager : MonoBehaviour
         if (m_Reference == null)
             return;
 
-        m_Reference.SetBool(m_IsMoving.ParameterName, m_IsMoving.ParameterValue);
+        m_Reference.SetBool(IsMoving.ParameterName, IsMoving.ParameterValue);
     }
 
     private void UpdateDeath()
@@ -62,10 +57,10 @@ public class AnimationManager : MonoBehaviour
         if (m_Reference == null)
             return;
 
-        if (m_IsDead.ParameterValue)
+        if (IsDead.ParameterValue)
         {
-            m_Reference.SetTrigger(m_IsDead.ParameterName);
-            m_IsDead.ParameterValue = false;
+            m_Reference.SetTrigger(IsDead.ParameterName);
+            IsDead.ParameterValue = false;
         }
     }
 }
