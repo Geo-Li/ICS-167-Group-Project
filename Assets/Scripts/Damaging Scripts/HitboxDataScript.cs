@@ -46,28 +46,32 @@ public class HitboxDataScript : MonoBehaviour
     // Applies effects listed in the damage unit to the gameObject of other
     void OnTriggerEnter(Collider other)
     {
-        float damage = m_DamageUnit.Damage;
-        float kForce = m_DamageUnit.KnockbackForce;
-        float InvulSeconds = m_DamageUnit.InvulnerabilityInSeconds;
-
-        bool canBeHit = true;
-        HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
-        
-        if (hitInvul != null && hitInvul.HasInvulFrames())
-            canBeHit = false;
-
-        if (other != m_CurrentOwner && !other.GetComponent<HitboxDataScript>() && canBeHit)
+        if (other != m_CurrentOwner 
+            && !other.GetComponent<HitboxDataScript>() 
+            && m_CurrentOwner.layer != other.gameObject.layer)
         {
-            /*
-            Debug.Log("Punched " + other.gameObject.name + " and applied " +
-                   damage + " damage, " +
-                   kForce + " knockback units, and " +
-                   InvulSeconds + " seconds of invulnerability.");
-            */
-            Vector3 vector = other.transform.position - transform.position;
+            bool canBeHit = true;
+            HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
 
-            m_DamageUnit.ApplyKnockback(other, vector);
-            m_DamageUnit.ApplyInvulFrames(other);
+            if (hitInvul != null && hitInvul.HasInvulFrames())
+                canBeHit = false;
+
+            if (canBeHit)
+            {
+                float damage = m_DamageUnit.Damage;
+                float kForce = m_DamageUnit.KnockbackForce;
+                float InvulSeconds = m_DamageUnit.InvulnerabilityInSeconds;
+                /*
+                Debug.Log("Punched " + other.gameObject.name + " and applied " +
+                       damage + " damage, " +
+                       kForce + " knockback units, and " +
+                       InvulSeconds + " seconds of invulnerability.");
+                */
+                Vector3 vector = other.transform.position - transform.position;
+
+                m_DamageUnit.ApplyKnockback(other, vector);
+                m_DamageUnit.ApplyInvulFrames(other);
+            }
         }
     }
 }
