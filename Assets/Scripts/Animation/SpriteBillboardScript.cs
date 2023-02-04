@@ -38,7 +38,7 @@ public class SpriteBillboardScript : MonoBehaviour
             Debug.DrawLine(m_MyCenterVector, m_MyFirstVector, Color.magenta);
             Debug.DrawLine(m_MyCenterVector, m_MySecondVector, Color.blue);
 
-            if (facingForward)
+            if (!facingForward)
             {
                 flippedY += 180;
                 flippedX *= -1;
@@ -80,8 +80,6 @@ public class SpriteBillboardScript : MonoBehaviour
             finalAngle += 360;
         else if (finalAngle > 180f)
             finalAngle -= 360;
-
-        Debug.Log(finalAngle);
 
         return finalAngle;
     }
