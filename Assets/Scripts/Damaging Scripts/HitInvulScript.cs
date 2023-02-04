@@ -13,7 +13,7 @@ public class HitInvulScript : MonoBehaviour
 
     // The rendered sprite of the object
     [SerializeField]
-    private MeshRenderer Sprite;
+    private SpriteRenderer Sprite;
 
     // The amount of time (in seconds)
     // that the entity in invulnerable to attacks
