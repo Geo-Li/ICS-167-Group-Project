@@ -17,6 +17,7 @@ public class HealthScript : ScriptableObject
     //private ParticleSystem m_ExplosionParticles;
     private float m_CurrentHealth;
     private bool m_Dead;
+    // haha
 
     private void Awake()
     {
