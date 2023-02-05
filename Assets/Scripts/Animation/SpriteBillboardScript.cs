@@ -35,8 +35,7 @@ public class SpriteBillboardScript : MonoBehaviour
 
             bool facingForward = IsFacingForward(m_MyFirstVector, m_MySecondVector, m_MyCenterVector, ZeroAxis);
 
-            Debug.DrawLine(m_MyCenterVector, m_MyFirstVector, Color.magenta);
-            Debug.DrawLine(m_MyCenterVector, m_MySecondVector, Color.blue);
+            renderLines(m_MyFirstVector, m_MySecondVector, m_MyCenterVector);
 
             if (!facingForward)
             {
@@ -49,6 +48,15 @@ public class SpriteBillboardScript : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, flippedY, 0f);
         else
             transform.rotation = Quaternion.Euler(flippedX, flippedY, 0f);
+    }
+
+    private void renderLines(Vector3 vector1, Vector3 vector2, Vector3 vectorCenter)
+    {
+        vector1.y = vectorCenter.y;
+        vector2.y = vectorCenter.y;
+
+        Debug.DrawLine(vectorCenter, vector1, Color.magenta);
+        Debug.DrawLine(vectorCenter, vector2, Color.blue);
     }
 
     private bool IsFacingForward(Vector3 vector1, Vector3 vector2, Vector3 vectorCenter, Vector3 zeroAxis)
