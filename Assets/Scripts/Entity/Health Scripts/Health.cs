@@ -53,6 +53,7 @@ public class Health
         }
     }
 
+    // Constructor of Health
     public Health(float maxHealth)
     {
         m_MaxHealth = maxHealth;

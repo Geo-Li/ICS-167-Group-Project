@@ -29,6 +29,7 @@ public class HealthBar : MonoBehaviour
         SetHealthUI();
     }
 
+    // Updates the health bar
     private void SetHealthUI()
     {
         if (m_Health == null)
