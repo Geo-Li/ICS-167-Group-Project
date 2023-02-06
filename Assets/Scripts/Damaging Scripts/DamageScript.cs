@@ -69,6 +69,19 @@ public class DamageScript : ScriptableObject
         }
     }
 
+    // Applies the gameObject of other with the damage
+    public void ApplyDamage(Collider other)
+    {
+        Entity otherEntity = other.GetComponent<Entity>();
+
+        if (otherEntity == null)
+            return;
+
+        Health health = otherEntity.Health;
+
+        health.CurrentHealth -= m_Damage;
+    }
+
     // Applies the gameObject of other with the knockback force by a certain angle
     public void ApplyKnockback(Collider other, Vector3 angle)
     {
