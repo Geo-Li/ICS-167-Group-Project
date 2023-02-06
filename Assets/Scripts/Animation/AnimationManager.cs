@@ -19,7 +19,7 @@ public class AnimationManager : MonoBehaviour
 
     // The parameter representation of the IsMoving boolean of the animator
     [SerializeField]
-    public ParameterRep<bool> IsMoving;
+    public ParameterRep<float> MovementSpeed;
 
     // The parameter representation of the IsDead trigger of the animator
     [SerializeField]
@@ -49,7 +49,7 @@ public class AnimationManager : MonoBehaviour
         if (m_Reference == null)
             return;
 
-        m_Reference.SetBool(IsMoving.ParameterName, IsMoving.ParameterValue);
+        m_Reference.SetFloat(MovementSpeed.ParameterName, MovementSpeed.ParameterValue);
     }
 
     private void UpdateDeath()
