@@ -30,10 +30,7 @@ public class FlippingSpriteScript : SpriteBillboardScript
             }
         }
 
-        if (m_FreezeXZAxis)
-            transform.rotation = Quaternion.Euler(0f, flippedY, 0f);
-        else
-            transform.rotation = Quaternion.Euler(flippedX, flippedY, 0f);
+        SetRotation(flippedX, flippedY);
     }
 
     private void renderLines(Vector3 vector1, Vector3 vector2, Vector3 vectorCenter)

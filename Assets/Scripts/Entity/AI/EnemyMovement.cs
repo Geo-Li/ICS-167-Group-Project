@@ -18,6 +18,19 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private GameObject m_Target;
 
+    // Public version of m_Target
+    public GameObject Target
+    {
+        get
+        {
+            return m_Target;
+        }
+        set 
+        {
+            m_Target = value;
+        }
+    }
+
     // Determines if the enemy will follow the target
     [SerializeField]
     private bool m_IsFollowingTarget;
@@ -43,22 +56,21 @@ public class EnemyMovement : MonoBehaviour
         m_IsFollowingTarget = true;
     }
 
-    // When the usser clicks move the agent.
+    // Updates the agent based on target and bool IsFollowingTarget
     void Update()
     {
         if (m_Target != null)
             SetDestination(m_Target.transform.position);
 
-        if (m_IsFollowingTarget != m_Agent.isStopped)
-            m_Agent.isStopped = m_IsFollowingTarget;
+        if (m_IsFollowingTarget == m_Agent.isStopped)
+            m_Agent.isStopped = !m_IsFollowingTarget;
     }
 
+    // Makes sure that the entity faces toward the direction of movement
     void LateUpdate()
     {
         if (m_Agent.velocity.sqrMagnitude > Mathf.Epsilon)
-        {
             transform.rotation = Quaternion.LookRotation(m_Agent.velocity.normalized);
-        }
     }
 
     // Sets the destination coordinates for the enemy
