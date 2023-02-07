@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 878397652217950502}
   - component: {fileID: 6498861345909443189}
   - component: {fileID: 2252288866385938853}
-  - component: {fileID: 1349926555960528643}
+  - component: {fileID: 5351665466090341322}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Collectible
@@ -98,29 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ad9d149e7041044832a4b62a11c97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &1349926555960528643
-BoxCollider2D:
+  dataOfItem: {fileID: 11400000, guid: bcd7aa50bf10f4342b7194426b7b1c05, type: 2}
+--- !u!65 &5351665466090341322
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7309745787455904294}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.16825819}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
-    newSize: {x: 20.48, y: 20.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20.48, y: 20.143482}
-  m_EdgeRadius: 0
+  m_Size: {x: 20.48, y: 20.48, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
