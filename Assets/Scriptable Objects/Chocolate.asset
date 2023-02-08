@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5690bdb4d4ca744d97f1b65f63d033c, type: 3}
   m_Name: Chocolate
   m_EditorClassIdentifier: 
-  displayName: Chocolate
+  displayName: Choco
   icon: {fileID: 21300000, guid: faaee1899e4f203408bccaa448f4c708, type: 3}
