@@ -4,29 +4,15 @@ using UnityEngine;
 
 public class Collector : MonoBehaviour
 {
-    //player can collect the collectible
-    // maybe change this to find tag later??
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.tag == "Collectible")
-    //    {
-    //        Item collectible = collision.GetComponent<Item>();
-    //        if (collectible != null)
-    //        {
-    //            collectible.Collect();
-    //        }
-    //    }
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Item collectible = collision.GetComponent<Item>();
-    //    if (collectible != null)
-    //    {
-    //        collectible.Collect();
-    //    }
-    //}
-
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

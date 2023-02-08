@@ -5,33 +5,18 @@ using System;
 
 public class Item : MonoBehaviour
 {
-    //public static event Action OnItemCollected;
+    public static event HandleItemCollected OnItemCollected;
+    public delegate void HandleItemCollected(ItemData itemData);
+    public ItemData dataOfItem;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //if items collide with the player they will destroy themselves and create an event message
+    private void OnCollisionEnter(Collision collision)
     {
-        Collector player = collision.GetComponent<Collector>();
-        if (player != null)
+        if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
-            Debug.Log("Hit");
-            //OnItemCollected?.Invoke();
+            OnItemCollected?.Invoke(dataOfItem);
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        Destroy(gameObject);
-    //        Debug.Log("Hit");
-    //        //OnItemCollected?.Invoke();
-    //    }
-    //}
-
-
-    //public void Collect()
-    //{
-    //    Destroy(gameObject);
-    //    //OnItemCollected?.Invoke();
-    //}
 }

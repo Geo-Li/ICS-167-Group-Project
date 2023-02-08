@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2148818139275572052}
   - component: {fileID: 6860175279604798923}
-  - component: {fileID: -3047808731640217432}
   - component: {fileID: -5499754182117391648}
+  - component: {fileID: 6924814460868865892}
   m_Layer: 0
   m_Name: Wheat
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1482097036233139284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9344315, y: 0.9407, z: 1}
+  m_LocalScale: {x: 0.4285303, y: 0.42444384, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &-3047808731640217432
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482097036233139284}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 1.296985, y: -0.112358585}
-  m_Size: {x: 6.658047, y: 20.255283}
-  m_Direction: 0
 --- !u!114 &-5499754182117391648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +98,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6ad9d149e7041044832a4b62a11c97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataOfItem: {fileID: 11400000, guid: 29ed0271c8fc06947b0fe87103fae66f, type: 2}
+--- !u!65 &6924814460868865892
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482097036233139284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.508523, y: 20.48, z: 0.2}
+  m_Center: {x: 0.51625025, y: 0, z: 0}
