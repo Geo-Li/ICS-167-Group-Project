@@ -106,4 +106,13 @@ public class DamageScript : ScriptableObject
 
         hitInvul.HitInvulnerabilityTime = m_InvulSeconds;
     }
+
+    // Displays the damage stats
+    public void DisplayDamageStats()
+    {
+        Debug.Log("This damage set deals " +
+                       m_Damage + " damage, " +
+                       m_KForce + " knockback units, and " +
+                       m_InvulSeconds + " seconds of invulnerability.");
+    }
 }

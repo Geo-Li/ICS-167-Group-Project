@@ -13,6 +13,7 @@ public class Enemy : Entity
     [SerializeField]
     private AttackConditions[] m_AttackConditions;
 
+    // The enemy AI movement
     private EnemyMovement m_Movement;
 
     // Initializes all references

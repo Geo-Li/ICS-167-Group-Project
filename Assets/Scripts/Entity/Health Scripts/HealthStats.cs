@@ -15,6 +15,7 @@ public class HealthStats : ScriptableObject
     [SerializeField]
     private float m_MaxHealth = 3f;
 
+    // Creates a class instance of Health for individual entities
     public Health CreateHealthStats()
     {
         return new Health(m_MaxHealth);

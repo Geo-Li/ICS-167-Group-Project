@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// William Min
+
+/*
+ * Represents an entity
+ */
 public class Entity : MonoBehaviour
 {
     // Starting stats of the health of an entity
@@ -54,12 +59,17 @@ public class Entity : MonoBehaviour
     // Initializes all references
     public virtual void Start()
     {
-        m_Health = HealthGenerator.CreateHealthStats();
-
         m_EntityManager = GetComponent<AnimationManager>();
 
         if (m_EntityManager == null)
             Debug.LogErrorFormat("An Entity component is not on an Entity.");
+
+        if (HealthGenerator == null)
+            Debug.LogErrorFormat("An Entity component does not have a Health Stats generator.");
+        
+        m_Health = HealthGenerator.CreateHealthStats();
+
+        GetComponent<HealthBar>().InitiateHealthBar(this);
     }
 
     // Checks if the entity is ready to die and be destroyed from the scene

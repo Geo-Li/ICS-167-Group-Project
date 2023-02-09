@@ -46,11 +46,13 @@ public struct LootDropScript : LootInterface
         return result;
     }
 
+    // Gets a random count of collectibles from m_MinCount to m_MaxCount
     private int getRandomCount()
     {
         return Random.Range(m_MinCount, m_MaxCount + 1);
     }
 
+    // Rolls to see if this loot will drop at all
     private bool WillDrop()
     {
         return Random.Range(0f, 1f) <= m_Probability;
