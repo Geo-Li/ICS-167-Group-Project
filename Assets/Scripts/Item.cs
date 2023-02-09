@@ -10,7 +10,7 @@ public class Item : MonoBehaviour
     public ItemData dataOfItem;
 
     //if items collide with the player they will destroy themselves and create an event message
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
