@@ -17,8 +17,15 @@ public class LootTable : ScriptableObject, LootInterface
     private List<LootDropScript> m_Items;
 
     // The location where all the collectibles will spawn
-    [SerializeField]
     private Vector3 m_DropPosition;
+
+    // Displacement from the original loot spawn as a Vector3
+    [SerializeField]
+    private Vector3 m_LootDropDisplacement = new Vector3(0, .25f, 0); 
+        
+    // Force of collectibles when drop
+    [SerializeField]
+    private float m_LootForce = 100f;
 
     // Public version of m_DropPosition
     public Vector3 DropPosition
@@ -53,6 +60,21 @@ public class LootTable : ScriptableObject, LootInterface
             foreach (GameObject obj in result)
             {
                 obj.transform.position = m_DropPosition;
+                obj.transform.position += m_LootDropDisplacement;
+
+                Rigidbody rb = obj.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                {
+                    Vector3 kVector = (Quaternion.Euler(0f, Random.Range(0f, 360f), 0f) * Vector3.forward).normalized;
+
+                    obj.transform.position += kVector * .5f;
+
+                    kVector *= m_LootForce;
+                    kVector.y = m_LootForce;
+
+                    rb.AddForce(kVector);
+                }
             }
         }
 
