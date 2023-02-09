@@ -10,46 +10,24 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     // Reference to an entity's animator
-    [SerializeField]
     protected Animator m_Reference;
-
-    // The parameter representation of the Action State of the animator
-    [SerializeField]
-    public ParameterRep<int> ActionState;
-
-    // The parameter representation of the IsMoving boolean of the animator
-    [SerializeField]
-    public ParameterRep<bool> IsMoving;
 
     // The parameter representation of the IsDead trigger of the animator
     [SerializeField]
     public ParameterRep<bool> IsDead;
 
-    // Updates Action State, IsMoving, and IsDead according to the parameter reps
-    // Destroys the entity after finishing its death animation
-    void Update()
+    // Checks if this manager has an animator to work with
+    void Start()
     {
-        UpdateAction();
-        UpdateMovement();
+        m_Reference = GetComponent<Animator>();
+
+        if (m_Reference == null)
+            Debug.LogErrorFormat("This manager is not with an animator.");
+    }
+
+    public virtual void Update()
+    {
         UpdateDeath();
-    }
-
-    private void UpdateAction()
-    {
-        if (m_Reference == null)
-            return;
-
-        m_Reference.SetInteger(ActionState.ParameterName, ActionState.ParameterValue);
-
-        ActionState.ParameterValue = 0;
-    }
-
-    private void UpdateMovement()
-    {
-        if (m_Reference == null)
-            return;
-
-        m_Reference.SetBool(IsMoving.ParameterName, IsMoving.ParameterValue);
     }
 
     private void UpdateDeath()
