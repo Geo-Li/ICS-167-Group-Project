@@ -26,6 +26,7 @@ public class MovingEntityAnimationManager : AnimationManager
         base.Update();
     }
 
+    // Activates an attack animation based on the ActionState parameter
     private void UpdateAction()
     {
         if (m_Reference == null)
@@ -36,6 +37,7 @@ public class MovingEntityAnimationManager : AnimationManager
         ActionState.ParameterValue = 0;
     }
 
+    // Updates the movement animation based on the MovementSpeed parameter
     private void UpdateMovement()
     {
         if (m_Reference == null)
