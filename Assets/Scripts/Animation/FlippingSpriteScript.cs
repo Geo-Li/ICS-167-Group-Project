@@ -28,7 +28,7 @@ public class FlippingSpriteScript : SpriteBillboardScript
         if (m_RotationOwner != null)
         {
             Vector3 m_MyCenterVector = m_RotationOwner.transform.position;
-            Vector3 m_MyFirstVector = m_RotationOwner.transform.right + m_MyCenterVector;
+            Vector3 m_MyFirstVector = m_RotationOwner.transform.forward + m_MyCenterVector;
             Vector3 m_MySecondVector = -Camera.main.transform.forward + m_MyCenterVector;
 
             renderLines(m_MyFirstVector, m_MySecondVector, m_MyCenterVector);

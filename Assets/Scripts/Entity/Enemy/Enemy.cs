@@ -34,12 +34,12 @@ public class Enemy : Entity
         {
             UpdateSpeed();
 
-            if (m_AttackConditions.Length > 0)
+            for (int i = 0; i < m_AttackConditions.Length; i++)
             {
-                AttackConditions ac = m_AttackConditions[0];
+                AttackConditions ac = m_AttackConditions[i];
 
                 if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
-                    StartCoroutine(PerformAttack(1));
+                    StartCoroutine(PerformAttack(i + 1));
             }
         }
 
@@ -57,13 +57,8 @@ public class Enemy : Entity
     {
         int length = m_AttackConditions.Length;
 
-        if (length > 0)
-        {
-            for (int i = 0; i < length; i++)
-            {
-                m_AttackConditions[i].UpdateTimer();
-            }
-        }
+        for (int i = 0; i < length; i++)
+            m_AttackConditions[i].UpdateTimer();
     }
 
     // Updates entity speed for animation manager
@@ -79,7 +74,7 @@ public class Enemy : Entity
         MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
         eam.ActionState.ParameterValue = attackNumber;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
 
         m_AttackConditions[attackNumber - 1].UseAttack();
     }

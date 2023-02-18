@@ -26,7 +26,7 @@ public class AnimationManager : MonoBehaviour
     }
 
     // Updates the IsDead parameter for entities
-    public virtual void Update()
+    public virtual void LateUpdate()
     {
         UpdateDeath();
     }

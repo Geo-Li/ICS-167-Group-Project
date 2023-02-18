@@ -200,16 +200,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07b44d65b3cbd145ad16a51d1033457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Reference: {fileID: 8811268225596388296}
+  IsDead:
+    m_ParameterValue: 0
+    m_ParameterName: IsDead
   ActionState:
     m_ParameterValue: 0
     m_ParameterName: ActionState
   MovementSpeed:
     m_ParameterValue: 0
     m_ParameterName: MoveSpeed
-  IsDead:
-    m_ParameterValue: 0
-    m_ParameterName: IsDead
 --- !u!114 &-3147302248170670368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,12 +222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 100d1f820be1c7a4ea501c0ccf64535f, type: 2}
+  m_Dead: 0
+  m_Loot: {fileID: 0}
   m_AttackConditions:
   - m_AttackCooldown: 1.3
     m_AttackDistances: {x: 0, y: 6}
-  m_Movement: {fileID: 3462464327092407000}
-  m_Dead: 0
-  m_Loot: {fileID: 0}
 --- !u!114 &7035958526462397780
 MonoBehaviour:
   m_ObjectHideFlags: 0
