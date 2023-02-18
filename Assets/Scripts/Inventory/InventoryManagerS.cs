@@ -11,6 +11,7 @@ public class InventoryManagerS : MonoBehaviour
     // add the collected item to the specific slot
     public void AddItem(InventoryItemSO item)
     {
+        // prove this by not using for loop
         for (int i = 0; i < inventorySlots.Length; i++) {
             InventorySlotS slot = inventorySlots[i];
             InventoryItemS itemInSlot = slot.GetComponentInChildren<InventoryItemS>();
@@ -34,14 +35,13 @@ public class InventoryManagerS : MonoBehaviour
     {
         int playerCurrHealth = player.playerHealth;
         InventoryItemS itemInSlot = slot.GetComponentInChildren<InventoryItemS>();
-        // Debug.Log(itemInSlot.count);
-        if (itemInSlot.count > 1) {
-            itemInSlot.count--; // this line is lil buggy
+        // add new condition to prevent player using item if they have full HP
+        if (itemInSlot.count > 1 && playerCurrHealth < 100) {
+            itemInSlot.count--;
             player.playerHealth = playerCurrHealth + 10;
             healthBar.SetHealth(playerCurrHealth + 10);
             itemInSlot.RefreshCount();
-        } else if (itemInSlot.count == 1) { // if the count is equal to one
-            Debug.Log("here");
+        } else if (itemInSlot.count == 1 && playerCurrHealth < 100) { // if the count is equal to one
             player.playerHealth = playerCurrHealth + 10;
             healthBar.SetHealth(playerCurrHealth + 10);
             itemInSlot.ResetAlphaWhenZero();

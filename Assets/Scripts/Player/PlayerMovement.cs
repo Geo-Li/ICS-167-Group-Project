@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float playerSpeed = 10f;
+    public EntitySO entity;
+    private float playerSpeed;
     // private float playerRotationSpeed = 100f;
     private Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerSpeed = entity.speed;
         startPosition = transform.position;
     }
 

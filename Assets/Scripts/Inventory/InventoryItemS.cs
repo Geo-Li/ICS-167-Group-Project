@@ -10,6 +10,8 @@ public class InventoryItemS : MonoBehaviour
     // this one is initially for drag and drop
     [HideInInspector] public InventoryItemSO item;
     [HideInInspector] public int count = 0;
+    [HideInInspector] public float fullAlpha = 255f;
+    [HideInInspector] public float alpha;
 
     [Header("UI")]
     public Image image;
@@ -17,10 +19,14 @@ public class InventoryItemS : MonoBehaviour
     public Text countText;
 
 
+    public void Start() {
+        alpha = image.color.a;
+    }
+
     public void ResetAlphaWhenZero() {
         count = 0;
         var tempColor = image.color;
-        tempColor.a = 150;
+        tempColor.a = alpha;
         image.color = tempColor;
         RefreshCount();
     }
@@ -32,7 +38,7 @@ public class InventoryItemS : MonoBehaviour
         count = 1;
         // make the item show full alpha value when stored into inventory
         var tempColor = image.color;
-        tempColor.a = 255;
+        tempColor.a = fullAlpha;
         image.color = tempColor;
         image.sprite = newItem.image;
         RefreshCount();

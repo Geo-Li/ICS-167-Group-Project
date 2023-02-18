@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f295d0c343b349d1bef27e3f6d6c65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entity: {fileID: 11400000, guid: 4ed88ab6f77784c27bf4eb4741d7cb92, type: 2}
 --- !u!54 &8093605557188547311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,5 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f520e4feb56f4442eb8f8c73611c5eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 0
   healthBar: {fileID: 0}
   maxHealth: 100
