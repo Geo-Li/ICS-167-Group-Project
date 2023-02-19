@@ -30,16 +30,27 @@ public class Enemy : Entity
     // Checks movement along with base entity checks
     public override void Update()
     {
+        EnemyAI();
+    }
+
+    // AI of Enemy
+    public void EnemyAI()
+    {
         if (m_Movement != null)
         {
             UpdateSpeed();
 
-            for (int i = 0; i < m_AttackConditions.Length; i++)
+            if (m_IsDying)
+                m_Movement.ToggleAgentActivity(false);
+            else
             {
-                AttackConditions ac = m_AttackConditions[i];
+                for (int i = 0; i < m_AttackConditions.Length; i++)
+                {
+                    AttackConditions ac = m_AttackConditions[i];
 
-                if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
-                    StartCoroutine(PerformAttack(i + 1));
+                    if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
+                        StartCoroutine(PerformAttack(i + 1));
+                }
             }
         }
 

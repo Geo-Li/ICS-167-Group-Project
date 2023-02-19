@@ -31,43 +31,34 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // Determines if the enemy will follow the target
-    [SerializeField]
-    private bool m_IsFollowingTarget;
-
-    // Public version of m_IsFollowingTarget
-    public bool IsFollowingTarget
-    {
-        get
-        {
-            return m_IsFollowingTarget;
-        }
-        set
-        {
-            m_IsFollowingTarget = value;
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
         m_Agent = GetComponent<NavMeshAgent>();
         m_Agent.updateRotation = false;
-        m_IsFollowingTarget = true;
+    }
+
+    // Update every frame
+    void Update()
+    {
+        UpdateTargetPosition();
+    }
+
+    // Update at the end of every frame
+    void LateUpdate()
+    {
+        UpdatePathRotation();
     }
 
     // Updates the agent based on target and bool IsFollowingTarget
-    void Update()
+    private void UpdateTargetPosition()
     {
         if (m_Target != null)
             SetDestination(m_Target.transform.position);
-
-        if (m_IsFollowingTarget == m_Agent.isStopped)
-            m_Agent.isStopped = !m_IsFollowingTarget;
     }
 
     // Makes sure that the entity faces toward the direction of movement
-    void LateUpdate()
+    private void UpdatePathRotation()
     {
         if (m_Agent.velocity.sqrMagnitude > Mathf.Epsilon)
             transform.rotation = Quaternion.LookRotation(m_Agent.velocity.normalized);
@@ -92,5 +83,19 @@ public class EnemyMovement : MonoBehaviour
             return -1;
         else
             return Vector3.Distance(this.transform.position, m_Target.transform.position);
+    }
+
+    // Allows the toggle of the activation of the agent
+    public void ToggleAgentActivity(bool isActive)
+    {
+        m_Agent.isStopped = !isActive;
+    }
+
+    // If isActive > 0 ==> true
+    // If isActive <= 0 ==> false
+    private void AnimationUnityTAA(int isActive)
+    {
+        bool input = isActive > 0;
+        ToggleAgentActivity(input);
     }
 }
