@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerHealthS : MonoBehaviour
 {
-    public int playerHealth;
-    public HealthBarS healthBar;
-    public int maxHealth = 100;
+    [SerializeField] private int playerHealth;
+    [SerializeField] private HealthBarS healthBar;
+    [SerializeField] private int maxHealth = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,19 @@ public class PlayerHealthS : MonoBehaviour
         healthBar.SetHealth(maxHealth/2);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int GetPlayerMaxHealth() {
+        return maxHealth;
+    }
+
+    public int GetPlayerHealth() {
+        return playerHealth;
+    }
+
+    public void IncreasePlayerHealth(int heal) {
+        playerHealth += heal;
+    }
+
+    public void DecreasePlayerHealth(int damage) {
+        playerHealth -= damage;
     }
 }

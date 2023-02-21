@@ -18,14 +18,15 @@ public class MovingEntityAnimationManager : AnimationManager
     public ParameterRep<float> MovementSpeed;
 
     // Updates Action State, IsMoving, and IsDead according to the parameter reps
-    public override void Update()
+    public override void LateUpdate()
     {
         UpdateAction();
         UpdateMovement();
 
-        base.Update();
+        base.LateUpdate();
     }
 
+    // Activates an attack animation based on the ActionState parameter
     private void UpdateAction()
     {
         if (m_Reference == null)
@@ -36,6 +37,7 @@ public class MovingEntityAnimationManager : AnimationManager
         ActionState.ParameterValue = 0;
     }
 
+    // Updates the movement animation based on the MovementSpeed parameter
     private void UpdateMovement()
     {
         if (m_Reference == null)

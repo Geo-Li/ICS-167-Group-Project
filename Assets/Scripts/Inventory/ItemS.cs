@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class ItemS : MonoBehaviour
 {
-    public InventoryManagerS inventoryManager;
-    public InventoryItemSO item;
+    [SerializeField] private InventoryManagerS inventoryManager;
+    [SerializeField] private InventoryItemSO item;
 
+    // When collide with player, destory the item and store into the inventory
     public void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
             inventoryManager.AddItem(item);
+            Destroy(gameObject);
         }
     }
 }

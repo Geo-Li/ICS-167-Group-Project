@@ -25,11 +25,13 @@ public class AnimationManager : MonoBehaviour
             Debug.LogErrorFormat("This manager is not with an animator.");
     }
 
-    public virtual void Update()
+    // Updates the IsDead parameter for entities
+    public virtual void LateUpdate()
     {
         UpdateDeath();
     }
 
+    // Activates the death animation if the IsDead parameter declares so
     private void UpdateDeath()
     {
         if (m_Reference == null)

@@ -67,13 +67,6 @@ public class HitboxDataScript : MonoBehaviour
                 m_DamageUnit.ApplyDamage(other);
                 m_DamageUnit.ApplyKnockback(other, vector);
                 m_DamageUnit.ApplyInvulFrames(other);
-
-                /*
-                Debug.Log("Punched " + other.gameObject.name + " and applied " +
-                       damage + " damage, " +
-                       kForce + " knockback units, and " +
-                       InvulSeconds + " seconds of invulnerability.");
-                */
             }
         }
     }

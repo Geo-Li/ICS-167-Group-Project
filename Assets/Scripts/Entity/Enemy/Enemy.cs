@@ -13,6 +13,7 @@ public class Enemy : Entity
     [SerializeField]
     private AttackConditions[] m_AttackConditions;
 
+    // The enemy AI movement
     private EnemyMovement m_Movement;
 
     // Initializes all references
@@ -29,16 +30,27 @@ public class Enemy : Entity
     // Checks movement along with base entity checks
     public override void Update()
     {
+        EnemyAI();
+    }
+
+    // AI of Enemy
+    public void EnemyAI()
+    {
         if (m_Movement != null)
         {
             UpdateSpeed();
 
-            if (m_AttackConditions.Length > 0)
+            if (m_IsDying)
+                m_Movement.ToggleAgentActivity(false);
+            else
             {
-                AttackConditions ac = m_AttackConditions[0];
+                for (int i = 0; i < m_AttackConditions.Length; i++)
+                {
+                    AttackConditions ac = m_AttackConditions[i];
 
-                if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
-                    StartCoroutine(PerformAttack(1));
+                    if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
+                        StartCoroutine(PerformAttack(i + 1));
+                }
             }
         }
 
@@ -56,13 +68,8 @@ public class Enemy : Entity
     {
         int length = m_AttackConditions.Length;
 
-        if (length > 0)
-        {
-            for (int i = 0; i < length; i++)
-            {
-                m_AttackConditions[i].UpdateTimer();
-            }
-        }
+        for (int i = 0; i < length; i++)
+            m_AttackConditions[i].UpdateTimer();
     }
 
     // Updates entity speed for animation manager
@@ -78,7 +85,7 @@ public class Enemy : Entity
         MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
         eam.ActionState.ParameterValue = attackNumber;
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
 
         m_AttackConditions[attackNumber - 1].UseAttack();
     }

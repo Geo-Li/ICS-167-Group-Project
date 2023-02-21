@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class EntitySpawner : MonoBehaviour
 {
+    // Entity Types in form of enum states
     private enum EntityType
     {
         ENTITY,

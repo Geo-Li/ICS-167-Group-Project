@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public EntitySO entity;
-    private float playerSpeed;
-    // private float playerRotationSpeed = 100f;
-    private Vector3 startPosition;
+    [SerializeField] private EntitySO entity;
+    [HideInInspector] private float playerSpeed;
+    [HideInInspector] private Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // Get player's current speed
+    // Get player's current velocity
     public float GetVelocity() {
         return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
     }
@@ -26,13 +25,16 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // check if user has fallen the table, if so make them go back
-        // to the origin
+        // to the start position
         if (transform.position.y < 0) {
             transform.position = startPosition;
         }
     }
 
     void FixedUpdate() {
+
+        // TODO:
+        // Make the player position normalized in y-axis
         // update player position based on keyboard input
         float translation = Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
         float rotation = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;

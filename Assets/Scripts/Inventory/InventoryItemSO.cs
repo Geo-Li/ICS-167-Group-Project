@@ -6,13 +6,20 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "Scriptable Objects/Inventory Item")]
 public class InventoryItemSO : ScriptableObject
 {
+    [SerializeField] private Sprite image;
+    [SerializeField] private string name;
+    [SerializeField] private int initialCount = 0;
 
-    [Header("Only UI")]
-    public bool stackable = true;
+    // Getter functions for above variables
+    public Sprite GetInventoryItemSOImage() {
+        return image;
+    }
 
-    [Header("Both")]
-    public Sprite image;
-    public string name;
-    public int initialCount = 0;
+    public string GetInventoryItemSOName() {
+        return name;
+    }
 
+    public int GetInventoryItemSOInitialCount() {
+        return initialCount;
+    }
 }

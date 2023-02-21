@@ -9,6 +9,7 @@ using UnityEngine;
  */
 public class HitInvulScript : MonoBehaviour
 {
+    // The invulnerability timer
     private float m_HitInvulTime;
 
     // The rendered sprite of the object
@@ -56,6 +57,7 @@ public class HitInvulScript : MonoBehaviour
         return m_HitInvulTime > 0;
     }
 
+    // Makes the sprite "flash" when having invincibility frames
     private void FlashInvul()
     {
         if (Sprite == null || !HasInvulFrames())

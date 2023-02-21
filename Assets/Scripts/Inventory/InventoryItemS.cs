@@ -6,27 +6,28 @@ using UnityEngine.EventSystems;
 
 public class InventoryItemS : MonoBehaviour
 {
-
-    // this one is initially for drag and drop
-    [HideInInspector] public InventoryItemSO item;
-    [HideInInspector] public int count = 0;
-    [HideInInspector] public float fullAlpha = 255f;
-    [HideInInspector] public float alpha;
+    [HideInInspector] private InventoryItemSO item;
+    [HideInInspector] private int count;
+    [HideInInspector] private float fullAlpha = 255f;
+    [HideInInspector] private float initAlpha;
 
     [Header("UI")]
-    public Image image;
-    public string name;
-    public Text countText;
+    [SerializeField] private Image image;
+    [SerializeField] private string name;
+    [SerializeField] private Text countText;
 
 
     public void Start() {
-        alpha = image.color.a;
+        count = 0;
+        initAlpha = image.color.a;
     }
 
+    // Set the alpha of the image to be initAlpha
+    // and set the conut to be zero
     public void ResetAlphaWhenZero() {
         count = 0;
         var tempColor = image.color;
-        tempColor.a = alpha;
+        tempColor.a = initAlpha;
         image.color = tempColor;
         RefreshCount();
     }
@@ -40,7 +41,7 @@ public class InventoryItemS : MonoBehaviour
         var tempColor = image.color;
         tempColor.a = fullAlpha;
         image.color = tempColor;
-        image.sprite = newItem.image;
+        image.sprite = newItem.GetInventoryItemSOImage();
         RefreshCount();
     }
 
@@ -48,5 +49,20 @@ public class InventoryItemS : MonoBehaviour
     public void RefreshCount() {
         countText.text = count.ToString();
     }
+
+    public string GetInventoryItemName() {
+        return name;
+    }
+
+    public int GetCount() {
+        return count;
+    }
     
+    public void IncreaseCount() {
+        count++;
+    }
+
+    public void DecreaseCount() {
+        count--;
+    }
 }
