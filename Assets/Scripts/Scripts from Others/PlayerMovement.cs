@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 
-        if (movementVector.magnitude < playerSpeed)
+        if (movementVector.magnitude > 1)
             movementVector = movementVector.normalized;
 
         movementVector *= playerSpeed * Time.deltaTime;

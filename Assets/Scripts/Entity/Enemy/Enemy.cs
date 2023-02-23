@@ -26,6 +26,7 @@ public class Enemy : Entity
     [SerializeField]
     protected float m_WanderingSpeed, m_ActiveSpeed;
 
+    // The name of the player tag to find players
     [SerializeField]
     protected string m_PlayerTag;
 
