@@ -8,7 +8,6 @@ using UnityEngine.AI;
 /*
  * Cat AI and movemment
  */
-
 public class Cat : Enemy
 {
     public override void EntityController()

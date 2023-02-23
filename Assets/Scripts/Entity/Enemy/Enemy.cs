@@ -66,8 +66,10 @@ public class Enemy : Entity
 
     public override void EntityController()
     {
-        if (m_Movement.Target != null)
-            m_Movement.Pursue();
+        GameObject target = m_Movement.Target;
+
+        if (target != null)
+            m_Movement.Seek(target.transform.position);
     }
 
     // Update is called once per physics frame
