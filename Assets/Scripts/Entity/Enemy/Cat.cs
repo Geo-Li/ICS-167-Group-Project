@@ -10,7 +10,7 @@ using UnityEngine.AI;
  */
 public class Cat : Enemy
 {
-    public override void EntityController()
+    protected override void EntityController()
     {
         GameObject target = m_Movement.Target;
         NavMeshAgent agent = m_Movement.Agent;

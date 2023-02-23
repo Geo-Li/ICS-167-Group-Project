@@ -57,7 +57,7 @@ public class Entity : MonoBehaviour
     protected LootTable m_Loot;
 
     // Initializes all references
-    public virtual void Start()
+    protected virtual void Start()
     {
         m_EntityManager = GetComponent<AnimationManager>();
 
@@ -68,19 +68,17 @@ public class Entity : MonoBehaviour
             Debug.LogErrorFormat("An Entity component does not have a Health Stats generator.");
         
         m_Health = HealthGenerator.CreateHealthStats();
-
-        GetComponent<HealthBar>().InitiateHealthBar(this);
     }
 
     // Checks if the entity is ready to die and be destroyed from the scene
-    public void Update()
+    private void Update()
     {
         AnimationUpdater();
         EntityController();
     }
 
     // The animation controller of the entity, making sure all animations are updated
-    public virtual void AnimationUpdater()
+    protected virtual void AnimationUpdater()
     {
         if (m_Health != null && m_Health.IsDying())
             StartDyingAnimation();
@@ -90,7 +88,7 @@ public class Entity : MonoBehaviour
     }
 
     // The controller of the entity, guided by either AI or player control
-    public virtual void EntityController()
+    protected virtual void EntityController()
     {
         
     }
@@ -118,5 +116,11 @@ public class Entity : MonoBehaviour
         }
 
         Destroy(this.gameObject);
+    }
+
+    // Make the entity take damage by demand
+    public void TakeDamage(float damage)
+    {
+        m_Health.CurrentHealth -= damage;
     }
 }

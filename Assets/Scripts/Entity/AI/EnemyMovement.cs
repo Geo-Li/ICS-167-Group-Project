@@ -232,8 +232,6 @@ public class EnemyMovement : MonoBehaviour
         {
             GameObject temp = list[index];
 
-            Debug.Log(temp);
-
             if (DistanceFromObject(list[index]) < detectionDistance)
                 newTarget = temp;
 

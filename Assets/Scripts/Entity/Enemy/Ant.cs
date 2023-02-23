@@ -18,7 +18,23 @@ public class Ant : Enemy
     [SerializeField]
     private GameObject m_AttackHitbox;
 
-    public override void EntityController()
+    protected override void Start()
+    {
+        DisplayGameObjectNullErrorMessage(m_AngryFace);
+        DisplayGameObjectNullErrorMessage(m_WorriedFace);
+        DisplayGameObjectNullErrorMessage(m_Wheat);
+        DisplayGameObjectNullErrorMessage(m_AttackHitbox);
+
+        base.Start();
+    }
+
+    private void DisplayGameObjectNullErrorMessage(GameObject obj)
+    {
+        if (obj == null)
+            Debug.LogErrorFormat("The " + obj.name + " object is missing.");
+    }
+
+    protected override void EntityController()
     {
         GameObject target = m_Movement.Target;
         NavMeshAgent agent = m_Movement.Agent;

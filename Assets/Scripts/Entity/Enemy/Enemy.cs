@@ -31,7 +31,7 @@ public class Enemy : Entity
     protected string m_PlayerTag;
 
     // Initializes all references
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
 
@@ -41,7 +41,7 @@ public class Enemy : Entity
         m_Movement = GetComponent<EnemyMovement>();
     }
 
-    public override void AnimationUpdater()
+    protected override void AnimationUpdater()
     {
         if (m_Movement != null)
         {
@@ -64,7 +64,7 @@ public class Enemy : Entity
         base.AnimationUpdater();
     }
 
-    public override void EntityController()
+    protected override void EntityController()
     {
         GameObject target = m_Movement.Target;
 

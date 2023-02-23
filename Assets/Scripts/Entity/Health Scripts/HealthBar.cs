@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 // William Min
@@ -22,8 +24,13 @@ public class HealthBar : MonoBehaviour
     // The health class of an entity
     private Health m_Health;
 
+    private void Start()
+    {
+        StartCoroutine(InitiateHealthBar());
+    }
+
     // Updates the health bar
-    void Update()
+    private void Update()
     {
         SetHealthUI();
     }
@@ -43,8 +50,15 @@ public class HealthBar : MonoBehaviour
     }
 
     // Intiates the health bar with a health class
-    public void InitiateHealthBar(Entity entity)
+    public IEnumerator InitiateHealthBar()
     {
-        m_Health = entity.Health;
+        yield return new WaitForSeconds(0.01f);
+
+        Entity entity = GetComponent<Entity>();
+
+        if (entity == null)
+            Debug.LogErrorFormat("This health bar is not associated with an entity.");
+        else
+            m_Health = entity.Health;
     }
 }
