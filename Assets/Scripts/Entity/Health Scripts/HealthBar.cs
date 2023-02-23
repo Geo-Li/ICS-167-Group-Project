@@ -31,6 +31,9 @@ public class HealthBar : MonoBehaviour
     // Updates the health bar
     private void SetHealthUI()
     {
+        if (m_Health == null)
+            return;
+
         float StartingHealth = m_Health.MaxHealth;
         float CurrentHealth = m_Health.CurrentHealth;
         float healthFraction = CurrentHealth / StartingHealth;

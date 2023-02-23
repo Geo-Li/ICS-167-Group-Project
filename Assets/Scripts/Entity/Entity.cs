@@ -73,13 +73,26 @@ public class Entity : MonoBehaviour
     }
 
     // Checks if the entity is ready to die and be destroyed from the scene
-    public virtual void Update()
+    public void Update()
+    {
+        AnimationUpdater();
+        EntityController();
+    }
+
+    // The animation controller of the entity, making sure all animations are updated
+    public virtual void AnimationUpdater()
     {
         if (m_Health != null && m_Health.IsDying())
             StartDyingAnimation();
 
         if (m_Dead)
             DestroyEntity();
+    }
+
+    // The controller of the entity, guided by either AI or player control
+    public virtual void EntityController()
+    {
+        
     }
 
     // Make the entity start dying

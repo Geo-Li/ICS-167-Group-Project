@@ -9,12 +9,25 @@ using UnityEngine;
  */
 public class Enemy : Entity
 {
+    private const float LOOK_AHEAD_MULTIPLIER = 5, TO_TARGET_ANGLE = 90, RELATIVE_ANGLE = 20;
+
     // Attack Conditions
     [SerializeField]
-    private AttackConditions[] m_AttackConditions;
+    protected AttackConditions[] m_AttackConditions;
 
     // The enemy AI movement
-    private EnemyMovement m_Movement;
+    protected EnemyMovement m_Movement;
+
+    // Detection range for players to target
+    [SerializeField]
+    protected float m_DetectionDistance;
+
+    // speeds for wandering and being active
+    [SerializeField]
+    protected float m_WanderingSpeed, m_ActiveSpeed;
+
+    [SerializeField]
+    protected string m_PlayerTag;
 
     // Initializes all references
     public override void Start()
@@ -27,18 +40,11 @@ public class Enemy : Entity
         m_Movement = GetComponent<EnemyMovement>();
     }
 
-    // Checks movement along with base entity checks
-    public override void Update()
-    {
-        EnemyAI();
-    }
-
-    // AI of Enemy
-    public void EnemyAI()
+    public override void AnimationUpdater()
     {
         if (m_Movement != null)
         {
-            UpdateSpeed();
+            UpdateSpeedAnimation();
 
             if (m_IsDying)
                 m_Movement.ToggleAgentActivity(false);
@@ -48,13 +54,19 @@ public class Enemy : Entity
                 {
                     AttackConditions ac = m_AttackConditions[i];
 
-                    if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
-                        StartCoroutine(PerformAttack(i + 1));
+                    if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromObject(m_Movement.Target)))
+                        StartCoroutine(StartAttack(i + 1));
                 }
             }
         }
 
-        base.Update();
+        base.AnimationUpdater();
+    }
+
+    public override void EntityController()
+    {
+        if (m_Movement.Target != null)
+            m_Movement.Pursue();
     }
 
     // Update is called once per physics frame
@@ -73,14 +85,14 @@ public class Enemy : Entity
     }
 
     // Updates entity speed for animation manager
-    public void UpdateSpeed()
+    public void UpdateSpeedAnimation()
     {
         MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
         eam.MovementSpeed.ParameterValue = m_Movement.GiveCurrentSpeed();
     }
 
     // Make the entity perform an attack if available
-    public IEnumerator PerformAttack(int attackNumber)
+    public IEnumerator StartAttack(int attackNumber)
     {
         MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
         eam.ActionState.ParameterValue = attackNumber;
