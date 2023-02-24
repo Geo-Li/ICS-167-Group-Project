@@ -19,7 +19,7 @@ public class DamageScript : ScriptableObject
     private float m_Damage, m_KForce, m_InvulSeconds;
 
     // The knockback force mulitplier to make m_KForce make a more noticeable force
-    private static float m_ForceMultiplier = 100;
+    private const float FORCE_MULTIPLIER = 100;
 
     // Public version of the damage float value
     public float Damage
@@ -92,7 +92,7 @@ public class DamageScript : ScriptableObject
 
         angle.y = 0;
 
-        Vector3 kVector = m_KForce * angle.normalized * m_ForceMultiplier;
+        Vector3 kVector = m_KForce * angle.normalized * FORCE_MULTIPLIER;
         rb.AddForce(kVector);
     }
 

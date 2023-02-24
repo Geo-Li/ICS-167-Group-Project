@@ -113,6 +113,18 @@ public class EnemyMovement : MonoBehaviour
         m_Agent.SetDestination(ownerLocation - fleeVector);
     }
 
+    // Have the enemy agent seek the target
+    public void SeekTarget()
+    {
+        Seek(m_Target.transform.position);
+    }
+
+    // Have the enemy agent flee from the target
+    public void FleeTarget()
+    {
+        Flee(m_Target.transform.position);
+    }
+
     // Have the enemy agent intelligently cut you off during a chase
     public void Pursue()
     {
@@ -221,9 +233,10 @@ public class EnemyMovement : MonoBehaviour
         return null;
     }
 
-    public void FindTargetByDistance(string playerTag, float detectionDistance)
+    // Picks a target object with a certain tag based on closest distance
+    public void FindTargetByDistance(string targetTag, float detectionDistance)
     {
-        GameObject[] list = GameObject.FindGameObjectsWithTag(playerTag);
+        GameObject[] list = GameObject.FindGameObjectsWithTag(targetTag);
 
         GameObject newTarget = null;
         int index = 0;

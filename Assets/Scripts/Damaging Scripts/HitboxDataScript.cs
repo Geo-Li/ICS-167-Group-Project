@@ -37,8 +37,10 @@ public class HitboxDataScript : MonoBehaviour
     // Sets the original owner to this object when instantiated
     void Start()
     {
+        /*
         if (m_CurrentOwner == null)
             Debug.LogErrorFormat("This hitbox is not assigned to an owner.");
+        */
 
         m_OriginalOwner = m_CurrentOwner;
     }
@@ -46,9 +48,9 @@ public class HitboxDataScript : MonoBehaviour
     // Applies effects listed in the damage unit to the gameObject of other
     void OnTriggerEnter(Collider other)
     {
-        if (other != m_CurrentOwner 
+        if (m_CurrentOwner == null || other != m_CurrentOwner 
             && !other.GetComponent<HitboxDataScript>() 
-            && m_CurrentOwner.layer != other.gameObject.layer)
+            && m_CurrentOwner.tag != other.gameObject.tag)
         {
             bool canBeHit = true;
             HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
@@ -69,5 +71,11 @@ public class HitboxDataScript : MonoBehaviour
                 m_DamageUnit.ApplyInvulFrames(other);
             }
         }
+    }
+
+    // Returns the original owner of the hitbox
+    public GameObject GetOriginalOwner()
+    {
+        return m_OriginalOwner;
     }
 }

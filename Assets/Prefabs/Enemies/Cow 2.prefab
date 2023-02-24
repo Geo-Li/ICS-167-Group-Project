@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 525098658864188055}
   m_Layer: 0
   m_Name: Attack 1
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 525098660026447712}
   m_Layer: 6
   m_Name: Cow 2
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 8034065212941063920}
   m_Layer: 6
   m_Name: Attack 2
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

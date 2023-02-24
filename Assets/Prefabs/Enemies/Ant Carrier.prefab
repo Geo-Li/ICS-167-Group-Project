@@ -1995,7 +1995,7 @@ GameObject:
   - component: {fileID: 6865652387653388604}
   m_Layer: 6
   m_Name: Ant Carrier
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2847,7 +2847,7 @@ GameObject:
   - component: {fileID: 8649950699091703804}
   m_Layer: 0
   m_Name: Attack 1
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

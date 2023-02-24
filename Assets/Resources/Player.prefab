@@ -550,9 +550,9 @@ GameObject:
   - component: {fileID: -8469463965436265529}
   - component: {fileID: 3518406010924463791}
   - component: {fileID: -2905911669588197161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15784654107e3ab46a84f2e8543bd244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 0}
+  entity: {fileID: 11400000, guid: e00ac9d7af383d54cb910d0a91a8fc09, type: 2}
 --- !u!114 &5801998457686786637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 8493303956978138723}
   m_Layer: 0
   m_Name: Attack 1
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

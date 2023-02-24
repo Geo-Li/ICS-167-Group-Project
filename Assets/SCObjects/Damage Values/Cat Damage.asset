@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b876c8dbea46744960b664f2457431, type: 3}
   m_Name: Cat Damage
   m_EditorClassIdentifier: 
-  m_Damage: 8
+  m_Damage: 6
   m_KForce: 4
   m_InvulSeconds: 2
