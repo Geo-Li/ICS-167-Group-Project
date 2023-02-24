@@ -98,8 +98,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1652
+      x: 448
+      y: 4
       width: 190
       height: 241
     spriteID: 496e8a54d22966c44b746be895f9b11c
@@ -475,7 +475,7 @@ ScriptedImporter:
     - {x: 0, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -435, y: 1538}
+    uvTransform: {x: 9, y: -110}
   - name: Right Cat Paw 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -483,15 +483,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 202
-      y: 1901
+      x: 646
+      y: 87
       width: 192
       height: 88
     spriteID: 683e553a1b6a2064fb807815349e5b93
     internalID: 0
     spriteBone:
     - name: Right Paw 1
-      position: {x: 169.91791, y: 30.820068, z: 0}
+      position: {x: 169.91791, y: 30.820023, z: 0}
       rotation: {x: 0, y: 0, z: 1, w: -0.000000084247006}
       length: 136.74887
       parentId: -1
@@ -979,7 +979,7 @@ ScriptedImporter:
     - {x: 44, y: 22}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -208, y: 1874}
+    uvTransform: {x: 236, y: 60}
   - name: Cat Face 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -988,7 +988,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1448
+      y: 1770
       width: 263
       height: 196
     spriteID: 19f6e8252f6c11942891b56c58fe3f27
@@ -2093,7 +2093,7 @@ ScriptedImporter:
     - {x: 4, y: 48}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -181, y: 1392}
+    uvTransform: {x: -181, y: 1714}
   - name: Cat Face 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2101,8 +2101,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
-      y: 87
+      x: 4
+      y: 1974
       width: 264
       height: 65
     spriteID: 8780e71f211f358459866a480dca71be
@@ -3047,7 +3047,7 @@ ScriptedImporter:
     - {x: 74, y: 84}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 257, y: 6}
+    uvTransform: {x: -187, y: 1893}
   - name: Cat Face 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3055,7 +3055,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
+      x: 646
       y: 4
       width: 274
       height: 75
@@ -5062,7 +5062,7 @@ ScriptedImporter:
     - {x: 181, y: 74}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 259, y: -71}
+    uvTransform: {x: 457, y: -71}
   - name: Right Car Ear
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5070,15 +5070,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 275
-      y: 1448
+      x: 270
+      y: 1544
       width: 138
       height: 182
     spriteID: 94b6f186861087e4b82d072fdc077b74
     internalID: 0
     spriteBone:
     - name: Right Ear
-      position: {x: 207.6912, y: -107.569496, z: 0}
+      position: {x: 207.69102, y: -107.56951, z: 0}
       rotation: {x: 0, y: 0, z: -0.15062033, w: 0.9885917}
       length: 147.59972
       parentId: 1
@@ -5400,7 +5400,7 @@ ScriptedImporter:
     - {x: 0, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -141, y: 1217}
+    uvTransform: {x: -146, y: 1313}
   - name: Cat Hair
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5409,19 +5409,19 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 448
-      y: 255
+      y: 630
       width: 190
       height: 67
     spriteID: 4ae144f8e0673e041afe7bf8e77a36c2
     internalID: 0
     spriteBone:
     - name: Hair
-      position: {x: 275.94452, y: -0.000011412792, z: 0}
+      position: {x: 275.94458, y: -0.000020044574, z: 0}
       rotation: {x: 0, y: 0, z: 0.6799789, w: 0.7332317}
       length: 71.38636
       parentId: 1
     - name: Body
-      position: {x: 151.9801, y: -230.09776, z: 0}
+      position: {x: 151.9801, y: -230.09778, z: 0}
       rotation: {x: 0, y: 0, z: 0.6831841, w: 0.7302462}
       length: 275.9445
       parentId: -1
@@ -5965,7 +5965,7 @@ ScriptedImporter:
     - {x: 48, y: 29}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 244, y: -32}
+    uvTransform: {x: 244, y: 343}
   - name: Cat Head 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5974,14 +5974,14 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 326
       width: 436
       height: 314
     spriteID: 1611f54694215f84cb69de1965a197a1
     internalID: 0
     spriteBone:
     - name: Body
-      position: {x: 220.98013, y: 25.902237, z: 0}
+      position: {x: 220.98013, y: 25.902222, z: 0}
       rotation: {x: 0, y: 0, z: 0.6831841, w: 0.7302462}
       length: 275.9445
       parentId: -1
@@ -6489,7 +6489,7 @@ ScriptedImporter:
     - {x: 0, y: 36}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -131, y: -27}
+    uvTransform: {x: -131, y: 295}
   - name: Cat Head 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6498,7 +6498,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 326
+      y: 648
       width: 436
       height: 314
     spriteID: 09595f451f5e97b4fb70f8bc52ab9d2b
@@ -7014,7 +7014,7 @@ ScriptedImporter:
     - {x: 4, y: 45}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -131, y: 295}
+    uvTransform: {x: -131, y: 617}
   - name: Cat Head 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7023,7 +7023,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 648
+      y: 970
       width: 436
       height: 314
     spriteID: fb84f43997b9eb64e980604c34f53291
@@ -7538,7 +7538,7 @@ ScriptedImporter:
     - {x: 0, y: 36}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -131, y: 617}
+    uvTransform: {x: -131, y: 939}
   - name: Right Cat Eye 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7546,15 +7546,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 402
-      y: 1931
+      x: 957
+      y: 4
       width: 17
       height: 18
     spriteID: 876af59ea6a272a46a1a45f6538b5106
     internalID: 0
     spriteBone:
     - name: Eyes 2
-      position: {x: -38.037537, y: 7.7091064, z: 0}
+      position: {x: -38.037537, y: 7.7091217, z: 0}
       rotation: {x: 0, y: 0, z: -0.00000092952223, w: 1}
       length: 8.886414
       parentId: -1
@@ -7758,7 +7758,7 @@ ScriptedImporter:
     - {x: 0, y: 12}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 56, y: 1685}
+    uvTransform: {x: 611, y: -242}
   - name: Right Cat Eye 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7766,8 +7766,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1901
+      x: 275
+      y: 1770
       width: 114
       height: 120
     spriteID: 73249c3292a8bee49a2ebb7112ab5610
@@ -8081,7 +8081,7 @@ ScriptedImporter:
     - {x: 0, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -353, y: 1778}
+    uvTransform: {x: -82, y: 1647}
   - name: Left Cat Eye 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8089,15 +8089,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 402
-      y: 1901
+      x: 928
+      y: 4
       width: 21
       height: 22
     spriteID: 5e465544c853f68458f79c98687c62d0
     internalID: 0
     spriteBone:
     - name: Eyes 2
-      position: {x: 57.962463, y: 9.709106, z: 0}
+      position: {x: 57.962463, y: 9.709122, z: 0}
       rotation: {x: 0, y: 0, z: -0.00000092952223, w: 1}
       length: 8.886414
       parentId: -1
@@ -8294,7 +8294,7 @@ ScriptedImporter:
     - {x: 0, y: 15}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 152, y: 1657}
+    uvTransform: {x: 678, y: -240}
   - name: Left Cat Eye 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8302,15 +8302,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 298
-      y: 970
+      x: 448
+      y: 502
       width: 114
       height: 120
     spriteID: 00a878292f865d543a4fb58dd3746a2f
     internalID: 0
     spriteBone:
     - name: Eyes 1
-      position: {x: 131.87991, y: 55.682373, z: 0}
+      position: {x: 131.87988, y: 55.682373, z: 0}
       rotation: {x: 0, y: 0, z: -0.098539345, w: 0.9951332}
       length: 4.3994007
       parentId: -1
@@ -8606,7 +8606,7 @@ ScriptedImporter:
     - {x: 0, y: 24}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 81, y: 847}
+    uvTransform: {x: 231, y: 379}
   - name: Cat Eyes Back
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8615,7 +8615,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 970
+      y: 1292
       width: 286
       height: 244
     spriteID: 9f1d124975650074da54d868b3f1ea03
@@ -8989,7 +8989,7 @@ ScriptedImporter:
     - {x: 0, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -181, y: 890}
+    uvTransform: {x: -181, y: 1212}
   - name: Left Cat Ear
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8997,8 +8997,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 270
-      y: 1222
+      x: 298
+      y: 1292
       width: 123
       height: 189
     spriteID: 97790656aea667d409e4b1840547b85a
@@ -9333,7 +9333,7 @@ ScriptedImporter:
     - {x: 0, y: 26}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 40, y: 998}
+    uvTransform: {x: 68, y: 1068}
   - name: Cat Tail
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -9342,7 +9342,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1222
+      y: 1544
       width: 258
       height: 218
     spriteID: 53c411f593af3c740a61e0b7748100d4
@@ -9769,7 +9769,7 @@ ScriptedImporter:
     - {x: 0, y: 28}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -437, y: 1124}
+    uvTransform: {x: -437, y: 1446}
   - name: Left Cat Paw 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -9777,8 +9777,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 202
-      y: 1652
+      x: 448
+      y: 253
       width: 190
       height: 241
     spriteID: ba66fc67e0771b248b012300079fc421
@@ -10174,7 +10174,7 @@ ScriptedImporter:
     - {x: 0, y: 27}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 134, y: 1534}
+    uvTransform: {x: 380, y: 135}
   - name: Left Cat Paw 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -10182,8 +10182,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 448
-      y: 160
+      x: 646
+      y: 183
       width: 192
       height: 87
     spriteID: b4046cd96e9078144a14edd918d7696f
@@ -10677,7 +10677,512 @@ ScriptedImporter:
     - {x: 0, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 448, y: 126}
+    uvTransform: {x: 646, y: 149}
+  - name: Cat Head 4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 436
+      height: 314
+    spriteID: 10a9e244b620a654c8380ad4c7725991
+    internalID: 0
+    spriteBone:
+    - name: Body
+      position: {x: 218.98013, y: 22.902237, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6831841, w: 0.7302462}
+      length: 275.9445
+      parentId: -1
+    spriteOutline: []
+    vertices:
+    - position: {x: 269.194, y: 0.38000488}
+      boneWeight:
+        weight0: 0
+        weight1: 1
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 275.987, y: 1.0879974}
+      boneWeight:
+        weight0: 0
+        weight1: 1
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 321.302, y: 8.151993}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 367.97775, y: 33.10977}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 392.416, y: 65.54695}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 406.001, y: 33}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 414.56882, y: 71.31723}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 408.59256, y: 105.70564}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 436, y: 85.203}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 427.33417, y: 117.13087}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 415.45428, y: 146.95462}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 395.51456, y: 172.89551}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 423.989, y: 160.969}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 400.27252, y: 210.51048}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 378.75748, y: 229.89226}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 346.52374, y: 267.3635}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 299.682, y: 300}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 254.12299, y: 312.889}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 218.34, y: 313.55798}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 182.884, y: 312.542}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 134.181, y: 295.591}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 96.298, y: 267.634}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 60.899994, y: 235.54599}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 29.731995, y: 205.55}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 11.011993, y: 176.038}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 31.844334, y: 179.81065}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 13.215895, y: 147.63956}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0.072006226, y: 98}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 22.506666, y: 113.06356}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 16.33622, y: 80.02034}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 21.860992, y: 49.185997}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 39.13777, y: 72.43433}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 57.85878, y: 41.076332}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 87.472, y: 21.084}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 124.104004, y: 7.3170013}
+      boneWeight:
+        weight0: 0
+        weight1: 0
+        weight2: 1
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 171.45999, y: 0.36999512}
+      boneWeight:
+        weight0: 0
+        weight1: 1
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 220.325, y: 0.11300659}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 104.399635, y: 136.99501}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 270.5603, y: 94.363174}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 184.05481, y: 102.16521}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 258.46008, y: 203.49304}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 170.44838, y: 205.63788}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 332.4053, y: 147.30177}
+      boneWeight:
+        weight0: 0
+        weight1: 1
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 399.4245, y: 54.928158}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 1d0000001f0000001e00000001000000260000000200000003000000260000002a00000027000000280000002600000006000000050000002b000000060000002b0000000400000004000000070000000600000009000000080000000700000004000000030000002a00000007000000040000002a0000000300000002000000260000000e000000280000000f0000001100000010000000280000000f00000028000000100000000e0000002a000000280000001200000011000000280000002a0000000b0000000a0000000d0000000b0000000e0000002a0000000e0000000b0000000c0000000b0000000d0000000a000000070000002a00000026000000280000002a000000260000000100000000000000260000002400000027000000250000001c0000001a0000001f0000001d0000001c0000001a0000001c0000001b000000250000001f0000001c00000023000000220000002700000024000000230000002700000021000000200000002500000022000000210000002700000025000000200000001f00000028000000270000002900000025000000270000002100000016000000190000001700000018000000170000001900000025000000190000001600000019000000250000001a0000001500000029000000160000002500000016000000290000002700000025000000290000001400000029000000150000001400000013000000290000001200000029000000130000002800000029000000120000000a0000000900000007000000000000002400000026000000
+    edges:
+    - {x: 1, y: 0}
+    - {x: 2, y: 1}
+    - {x: 3, y: 2}
+    - {x: 3, y: 4}
+    - {x: 43, y: 5}
+    - {x: 6, y: 5}
+    - {x: 6, y: 7}
+    - {x: 8, y: 7}
+    - {x: 9, y: 8}
+    - {x: 10, y: 9}
+    - {x: 10, y: 11}
+    - {x: 12, y: 11}
+    - {x: 13, y: 12}
+    - {x: 14, y: 13}
+    - {x: 15, y: 14}
+    - {x: 16, y: 15}
+    - {x: 17, y: 16}
+    - {x: 18, y: 17}
+    - {x: 19, y: 18}
+    - {x: 20, y: 19}
+    - {x: 21, y: 20}
+    - {x: 22, y: 21}
+    - {x: 23, y: 22}
+    - {x: 24, y: 23}
+    - {x: 25, y: 24}
+    - {x: 26, y: 25}
+    - {x: 27, y: 26}
+    - {x: 28, y: 27}
+    - {x: 28, y: 29}
+    - {x: 30, y: 29}
+    - {x: 30, y: 31}
+    - {x: 32, y: 31}
+    - {x: 33, y: 32}
+    - {x: 34, y: 33}
+    - {x: 35, y: 34}
+    - {x: 36, y: 35}
+    - {x: 0, y: 36}
+    - {x: 4, y: 43}
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -133, y: -27}
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -10732,14 +11237,14 @@ ScriptedImporter:
     parentIndex: 0
     spriteID: 496e8a54d22966c44b746be895f9b11c
     layerID: 85
-    mosaicPosition: {x: 4, y: 1652}
+    mosaicPosition: {x: 448, y: 4}
   - name: Right Cat Paw 1
     spriteName: Right Cat Paw 1
     isGroup: 0
     parentIndex: 0
     spriteID: 683e553a1b6a2064fb807815349e5b93
     layerID: 74
-    mosaicPosition: {x: 202, y: 1901}
+    mosaicPosition: {x: 646, y: 87}
   - name: Cat Faces
     spriteName: 
     isGroup: 1
@@ -10753,35 +11258,35 @@ ScriptedImporter:
     parentIndex: 3
     spriteID: 19f6e8252f6c11942891b56c58fe3f27
     layerID: 66
-    mosaicPosition: {x: 4, y: 1448}
+    mosaicPosition: {x: 4, y: 1770}
   - name: Cat Face 2
     spriteName: Cat Face 2
     isGroup: 0
     parentIndex: 3
     spriteID: 8780e71f211f358459866a480dca71be
     layerID: 54
-    mosaicPosition: {x: 448, y: 87}
+    mosaicPosition: {x: 4, y: 1974}
   - name: Cat Face 1
     spriteName: Cat Face 1
     isGroup: 0
     parentIndex: 3
     spriteID: 61382053be3c7cd4eb50cba05c328aff
     layerID: 49
-    mosaicPosition: {x: 448, y: 4}
+    mosaicPosition: {x: 646, y: 4}
   - name: Right Car Ear
     spriteName: Right Car Ear
     isGroup: 0
     parentIndex: -1
     spriteID: 94b6f186861087e4b82d072fdc077b74
     layerID: 46
-    mosaicPosition: {x: 275, y: 1448}
+    mosaicPosition: {x: 270, y: 1544}
   - name: Cat Hair
     spriteName: Cat Hair
     isGroup: 0
     parentIndex: -1
     spriteID: 4ae144f8e0673e041afe7bf8e77a36c2
     layerID: 44
-    mosaicPosition: {x: 448, y: 255}
+    mosaicPosition: {x: 448, y: 630}
   - name: Cat Heads
     spriteName: 
     isGroup: 1
@@ -10789,27 +11294,34 @@ ScriptedImporter:
     spriteID: 00000000000000000000000000000000
     layerID: 91
     mosaicPosition: {x: 0, y: 0}
+  - name: Cat Head 4
+    spriteName: Cat Head 4
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 10a9e244b620a654c8380ad4c7725991
+    layerID: 99
+    mosaicPosition: {x: 4, y: 4}
   - name: Cat Head 3
     spriteName: Cat Head 3
     isGroup: 0
     parentIndex: 9
     spriteID: 1611f54694215f84cb69de1965a197a1
     layerID: 41
-    mosaicPosition: {x: 4, y: 4}
+    mosaicPosition: {x: 4, y: 326}
   - name: Cat Head 2
     spriteName: Cat Head 2
     isGroup: 0
     parentIndex: 9
     spriteID: 09595f451f5e97b4fb70f8bc52ab9d2b
     layerID: 36
-    mosaicPosition: {x: 4, y: 326}
+    mosaicPosition: {x: 4, y: 648}
   - name: Cat Head 1
     spriteName: Cat Head 1
     isGroup: 0
     parentIndex: 9
     spriteID: fb84f43997b9eb64e980604c34f53291
     layerID: 32
-    mosaicPosition: {x: 4, y: 648}
+    mosaicPosition: {x: 4, y: 970}
   - name: Right Cat Eyes
     spriteName: 
     isGroup: 1
@@ -10820,17 +11332,17 @@ ScriptedImporter:
   - name: Right Cat Eye 2
     spriteName: Right Cat Eye 2
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: 876af59ea6a272a46a1a45f6538b5106
     layerID: 30
-    mosaicPosition: {x: 402, y: 1931}
+    mosaicPosition: {x: 957, y: 4}
   - name: Right Cat Eye 1
     spriteName: Right Cat Eye 1
     isGroup: 0
-    parentIndex: 13
+    parentIndex: 14
     spriteID: 73249c3292a8bee49a2ebb7112ab5610
     layerID: 29
-    mosaicPosition: {x: 4, y: 1901}
+    mosaicPosition: {x: 275, y: 1770}
   - name: Left Cat Eyes
     spriteName: 
     isGroup: 1
@@ -10841,38 +11353,38 @@ ScriptedImporter:
   - name: Left Cat Eye 2
     spriteName: Left Cat Eye 2
     isGroup: 0
-    parentIndex: 16
+    parentIndex: 17
     spriteID: 5e465544c853f68458f79c98687c62d0
     layerID: 31
-    mosaicPosition: {x: 402, y: 1901}
+    mosaicPosition: {x: 928, y: 4}
   - name: Left Cat Eye 1
     spriteName: Left Cat Eye 1
     isGroup: 0
-    parentIndex: 16
+    parentIndex: 17
     spriteID: 00a878292f865d543a4fb58dd3746a2f
     layerID: 28
-    mosaicPosition: {x: 298, y: 970}
+    mosaicPosition: {x: 448, y: 502}
   - name: Cat Eyes Back
     spriteName: Cat Eyes Back
     isGroup: 0
     parentIndex: -1
     spriteID: 9f1d124975650074da54d868b3f1ea03
     layerID: 27
-    mosaicPosition: {x: 4, y: 970}
+    mosaicPosition: {x: 4, y: 1292}
   - name: Left Cat Ear
     spriteName: Left Cat Ear
     isGroup: 0
     parentIndex: -1
     spriteID: 97790656aea667d409e4b1840547b85a
     layerID: 26
-    mosaicPosition: {x: 270, y: 1222}
+    mosaicPosition: {x: 298, y: 1292}
   - name: Cat Tail
     spriteName: Cat Tail
     isGroup: 0
     parentIndex: -1
     spriteID: 53c411f593af3c740a61e0b7748100d4
     layerID: 24
-    mosaicPosition: {x: 4, y: 1222}
+    mosaicPosition: {x: 4, y: 1544}
   - name: Left Cat Paws
     spriteName: 
     isGroup: 1
@@ -10883,17 +11395,17 @@ ScriptedImporter:
   - name: Left Cat Paw 2
     spriteName: Left Cat Paw 2
     isGroup: 0
-    parentIndex: 22
+    parentIndex: 23
     spriteID: ba66fc67e0771b248b012300079fc421
     layerID: 19
-    mosaicPosition: {x: 202, y: 1652}
+    mosaicPosition: {x: 448, y: 253}
   - name: Left Cat Paw 1
     spriteName: Left Cat Paw 1
     isGroup: 0
-    parentIndex: 22
+    parentIndex: 23
     spriteID: b4046cd96e9078144a14edd918d7696f
     layerID: 8
-    mosaicPosition: {x: 448, y: 160}
+    mosaicPosition: {x: 646, y: 183}
   characterData:
     bones:
     - name: Body
@@ -11018,6 +11530,15 @@ ScriptedImporter:
         height: 67
       spriteId: 4ae144f8e0673e041afe7bf8e77a36c2
       bones: 0100000000000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 137
+        y: 34
+        width: 436
+        height: 314
+      spriteId: 10a9e244b620a654c8380ad4c7725991
+      bones: 00000000
       parentGroup: 0
       order: 0
     - spritePosition:

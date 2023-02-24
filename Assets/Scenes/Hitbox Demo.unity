@@ -1102,6 +1102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 0}
   m_Dead: 0
+  m_HasSetFace: 0
   m_Loot: {fileID: 0}
   m_AttackConditions: []
   m_DetectionDistance: 0
@@ -4308,6 +4309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 34b1e9751aad08e4c8a347cb55030243, type: 2}
   m_Dead: 0
+  m_HasSetFace: 0
   m_Loot: {fileID: 11400000, guid: ba5f9ab6eacbfc44f9cae36e1e7500f7, type: 2}
 --- !u!114 &2030646035
 MonoBehaviour:

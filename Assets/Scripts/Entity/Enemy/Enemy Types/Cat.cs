@@ -10,6 +10,18 @@ using UnityEngine.AI;
  */
 public class Cat : Enemy
 {
+    // Sprites for change in animations
+    [SerializeField]
+    private GameObject m_NeutralFace, m_AngryFace;
+
+    protected override void Start()
+    {
+        DisplayGameObjectNullErrorMessage(m_NeutralFace);
+        DisplayGameObjectNullErrorMessage(m_AngryFace);
+
+        base.Start();
+    }
+
     protected override void EntityController()
     {
         GameObject target = m_Movement.Target;
@@ -32,5 +44,12 @@ public class Cat : Enemy
 
             agent.speed = m_ActiveSpeed;
         }
+    }
+    protected override void ExpressionMaker()
+    {
+        bool IsChasing = m_Movement.Target != null;
+
+        m_NeutralFace.SetActive(!IsChasing);
+        m_AngryFace.SetActive(IsChasing);
     }
 }

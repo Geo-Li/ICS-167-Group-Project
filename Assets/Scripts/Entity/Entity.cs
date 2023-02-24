@@ -52,6 +52,10 @@ public class Entity : MonoBehaviour
     // Determines if the entity is currently playing its dying animation
     protected bool m_IsDying;
 
+    // Checks if the cat has a set face expression (Mainly for animation)
+    [SerializeField]
+    private bool m_HasSetFace;
+
     // Loot Table that the entity use to drop collectibles
     [SerializeField]
     protected LootTable m_Loot;
@@ -61,20 +65,29 @@ public class Entity : MonoBehaviour
     {
         m_EntityManager = GetComponent<AnimationManager>();
 
-        if (m_EntityManager == null)
-            Debug.LogErrorFormat("An Entity component is not on an Entity.");
+        DisplayGameObjectNullErrorMessage(m_EntityManager);
+        DisplayGameObjectNullErrorMessage(HealthGenerator);
 
-        if (HealthGenerator == null)
-            Debug.LogErrorFormat("An Entity component does not have a Health Stats generator.");
-        
         m_Health = HealthGenerator.CreateHealthStats();
     }
 
-    // Checks if the entity is ready to die and be destroyed from the scene
+    // Displays when the object being checked is missing
+    public void DisplayGameObjectNullErrorMessage(Object obj)
+    {
+        if (obj == null)
+            Debug.LogErrorFormat("The " + obj.name + " object is missing.");
+    }
+
     private void Update()
     {
         AnimationUpdater();
         EntityController();
+    }
+
+    private void LateUpdate()
+    {
+        if (!m_HasSetFace)
+            ExpressionMaker();
     }
 
     // The animation controller of the entity, making sure all animations are updated
@@ -91,6 +104,12 @@ public class Entity : MonoBehaviour
     protected virtual void EntityController()
     {
         
+    }
+
+    // The expression maker (facial) of the entities
+    protected virtual void ExpressionMaker()
+    {
+
     }
 
     // Make the entity start dying

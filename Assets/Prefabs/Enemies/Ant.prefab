@@ -196,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 9d7afbf5195da1f4e8f9d0cdd0b96655, type: 2}
   m_Dead: 0
+  m_HasSetFace: 0
   m_Loot: {fileID: 0}
   m_AttackConditions: []
   m_DetectionDistance: 10

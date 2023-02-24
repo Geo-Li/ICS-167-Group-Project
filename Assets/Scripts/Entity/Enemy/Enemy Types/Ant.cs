@@ -28,12 +28,6 @@ public class Ant : Enemy
         base.Start();
     }
 
-    private void DisplayGameObjectNullErrorMessage(GameObject obj)
-    {
-        if (obj == null)
-            Debug.LogErrorFormat("The " + obj.name + " object is missing.");
-    }
-
     protected override void EntityController()
     {
         GameObject target = m_Movement.Target;
@@ -72,9 +66,11 @@ public class Ant : Enemy
         return m_Loot != null;
     }
 
-    // Update the sprite of the ant
-    void LateUpdate()
+    protected override void ExpressionMaker()
     {
+        if (m_IsDying)
+            return;
+
         bool activeAF = false;
         bool activeWF = false;
         bool activeW = false;
@@ -95,5 +91,7 @@ public class Ant : Enemy
         m_AngryFace.SetActive(activeAF);
         m_WorriedFace.SetActive(activeWF);
         m_Wheat.SetActive(activeW);
+
+        base.ExpressionMaker();
     }
 }
