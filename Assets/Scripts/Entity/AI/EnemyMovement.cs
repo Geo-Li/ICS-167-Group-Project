@@ -110,7 +110,7 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 ownerLocation = m_Owner.transform.position;
         Vector3 fleeVector = location - ownerLocation;
-        m_Agent.SetDestination(ownerLocation - fleeVector);
+        Seek(ownerLocation - fleeVector);
     }
 
     // Have the enemy agent seek the target

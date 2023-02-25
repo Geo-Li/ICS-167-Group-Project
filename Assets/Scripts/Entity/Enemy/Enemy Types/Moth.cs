@@ -3,12 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// William Min
+
+/*
+ * Moth AI and movemment
+ */
 public class Moth : Enemy
 {
     [SerializeField]
     private ProjectileSummoner[] m_Summons;
 
     private List<Projectile> m_CurrentProjectiles = new List<Projectile>();
+
+    // Sprites for change in animations
+    [SerializeField]
+    //private GameObject m_NeutralLeftEye, m_NeutralLeftEyelid, m_NeutralRightEye, m_NeutralRightEyelid,
+    //m_HappyLeftEye, m_HappyLeftEyelid, m_HappyRightEye, m_HappyRightEyelid;
+    private GameObject m_NeutralFace, m_HappyFace;
+
+    protected override void Start()
+    {
+        DisplayGameObjectNullErrorMessage(m_NeutralFace);
+        DisplayGameObjectNullErrorMessage(m_HappyFace);
+
+        base.Start();
+    }
 
     protected override void EntityController()
     {
@@ -34,6 +53,14 @@ public class Moth : Enemy
         }
 
         UpdateProjectileList();
+    }
+
+    protected override void ExpressionMaker()
+    {
+        bool IsChasing = m_Movement.Target != null;
+
+        m_NeutralFace.SetActive(!IsChasing);
+        m_HappyFace.SetActive(IsChasing);
     }
 
     private void UpdateProjectileList()

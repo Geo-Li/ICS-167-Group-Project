@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ProjectilePrefab: {fileID: 242215110775906486, guid: fa70ab0932b0de743a266dbf7ff5bc1f, type: 3}
   m_SummonPositionState: 0
-  m_SummonPosition: {x: 0, y: -1, z: -1.5}
+  m_SummonPosition: {x: 0, y: 0, z: -1.5}
   m_SummonRotation: {x: 0, y: 0, z: 0}
+  m_LifeTime: 10
+  m_PushForce: 0
+  m_HasConstantForce: 0

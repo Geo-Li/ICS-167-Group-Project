@@ -9,17 +9,26 @@ using UnityEngine;
  */
 public class Projectile : MonoBehaviour
 {
-    // The starting life time of the projectile
-    [SerializeField]
     private float m_LifeTime;
+
+    // The starting life time of the projectile
+    public float LifeTime
+    {
+        get
+        {
+            return m_LifeTime;
+        }
+        set
+        {
+            m_LifeTime = value;
+        }
+    }
 
     private float m_Timer;
 
-    // Magnitude of the force that moves the projectile
-    [SerializeField]
     private float m_PushForce;
 
-    // Public version of m_PushForce
+    // Magnitude of the force that moves the projectile
     public float PushForce
     {
         get
@@ -50,11 +59,9 @@ public class Projectile : MonoBehaviour
     // The knockback force mulitplier to make m_KForce make a more noticeable force
     private const float FORCE_MULTIPLIER = 300, CONSTANT_FORCE_MULTIPLIER = 10;
 
-    // Determines if the projecile moves with an initial force or with a constant force
-    [SerializeField]
     private bool m_HasConstantForce;
 
-    // Public version of m_HasConstantForce
+    // Determines if the projecile moves with an initial force or with a constant force
     public bool HasConstantForce
     {
         get

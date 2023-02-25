@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b876c8dbea46744960b664f2457431, type: 3}
   m_Name: Moth Pollen Damage
   m_EditorClassIdentifier: 
-  m_Damage: 3
+  m_Damage: 4
   m_KForce: 6
   m_InvulSeconds: 1
