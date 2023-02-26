@@ -29,8 +29,8 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    // The gameObject owner of the NavMeshAgent
-    private GameObject m_Owner;
+    // The entity owner of the NavMeshAgent
+    private Entity m_Owner;
 
     // The target the enemy will move towards
     [SerializeField]
@@ -59,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
         m_Agent = GetComponent<NavMeshAgent>();
         m_Agent.updateRotation = false;
 
-        m_Owner = m_Agent.gameObject;
+        m_Owner = m_Agent.gameObject.GetComponent<Entity>();
     }
 
     // Update at the end of every frame
@@ -222,15 +222,27 @@ public class EnemyMovement : MonoBehaviour
      */
 
     // Detects what entity has dealt damage to the owner
-    public GameObject HasBeenHit()
+    public GameObject GetLatestOffensiveEntity()
     {
-        return null;
+        return GetLatestEntity(true);
     }
 
     // Detects what entity has the owner hit
-    public GameObject HasHitSomething()
+    public GameObject GetLatestVictimEntity()
     {
-        return null;
+        return GetLatestEntity(false);
+    }
+
+    private GameObject GetLatestEntity(bool wantOffensive)
+    {
+        List<GameObject> list = m_Owner.GetEntityList(wantOffensive);
+
+        int count = list.Count;
+
+        if (count >= 1)
+            return list[count - 1];
+        else
+            return null;
     }
 
     // Picks a target object with a certain tag based on closest distance

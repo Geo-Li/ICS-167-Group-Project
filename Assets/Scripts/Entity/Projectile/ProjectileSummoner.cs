@@ -117,6 +117,7 @@ public class ProjectileSummoner : ScriptableObject
         instance.LifeTime = lifeTime;
         instance.PushForce = pushForce;
         instance.HasConstantForce = hasConstantForce;
+        instance.tag = owner.tag;
 
         return instance;
     }

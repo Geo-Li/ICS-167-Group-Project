@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_WanderRadius: 10
+  m_WanderRadius: 4
   m_WanderDistance: 10
   m_WanderJitter: 1
 --- !u!114 &5522440570267836388
@@ -2084,6 +2084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 9d7afbf5195da1f4e8f9d0cdd0b96655, type: 2}
   m_Dead: 0
+  m_HasSetFace: 0
   m_Loot: {fileID: 11400000, guid: ba5f9ab6eacbfc44f9cae36e1e7500f7, type: 2}
   m_AttackConditions: []
   m_DetectionDistance: 10

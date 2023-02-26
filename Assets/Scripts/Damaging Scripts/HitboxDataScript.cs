@@ -37,11 +37,6 @@ public class HitboxDataScript : MonoBehaviour
     // Sets the original owner to this object when instantiated
     void Start()
     {
-        /*
-        if (m_CurrentOwner == null)
-            Debug.LogErrorFormat("This hitbox is not assigned to an owner.");
-        */
-
         m_OriginalOwner = m_CurrentOwner;
     }
 
@@ -59,14 +54,14 @@ public class HitboxDataScript : MonoBehaviour
                 canBeHit = false;
 
             if (canBeHit)
-            {
-                float damage = m_DamageUnit.Damage;
-                float kForce = m_DamageUnit.KnockbackForce;
-                float InvulSeconds = m_DamageUnit.InvulnerabilityInSeconds;
-                
+            {   
                 Vector3 vector = other.transform.position - transform.position;
 
-                m_DamageUnit.ApplyDamage(other);
+                Entity owner = null;
+                if (m_CurrentOwner != null)
+                    owner = m_CurrentOwner.GetComponent<Entity>();
+
+                m_DamageUnit.ApplyDamage(other, owner);
                 m_DamageUnit.ApplyKnockback(other, vector);
                 m_DamageUnit.ApplyInvulFrames(other);
             }

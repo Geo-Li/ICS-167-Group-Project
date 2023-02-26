@@ -70,7 +70,7 @@ public class DamageScript : ScriptableObject
     }
 
     // Applies the gameObject of other with the damage
-    public void ApplyDamage(Collider other)
+    public void ApplyDamage(Collider other, Entity owner)
     {
         Entity otherEntity = other.GetComponent<Entity>();
 
@@ -80,6 +80,9 @@ public class DamageScript : ScriptableObject
         Health health = otherEntity.Health;
 
         health.CurrentHealth -= m_Damage;
+
+        otherEntity.AddEntity(owner.gameObject, true);
+        owner.AddEntity(otherEntity.gameObject, false);
     }
 
     // Applies the gameObject of other with the knockback force by a certain angle

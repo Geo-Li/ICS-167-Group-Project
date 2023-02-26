@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_WanderRadius: 10
+  m_WanderRadius: 4
   m_WanderDistance: 10
   m_WanderJitter: 1
 --- !u!114 &1545395963452056827

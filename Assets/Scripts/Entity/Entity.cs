@@ -60,6 +60,12 @@ public class Entity : MonoBehaviour
     [SerializeField]
     protected LootTable m_Loot;
 
+    private List<GameObject> m_OffensiveObjects, m_VictimObjects;
+
+    // Maximum number of offensive objects and victim objects that the entity can remember
+    [SerializeField]
+    private int m_MaxOffensiveObjectCount = 5, m_MaxVictimObjectCount = 5;
+
     // Initializes all references
     protected virtual void Start()
     {
@@ -69,6 +75,9 @@ public class Entity : MonoBehaviour
         DisplayGameObjectNullErrorMessage(HealthGenerator);
 
         m_Health = HealthGenerator.CreateHealthStats();
+
+        m_VictimObjects = new List<GameObject>();
+        m_OffensiveObjects = new List<GameObject>();
     }
 
     // Displays when the object being checked is missing
@@ -141,5 +150,31 @@ public class Entity : MonoBehaviour
     public void TakeDamage(float damage)
     {
         m_Health.CurrentHealth -= damage;
+    }
+
+    // Returns either the list of offensive entities or victim objects based on wantOffesnive
+    public List<GameObject> GetEntityList(bool wantOffesnive)
+    {
+        if (wantOffesnive)
+            return m_OffensiveObjects;
+        else
+            return m_VictimObjects;
+    }
+
+    // Adds an entity gameobject to either the list of offensive entities or victim objects based on wantOffesnive
+    public void AddEntity(GameObject otherEntity, bool wantOffesnive)
+    {
+        if (wantOffesnive)
+            AddEntityToListWIthLimit(m_OffensiveObjects, m_MaxOffensiveObjectCount, otherEntity);
+        else
+            AddEntityToListWIthLimit(m_VictimObjects, m_MaxVictimObjectCount, otherEntity);
+    }
+
+    private void AddEntityToListWIthLimit(List<GameObject> entityList, int maxCount, GameObject otherEntity)
+    {
+        entityList.Add(otherEntity);
+
+        if (entityList.Count > maxCount)
+            entityList.RemoveAt(0);
     }
 }
