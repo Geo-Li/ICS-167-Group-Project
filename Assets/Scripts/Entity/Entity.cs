@@ -166,9 +166,9 @@ public class Entity : MonoBehaviour
     {
         m_AnimationManager.ActionState.ParameterValue = attackNumber;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.01f);
 
-        m_AttackConditions[attackNumber - 1].UseAttack();
+        //m_AttackConditions[attackNumber - 1].UseAttack();
     }
 
     private void UpdateProjectileList()
@@ -271,8 +271,29 @@ public class Entity : MonoBehaviour
             entityList.RemoveAt(0);
     }
 
+    // Returns the list of Attack Conditions
     public AttackConditions[] GetAttackConditions()
     {
         return m_AttackConditions;
+    }
+
+    // Toggles an AttackCondition to tell them if their attack animation is currently playing
+    // When it toggles off, the cooldown for the condition is applied
+    public void ToggleAttackAnimationPlaying(int attackNumber)
+    {
+        attackNumber--;
+
+        if (attackNumber < 0 || attackNumber >= m_AttackConditions.Length)
+        {
+            Debug.LogError("The entity is trying to access an attackCondition of the attackCondition list's size.");
+            return;
+        }
+
+        bool oldBool = m_AttackConditions[attackNumber].IsPlayingAttackAnimation;
+
+        m_AttackConditions[attackNumber].IsPlayingAttackAnimation = !oldBool;
+
+        if (oldBool)
+            m_AttackConditions[attackNumber].UseAttack();
     }
 }

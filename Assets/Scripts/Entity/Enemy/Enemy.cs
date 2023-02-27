@@ -52,6 +52,10 @@ public class Enemy : Entity
             int max = m_AttackConditions.Length;
             bool hasMadeMove = false;
 
+            foreach (AttackConditions ac in m_AttackConditions)
+                if (ac.IsPlayingAttackAnimation)
+                    hasMadeMove = true;
+
             while (!hasMadeMove && i < max)
             {
                 AttackConditions ac = m_AttackConditions[i];

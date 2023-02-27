@@ -1068,9 +1068,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 33cc1efa3d4049944a06b9a26327c5d4, type: 2}
   m_AttackConditions:
-  - m_AttackCooldown: 13
-    m_AttackDistances: {x: 0, y: 10}
-  - m_AttackCooldown: 2.5
+  - m_AttackCooldown: 7
+    m_AttackDistances: {x: 0, y: 12}
+  - m_AttackCooldown: 0.5
     m_AttackDistances: {x: 6, y: 18}
   m_Projectiles:
   - {fileID: 11400000, guid: 08a5ec41dc85889459618d4d1c707e6b, type: 2}
