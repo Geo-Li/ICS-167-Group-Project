@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1}
   m_SizeDelta: {x: 3, y: 0.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4717288438578582337
@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5771048159660002461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99013996, y: 0.99013996, z: 0.99013996}
   m_Children:
   - {fileID: 5801998456091585963}
@@ -540,17 +540,16 @@ GameObject:
   - component: {fileID: 5801998457686786617}
   - component: {fileID: 5801998457686786638}
   - component: {fileID: 5801998457686786637}
-  - component: {fileID: 5801998457686786639}
   - component: {fileID: 2081606901161254513}
   - component: {fileID: 4549728280936135251}
+  - component: {fileID: 549375065}
   - component: {fileID: 5801998457686786628}
   - component: {fileID: 5801998457686786629}
   - component: {fileID: 2786698553217850555}
-  - component: {fileID: 5801998457686786636}
   - component: {fileID: -8469463965436265529}
   - component: {fileID: 3518406010924463791}
   - component: {fileID: -2905911669588197161}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -586,7 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15784654107e3ab46a84f2e8543bd244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 11400000, guid: e00ac9d7af383d54cb910d0a91a8fc09, type: 2}
+  m_PlayerSpeed: 10
+  m_HorizontalMovement: Horizontal
+  m_VerticalMovement: Vertical
+  m_AttackInput: Attack
 --- !u!114 &5801998457686786637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,28 +601,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13463fc417415d498f80c9c0d6cbc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 3452167590050878926}
---- !u!114 &5801998457686786639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801998457686786626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07b44d65b3cbd145ad16a51d1033457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDead:
-    m_ParameterValue: 0
-    m_ParameterName: IsDead
-  ActionState:
-    m_ParameterValue: 0
-    m_ParameterName: ActionState
-  MovementSpeed:
-    m_ParameterValue: 0
-    m_ParameterName: MoveSpeed
+  m_Sprite: {fileID: 5771048159660002461}
+  m_MakeHitStunInvincible: 1
 --- !u!114 &2081606901161254513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,9 +631,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b3a33aa1d76bf48a73ab0d64dc5890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthGenerator: {fileID: 11400000, guid: 34b1e9751aad08e4c8a347cb55030243, type: 2}
+  HealthGenerator: {fileID: 11400000, guid: b0fff6ae7d130ba44974d292927f7fd5, type: 2}
+  m_AttackConditions:
+  - m_AttackCooldown: 0.1
+    m_AttackDistances: {x: 0, y: 0}
+  m_Projectiles: []
   m_Dead: 0
-  m_Loot: {fileID: 11400000, guid: ba5f9ab6eacbfc44f9cae36e1e7500f7, type: 2}
+  m_HasSetFace: 0
+  m_Loot: {fileID: 0}
+  m_MaxOffensiveObjectCount: 5
+  m_MaxVictimObjectCount: 5
+--- !u!114 &549375065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801998457686786626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8da66d03ad126444bf1fca059baed4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActionState:
+    m_ParameterValue: 0
+    m_ParameterName: ActionState
+  MovementSpeed:
+    m_ParameterValue: 0
+    m_ParameterName: MoveSpeed
+  IsDead:
+    m_ParameterValue: 0
+    m_ParameterName: IsDead
 --- !u!136 &5801998457686786628
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -662,10 +672,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.1283252
+  m_Radius: 0.56
+  m_Height: 1.2158467
   m_Direction: 1
-  m_Center: {x: 0, y: -0.5228108, z: 0}
+  m_Center: {x: 0, y: 0.0373196, z: 0}
 --- !u!54 &5801998457686786629
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -681,7 +691,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!95 &2786698553217850555
 Animator:
   serializedVersion: 3
@@ -692,7 +702,7 @@ Animator:
   m_GameObject: {fileID: 5801998457686786626}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5a8946dcc7cbd494c9e07565ec439d8d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6a1b64840243b9349b254366df9870eb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -701,28 +711,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &5801998457686786636
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801998457686786626}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 12
-  m_Acceleration: 35
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.06
-  m_BaseOffset: 1.02
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &-8469463965436265529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,8 +854,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9013762216564251516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1800001, y: 0, z: 0}
-  m_LocalScale: {x: 1.59, y: 0.5, z: 1.57}
+  m_LocalPosition: {x: 1.86, y: 0, z: 0}
+  m_LocalScale: {x: 2.1744967, y: 0.68380404, z: 2.1471446}
   m_Children: []
   m_Father: {fileID: 8493303956978138723}
   m_RootOrder: 0
@@ -933,7 +921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f67aa4bcad98ab4797c6e9276cd7197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DamageUnit: {fileID: 11400000, guid: d428d166f578cd7449a812427236f38f, type: 2}
+  m_DamageUnit: {fileID: 11400000, guid: 99bce8de89a6f864284eebab99feda94, type: 2}
   m_CurrentOwner: {fileID: 5801998457686786626}
 --- !u!136 &6796261358983642536
 CapsuleCollider:

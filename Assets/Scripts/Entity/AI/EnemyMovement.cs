@@ -9,7 +9,7 @@ using UnityEngine.AI;
  * Basic Enemy AI movement
  */
 [RequireComponent(typeof(NavMeshAgent))]
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, EntityMovement
 {
     private const float LOOK_AHEAD_MULTIPLIER = 5, TO_TARGET_ANGLE = 90, RELATIVE_ANGLE = 20;
 
@@ -65,26 +65,51 @@ public class EnemyMovement : MonoBehaviour
     // Update at the end of every frame
     void LateUpdate()
     {
-        UpdatePathRotation();
+        UpdateEntityRotation();
+        RespondToKnockback();
+    }
+
+    // Makes the enemy respond to knockback by temporarily disabling the agent during hit stun
+    private void RespondToKnockback()
+    {
+        HitStunScript hit = GetComponent<HitStunScript>();
+        bool isInHitStun = hit.HasHitStunFrames();
+
+        if (m_Agent.enabled == isInHitStun)
+            m_Agent.enabled = !isInHitStun;
     }
 
     // Makes sure that the entity faces toward the direction of movement
-    private void UpdatePathRotation()
+    private void UpdateEntityRotation()
     {
-        if (m_Agent.velocity.sqrMagnitude > Mathf.Epsilon)
-            transform.rotation = Quaternion.LookRotation(m_Agent.velocity.normalized);
+        if (!m_Agent.isActiveAndEnabled)
+            return;
+
+        Vector3 agentV = m_Agent.velocity;
+
+        if (agentV.sqrMagnitude > Mathf.Epsilon)
+            UpdateRotation(agentV.normalized);
+    }
+
+    public void UpdateRotation(Vector3 lookingPosition)
+    {
+        transform.rotation = Quaternion.LookRotation(lookingPosition);
     }
 
     // Returns the current speed of m_Agent
-    public float GiveCurrentSpeed()
+    public float GetCurrentSpeed()
     {
-        return m_Agent.velocity.magnitude;
+        if (m_Agent.isActiveAndEnabled)
+            return m_Agent.velocity.magnitude;
+        else
+            return 0;
     }
 
     // Allows the toggle of the activation of the agent
     public void ToggleAgentActivity(bool isActive)
     {
-        m_Agent.isStopped = !isActive;
+        if (m_Agent.isActiveAndEnabled)
+            m_Agent.isStopped = !isActive;
     }
 
     // If isActive > 0 ==> true
@@ -102,7 +127,8 @@ public class EnemyMovement : MonoBehaviour
     // Have the enemy agent seek a certain location
     public void Seek(Vector3 location)
     {
-        m_Agent.SetDestination(location);
+        if (m_Agent.isActiveAndEnabled)
+            m_Agent.SetDestination(location);
     }
 
     // Have the enemy agent flee from a certain location
@@ -128,6 +154,9 @@ public class EnemyMovement : MonoBehaviour
     // Have the enemy agent intelligently cut you off during a chase
     public void Pursue()
     {
+        if (!m_Agent.isActiveAndEnabled)
+            return;
+
         Vector3 targetLocation = m_Target.transform.position;
         Vector3 targetDir = targetLocation - m_Owner.transform.position;
         float targetSpeed = GetTargetSpeed();
@@ -148,6 +177,9 @@ public class EnemyMovement : MonoBehaviour
     // Have the enemy agent intelligently avoid your attempts at cutting them off
     public void Evade()
     {
+        if (!m_Agent.isActiveAndEnabled)
+            return;
+
         Vector3 targetLocation = m_Target.transform.position;
         float targetSpeed = GetTargetSpeed();
 
@@ -200,19 +232,10 @@ public class EnemyMovement : MonoBehaviour
     private float GetTargetSpeed()
     {
         float speed = 0f;
-        System.Type targetType = m_Target.GetType();
 
-        EnemyMovement component1 = m_Target.GetComponent<EnemyMovement>();
-        if (component1 != null)
-        {
-            speed = component1.m_Agent.speed;
-        }
-
-        PlayerMovement component2 = m_Target.GetComponent<PlayerMovement>();
-        if (component2 != null)
-        {
-            speed = component2.GetVelocity();
-        }
+        EntityMovement component = m_Target.GetComponent<EntityMovement>();
+        if (component != null)
+            speed = component.GetCurrentSpeed();
 
         return speed;
     }

@@ -3,54 +3,102 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+// Geo Li
+
+/*
+ * The player controller movement
+ */
+public class PlayerMovement : MonoBehaviour, EntityMovement
 {
-    [SerializeField] private EntitySO entity;
-    [HideInInspector] private float playerSpeed, currentSpeed;
-    [HideInInspector] private Vector3 startPosition;
+    // Player top speed
+    [SerializeField]
+    private float m_PlayerSpeed = 10f;
+
+    // Names of all the player inputs
+    [SerializeField]
+    private string m_HorizontalMovement, m_VerticalMovement, m_AttackInput;
+
+    private float m_CurrentSpeed;
+
+    private Vector3 startPosition;
+
+    private AttackConditions[] m_AttackConditions = null;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerSpeed = entity.speed;
         startPosition = transform.position;
+
+        Entity e = GetComponent<Entity>();
+
+        if (e != null)
+            m_AttackConditions = e.GetAttackConditions();
     }
 
-    // Get player's current velocity
-    public float GetVelocity() 
+    public float GetCurrentSpeed()
     {
-        //return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
-        return currentSpeed;
+        return m_CurrentSpeed;
+    }
+
+    public void UpdateRotation(Vector3 lookingPosition)
+    {
+        if (Mathf.Abs(m_CurrentSpeed) > 0.001)
+            transform.rotation = Quaternion.LookRotation(lookingPosition);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // check if user has fallen the table, if so make them go back
-        // to the start position
-        if (transform.position.y < 0) {
-            transform.position = startPosition;
-        }
+        RespawnFromVoidBorders();
     }
 
-    void FixedUpdate() 
+    // Checks if user has fallen the table, if so make them go back to the start position
+    private void RespawnFromVoidBorders()
     {
-        // TODO:
-        // Make the player position normalized in y-axis
-        // update player position based on keyboard input
-        float inputX = Input.GetAxis("Horizontal");
-        float inputZ = Input.GetAxis("Vertical");
+        if (transform.position.y < 0)
+            transform.position = startPosition;
+    }
+
+    void FixedUpdate()
+    {
+        EnactMovement();
+        DoAttack();
+    }
+
+    private void EnactMovement()
+    {
+        float inputX = Input.GetAxis(m_HorizontalMovement);
+        float inputZ = Input.GetAxis(m_VerticalMovement);
 
         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 
         if (movementVector.magnitude > 1)
-            movementVector = movementVector.normalized;
+            movementVector.Normalize();
 
-        movementVector *= playerSpeed * Time.deltaTime;
+        movementVector *= m_PlayerSpeed;
+
+        float newSpeed = movementVector.magnitude;
+
+        movementVector *= Time.deltaTime;
 
         transform.position += movementVector;
 
-        currentSpeed = movementVector.magnitude;
-        transform.rotation = Quaternion.LookRotation(movementVector);
+        if (Mathf.Abs(m_CurrentSpeed - newSpeed) >= 0.001)
+            m_CurrentSpeed = newSpeed;
+
+        UpdateRotation(movementVector);
+    }
+
+    private void DoAttack()
+    {
+        if (m_AttackConditions == null)
+            return;
+
+        float attackInput = Input.GetAxis(m_AttackInput);
+        int attackNum = 1;
+        Entity e = GetComponent<Entity>();
+
+        if (e != null && attackInput >= 1 && m_AttackConditions.Length > 0 && m_AttackConditions[attackNum - 1].IsNotOnCooldown())
+            StartCoroutine(e.StartAttack(1));
     }
 }

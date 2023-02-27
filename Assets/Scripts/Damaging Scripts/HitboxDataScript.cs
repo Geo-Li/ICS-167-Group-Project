@@ -48,9 +48,9 @@ public class HitboxDataScript : MonoBehaviour
             && m_CurrentOwner.tag != other.gameObject.tag)
         {
             bool canBeHit = true;
-            HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
+            HitStunScript hitInvul = other.GetComponent<HitStunScript>();
 
-            if (hitInvul != null && hitInvul.HasInvulFrames())
+            if (hitInvul != null && hitInvul.IsInvincible())
                 canBeHit = false;
 
             if (canBeHit)

@@ -1986,13 +1986,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6723975934343400358}
   - component: {fileID: 6723975934343400414}
-  - component: {fileID: 5522440570267836388}
+  - component: {fileID: 7913759292440319608}
   - component: {fileID: 1240689837568071662}
   - component: {fileID: 6472234516848380393}
   - component: {fileID: 6723975934343400411}
   - component: {fileID: 6723975934343400410}
   - component: {fileID: 3132496764930381092}
   - component: {fileID: 6865652387653388604}
+  - component: {fileID: -6906432973567775363}
   m_Layer: 6
   m_Name: Ant Carrier
   m_TagString: Enemy
@@ -2030,10 +2031,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_WanderRadius: 4
+  m_WanderRadius: 2
   m_WanderDistance: 10
   m_WanderJitter: 1
---- !u!114 &5522440570267836388
+--- !u!114 &7913759292440319608
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2042,18 +2043,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6723975934343400413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f07b44d65b3cbd145ad16a51d1033457, type: 3}
+  m_Script: {fileID: 11500000, guid: b8da66d03ad126444bf1fca059baed4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsDead:
-    m_ParameterValue: 0
-    m_ParameterName: IsDead
   ActionState:
     m_ParameterValue: 0
     m_ParameterName: ActionState
   MovementSpeed:
     m_ParameterValue: 0
     m_ParameterName: MoveSpeed
+  IsDead:
+    m_ParameterValue: 0
+    m_ParameterName: IsDead
 --- !u!114 &1240689837568071662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2083,10 +2084,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 9d7afbf5195da1f4e8f9d0cdd0b96655, type: 2}
+  m_AttackConditions: []
   m_Dead: 0
   m_HasSetFace: 0
   m_Loot: {fileID: 11400000, guid: ba5f9ab6eacbfc44f9cae36e1e7500f7, type: 2}
-  m_AttackConditions: []
+  m_MaxOffensiveObjectCount: 5
+  m_MaxVictimObjectCount: 5
   m_DetectionDistance: 10
   m_WanderingSpeed: 3
   m_ActiveSpeed: 5
@@ -2122,7 +2125,7 @@ Rigidbody:
   m_AngularDrag: 1000
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &3132496764930381092
@@ -2166,6 +2169,20 @@ NavMeshAgent:
   m_BaseOffset: 1.15
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-6906432973567775363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723975934343400413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13463fc417415d498f80c9c0d6cbc17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 6756080168796521730}
+  m_MakeHitStunInvincible: 0
 --- !u!1 &6756080168796521730
 GameObject:
   m_ObjectHideFlags: 0

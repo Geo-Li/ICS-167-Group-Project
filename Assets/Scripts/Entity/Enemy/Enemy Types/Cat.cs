@@ -24,30 +24,30 @@ public class Cat : Enemy
 
     protected override void EntityController()
     {
-        GameObject target = m_Movement.Target;
-        NavMeshAgent agent = m_Movement.Agent;
+        GameObject target = m_MovementManager.Target;
+        NavMeshAgent agent = m_MovementManager.Agent;
 
         if (target == null)
         {
-            m_Movement.Wander();
+            m_MovementManager.Wander();
 
-            m_Movement.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
+            m_MovementManager.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
 
             agent.speed = m_WanderingSpeed;
         }
         else
         {
-            m_Movement.Pursue();
+            m_MovementManager.Pursue();
 
-            if (m_Movement.DistanceFromObject(target) >= m_DetectionDistance)
-                m_Movement.Target = null;
+            if (m_MovementManager.DistanceFromObject(target) >= m_DetectionDistance)
+                m_MovementManager.Target = null;
 
             agent.speed = m_ActiveSpeed;
         }
     }
     protected override void ExpressionMaker()
     {
-        bool IsChasing = m_Movement.Target != null;
+        bool IsChasing = m_MovementManager.Target != null;
 
         m_NeutralFace.SetActive(!IsChasing);
         m_AngryFace.SetActive(IsChasing);

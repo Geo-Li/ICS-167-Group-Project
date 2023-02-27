@@ -30,14 +30,14 @@ public class Ant : Enemy
 
     protected override void EntityController()
     {
-        GameObject target = m_Movement.Target;
-        NavMeshAgent agent = m_Movement.Agent;
+        GameObject target = m_MovementManager.Target;
+        NavMeshAgent agent = m_MovementManager.Agent;
 
         if (target == null)
         {
-            m_Movement.Wander();
+            m_MovementManager.Wander();
 
-            m_Movement.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
+            m_MovementManager.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
 
             agent.speed = m_WanderingSpeed;
 
@@ -46,15 +46,15 @@ public class Ant : Enemy
         else
         {
             if (IsHoldingWheat())
-                m_Movement.Evade();
+                m_MovementManager.Evade();
             else
             {
-                m_Movement.Pursue();
+                m_MovementManager.Pursue();
                 m_AttackHitbox.SetActive(true);
             }
 
-            if (m_Movement.DistanceFromObject(target) >= m_DetectionDistance)
-                m_Movement.Target = null;
+            if (m_MovementManager.DistanceFromObject(target) >= m_DetectionDistance)
+                m_MovementManager.Target = null;
 
             agent.speed = m_ActiveSpeed;
         }
@@ -80,7 +80,7 @@ public class Ant : Enemy
         if (isHoldingWheat)
             activeW = true;
         
-        if (m_Movement.Target != null)
+        if (m_MovementManager.Target != null)
         {
             if (isHoldingWheat)
                 activeWF = true;

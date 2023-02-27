@@ -11,12 +11,8 @@ public class Enemy : Entity
 {
     private const float LOOK_AHEAD_MULTIPLIER = 5, TO_TARGET_ANGLE = 90, RELATIVE_ANGLE = 20;
 
-    // Attack Conditions
-    [SerializeField]
-    protected AttackConditions[] m_AttackConditions;
-
-    // The enemy AI movement
-    protected EnemyMovement m_Movement;
+    // The enemyy movement manager
+    protected new EnemyMovement m_MovementManager;
 
     // Detection range for players to target
     [SerializeField]
@@ -35,29 +31,38 @@ public class Enemy : Entity
     {
         base.Start();
 
-        if (m_EntityManager.GetType() != typeof(MovingEntityAnimationManager))
-            Debug.LogErrorFormat("This enemy does not have an enemy animation manager.");
+        m_MovementManager = GetComponent<EnemyMovement>();
 
-        m_Movement = GetComponent<EnemyMovement>();
+        if (m_MovementManager == null)
+            Debug.LogErrorFormat("This enemy does not have an enemy movement manager.");
+
+        base.m_MovementManager = m_MovementManager;
     }
 
     protected override void AnimationUpdater()
     {
-        if (m_Movement != null)
+        if (m_AnimationManager == null)
+            return;
+
+        if (m_IsDying)
+            m_MovementManager.ToggleAgentActivity(false);
+        else
         {
-            UpdateSpeedAnimation();
+            int i = 0;
+            int max = m_AttackConditions.Length;
+            bool hasMadeMove = false;
 
-            if (m_IsDying)
-                m_Movement.ToggleAgentActivity(false);
-            else
+            while (!hasMadeMove && i < max)
             {
-                for (int i = 0; i < m_AttackConditions.Length; i++)
-                {
-                    AttackConditions ac = m_AttackConditions[i];
+                AttackConditions ac = m_AttackConditions[i];
 
-                    if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromObject(m_Movement.Target)))
-                        StartCoroutine(StartAttack(i + 1));
+                if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_MovementManager.DistanceFromObject(m_MovementManager.Target)))
+                {
+                    StartCoroutine(StartAttack(i + 1));
+                    hasMadeMove = true;
                 }
+
+                i++;
             }
         }
 
@@ -66,42 +71,17 @@ public class Enemy : Entity
 
     protected override void EntityController()
     {
-        GameObject target = m_Movement.Target;
+        GameObject target = m_MovementManager.Target;
 
         if (target != null)
-            m_Movement.Seek(target.transform.position);
+            m_MovementManager.Seek(target.transform.position);
     }
 
-    // Update is called once per physics frame
-    void FixedUpdate()
+    public void DoProjectileAttack(int index)
     {
-        UpdateTimers();
-    }
+        GameObject target = m_MovementManager.Target;
 
-    // Updates all attack condition timers
-    private void UpdateTimers()
-    {
-        int length = m_AttackConditions.Length;
-
-        for (int i = 0; i < length; i++)
-            m_AttackConditions[i].UpdateTimer();
-    }
-
-    // Updates entity speed for animation manager
-    public void UpdateSpeedAnimation()
-    {
-        MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
-        eam.MovementSpeed.ParameterValue = m_Movement.GiveCurrentSpeed();
-    }
-
-    // Make the entity perform an attack if available
-    public IEnumerator StartAttack(int attackNumber)
-    {
-        MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
-        eam.ActionState.ParameterValue = attackNumber;
-
-        yield return new WaitForSeconds(0.3f);
-
-        m_AttackConditions[attackNumber - 1].UseAttack();
+        if (target != null)
+            base.DoProjectileAttack(index, target.transform.position);
     }
 }

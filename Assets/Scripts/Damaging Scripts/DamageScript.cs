@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 // William Min
 
@@ -96,18 +97,20 @@ public class DamageScript : ScriptableObject
         angle.y = 0;
 
         Vector3 kVector = m_KForce * angle.normalized * FORCE_MULTIPLIER;
+        kVector.y = 0f;
+
         rb.AddForce(kVector);
     }
 
     // Applies the gameObject of other with the invulnerability time
     public void ApplyInvulFrames(Collider other)
     {
-        HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
+        HitStunScript hitInvul = other.GetComponent<HitStunScript>();
 
         if (hitInvul == null)
             return;
 
-        hitInvul.HitInvulnerabilityTime = m_InvulSeconds;
+        hitInvul.HitStunTime = m_InvulSeconds;
     }
 
     // Displays the damage stats
