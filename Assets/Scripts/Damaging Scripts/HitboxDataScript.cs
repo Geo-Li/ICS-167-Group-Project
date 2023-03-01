@@ -37,37 +37,40 @@ public class HitboxDataScript : MonoBehaviour
     // Sets the original owner to this object when instantiated
     void Start()
     {
-        if (m_CurrentOwner == null)
-            Debug.LogErrorFormat("This hitbox is not assigned to an owner.");
-
         m_OriginalOwner = m_CurrentOwner;
     }
 
     // Applies effects listed in the damage unit to the gameObject of other
     void OnTriggerEnter(Collider other)
     {
-        if (other != m_CurrentOwner 
+        if (m_CurrentOwner == null || other != m_CurrentOwner 
             && !other.GetComponent<HitboxDataScript>() 
-            && m_CurrentOwner.layer != other.gameObject.layer)
+            && m_CurrentOwner.tag != other.gameObject.tag)
         {
             bool canBeHit = true;
-            HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
+            HitStunScript hitInvul = other.GetComponent<HitStunScript>();
 
-            if (hitInvul != null && hitInvul.HasInvulFrames())
+            if (hitInvul != null && hitInvul.IsInvincible())
                 canBeHit = false;
 
             if (canBeHit)
-            {
-                float damage = m_DamageUnit.Damage;
-                float kForce = m_DamageUnit.KnockbackForce;
-                float InvulSeconds = m_DamageUnit.InvulnerabilityInSeconds;
-                
+            {   
                 Vector3 vector = other.transform.position - transform.position;
 
-                m_DamageUnit.ApplyDamage(other);
+                Entity owner = null;
+                if (m_CurrentOwner != null)
+                    owner = m_CurrentOwner.GetComponent<Entity>();
+
+                m_DamageUnit.ApplyDamage(other, owner);
                 m_DamageUnit.ApplyKnockback(other, vector);
                 m_DamageUnit.ApplyInvulFrames(other);
             }
         }
+    }
+
+    // Returns the original owner of the hitbox
+    public GameObject GetOriginalOwner()
+    {
+        return m_OriginalOwner;
     }
 }

@@ -12,6 +12,14 @@ public class AnimationManager : MonoBehaviour
     // Reference to an entity's animator
     protected Animator m_Reference;
 
+    // The parameter representation of the Action State of the animator
+    [SerializeField]
+    public ParameterRep<int> ActionState;
+
+    // The parameter representation of the IsMoving boolean of the animator
+    [SerializeField]
+    public ParameterRep<float> MovementSpeed;
+
     // The parameter representation of the IsDead trigger of the animator
     [SerializeField]
     public ParameterRep<bool> IsDead;
@@ -26,9 +34,35 @@ public class AnimationManager : MonoBehaviour
     }
 
     // Updates the IsDead parameter for entities
-    public virtual void Update()
+    public virtual void LateUpdate()
     {
+        UpdateAction();
+        UpdateMovement();
         UpdateDeath();
+    }
+
+    // Activates an attack animation based on the ActionState parameter
+    private void UpdateAction()
+    {
+        if (m_Reference == null)
+            return;
+
+        string name = ActionState.ParameterName;
+        if (HasParameterInAnimator(name))
+            m_Reference.SetInteger(name, ActionState.ParameterValue);
+
+        ActionState.ParameterValue = 0;
+    }
+
+    // Updates the movement animation based on the MovementSpeed parameter
+    private void UpdateMovement()
+    {
+        if (m_Reference == null)
+            return;
+
+        string name = MovementSpeed.ParameterName;
+        if (HasParameterInAnimator(name))
+            m_Reference.SetFloat(name, MovementSpeed.ParameterValue);
     }
 
     // Activates the death animation if the IsDead parameter declares so
@@ -39,8 +73,29 @@ public class AnimationManager : MonoBehaviour
 
         if (IsDead.ParameterValue)
         {
-            m_Reference.SetTrigger(IsDead.ParameterName);
+            string name = IsDead.ParameterName;
+            if (HasParameterInAnimator(name))
+                m_Reference.SetTrigger(name);
+            
             IsDead.ParameterValue = false;
         }
+    }
+
+    private bool HasParameterInAnimator(string parameterName)
+    {
+        AnimatorControllerParameter[] array = m_Reference.parameters;
+        bool result = false;
+        int i = 0;
+
+        while(i < array.Length && !result)
+        {
+            AnimatorControllerParameter acp = array[i];
+            if (acp.name.Equals(parameterName))
+                result = true;
+
+            i++;
+        }
+
+        return result;
     }
 }

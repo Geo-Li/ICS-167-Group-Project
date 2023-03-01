@@ -9,78 +9,83 @@ using UnityEngine;
  */
 public class Enemy : Entity
 {
-    // Attack Conditions
-    [SerializeField]
-    private AttackConditions[] m_AttackConditions;
+    private const float LOOK_AHEAD_MULTIPLIER = 5, TO_TARGET_ANGLE = 90, RELATIVE_ANGLE = 20;
 
-    // The enemy AI movement
-    private EnemyMovement m_Movement;
+    // The enemyy movement manager
+    protected new EnemyMovement m_MovementManager;
+
+    // Detection range for players to target
+    [SerializeField]
+    protected float m_DetectionDistance;
+
+    // speeds for wandering and being active
+    [SerializeField]
+    protected float m_WanderingSpeed, m_ActiveSpeed;
+
+    // The name of the player tag to find players
+    [SerializeField]
+    protected string m_PlayerTag;
 
     // Initializes all references
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
 
-        if (m_EntityManager.GetType() != typeof(MovingEntityAnimationManager))
-            Debug.LogErrorFormat("This enemy does not have an enemy animation manager.");
+        m_MovementManager = GetComponent<EnemyMovement>();
 
-        m_Movement = GetComponent<EnemyMovement>();
+        if (m_MovementManager == null)
+            Debug.LogErrorFormat("This enemy does not have an enemy movement manager.");
+
+        base.m_MovementManager = m_MovementManager;
     }
 
-    // Checks movement along with base entity checks
-    public override void Update()
+    protected override void AnimationUpdater()
     {
-        if (m_Movement != null)
+        if (m_AnimationManager == null)
+            return;
+
+        if (m_IsDying)
+            m_MovementManager.ToggleAgentActivity(false);
+        else
         {
-            UpdateSpeed();
+            int i = 0;
+            int max = m_AttackConditions.Length;
+            bool hasMadeMove = false;
 
-            if (m_AttackConditions.Length > 0)
+            foreach (AttackConditions ac in m_AttackConditions)
+                if (ac.IsPlayingAttackAnimation)
+                    hasMadeMove = true;
+
+            while (!hasMadeMove && i < max)
             {
-                AttackConditions ac = m_AttackConditions[0];
+                AttackConditions ac = m_AttackConditions[i];
 
-                if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_Movement.DistanceFromTarget()))
-                    StartCoroutine(PerformAttack(1));
+                if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_MovementManager.DistanceFromObject(m_MovementManager.Target)))
+                {
+                    StartCoroutine(StartAttack(i + 1));
+                    hasMadeMove = true;
+                }
+
+                i++;
             }
         }
 
-        base.Update();
+        base.AnimationUpdater();
     }
 
-    // Update is called once per physics frame
-    void FixedUpdate()
+    protected override void EntityController()
     {
-        UpdateTimers();
+        GameObject target = m_MovementManager.Target;
+
+        if (target != null)
+            m_MovementManager.Seek(target.transform.position);
     }
 
-    // Updates all attack condition timers
-    private void UpdateTimers()
+    public void DoProjectileAttack(int index)
     {
-        int length = m_AttackConditions.Length;
+        GameObject target = m_MovementManager.Target;
 
-        if (length > 0)
-        {
-            for (int i = 0; i < length; i++)
-            {
-                m_AttackConditions[i].UpdateTimer();
-            }
-        }
-    }
-
-    // Updates entity speed for animation manager
-    public void UpdateSpeed()
-    {
-        MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
-        eam.MovementSpeed.ParameterValue = m_Movement.GiveCurrentSpeed();
-    }
-
-    // Make the entity perform an attack if available
-    public IEnumerator PerformAttack(int attackNumber)
-    {
-        MovingEntityAnimationManager eam = (MovingEntityAnimationManager)m_EntityManager;
-        eam.ActionState.ParameterValue = attackNumber;
-
-        yield return new WaitForSeconds(0.5f);
-
-        m_AttackConditions[attackNumber - 1].UseAttack();
+        if (target != null)
+            base.DoProjectileAttack(index, target.transform.position);
     }
 }

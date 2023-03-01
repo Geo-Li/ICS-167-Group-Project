@@ -57,6 +57,23 @@ public class AttackConditions
         }
     }
 
+    // Checks if the entity is currently playing the attack animation
+    private bool m_IsPlayingAttackAnimation = false;
+
+    // Public version of m_IsPlayingAttackAnimation
+    public bool IsPlayingAttackAnimation
+    {
+        get
+        {
+            return m_IsPlayingAttackAnimation;
+        }
+
+        set
+        {
+            m_IsPlayingAttackAnimation = value;
+        }
+    }
+
     // Updates cooldown timer
     public void UpdateTimer()
     {
@@ -68,6 +85,11 @@ public class AttackConditions
 
     // Determines if attack is not on cooldown
     public bool IsNotOnCooldown()
+    {
+        return !m_IsPlayingAttackAnimation && TimerIsDone();
+    }
+
+    private bool TimerIsDone()
     {
         return Mathf.Abs(m_Timer) < 0.001f;
     }
@@ -82,5 +104,11 @@ public class AttackConditions
     public void UseAttack()
     {
         m_Timer = m_AttackCooldown;
+    }
+
+    // Returns the counting timer
+    public float GetTimer()
+    {
+        return m_Timer;
     }
 }
