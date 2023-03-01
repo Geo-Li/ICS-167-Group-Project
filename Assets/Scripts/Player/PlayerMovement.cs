@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private EntitySO entity;
-    [HideInInspector] private float playerSpeed;
+    
+    [SerializeField] private string whichKeyboardController;
+    [SerializeField] private float playerSpeed = 500f;
     [HideInInspector] private Vector3 startPosition;
+    [HideInInspector] private Rigidbody playerRigidbody;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        playerSpeed = entity.speed;
+        // playerSpeed = entity.speed;
         startPosition = transform.position;
+        playerRigidbody = GetComponent<Rigidbody>();
+        playerRigidbody.freezeRotation = true;
     }
 
 
     // Get player's current velocity
     public float GetVelocity() {
-        return gameObject.GetComponent<Rigidbody>().velocity.magnitude;
+        return playerRigidbody.velocity.magnitude;
     }
 
     // Update is called once per frame
@@ -32,13 +37,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate() {
-
-        // TODO:
-        // Make the player position normalized in y-axis
-        // update player position based on keyboard input
-        float translation = Input.GetAxis("Vertical") * playerSpeed * Time.deltaTime;
-        float rotation = Input.GetAxis("Horizontal") * playerSpeed * Time.deltaTime;
-
-        transform.Translate(rotation,0,translation);
+        Vector3 move = new Vector3(0, 0, 0);
+        if (whichKeyboardController == "Arrows") {
+            move = new Vector3(Input.GetAxis("Horizontal_Arrows"), 0, Input.GetAxis("Vertical_Arrows"));
+        } else if (whichKeyboardController == "WASD") {
+            move = new Vector3(Input.GetAxis("Horizontal_WASD"), 0, Input.GetAxis("Vertical_WASD"));
+        }
+        playerRigidbody.velocity = move * playerSpeed * Time.deltaTime;
     }
 }

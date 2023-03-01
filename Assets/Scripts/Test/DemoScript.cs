@@ -8,6 +8,7 @@ public class DemoScript : MonoBehaviour
     public InventoryItemSO[] items;
 
     public void PickupItem(int id){
+        Debug.Log("Clicked");
         inventoryManager.AddItem(items[id]);
     }
 
