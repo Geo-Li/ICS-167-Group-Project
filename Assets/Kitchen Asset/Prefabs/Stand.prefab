@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4041163057064476}
   - component: {fileID: 33036358983762974}
   - component: {fileID: 23149443366403996}
+  - component: {fileID: 1396996015048969793}
+  - component: {fileID: 1032616053648345545}
+  - component: {fileID: 2415328578645766648}
   m_Layer: 0
   m_Name: Stand
   m_TagString: Untagged
@@ -81,3 +84,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &1396996015048969793
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528584021113940}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1032616053648345545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528584021113940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.563205, y: 0.25609475, z: 0.15}
+  m_Center: {x: 0.00028654904, y: 0.056619894, z: -0.42}
+--- !u!65 &2415328578645766648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528584021113940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.563205, y: 0.25609475, z: 0.15}
+  m_Center: {x: 0.00028654904, y: 0.056619894, z: 0.42}
