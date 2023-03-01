@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 803f65df91a66ae4eaa9f2900758c15d
+=======
+guid: cbf1a351725d3b042a27f8ac0ea66ffc
+>>>>>>> origin/Geo-Progress
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -91,6 +95,7 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+<<<<<<< HEAD
   - name: Pollen Aura
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -425,6 +430,8 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -170, y: -150}
+=======
+>>>>>>> origin/Geo-Progress
   - name: Left Eyelid Closed
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -432,6 +439,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 157
       y: 1986
       width: 80
@@ -809,6 +817,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -89, y: 1514}
+=======
+      x: 4
+      y: 977
+      width: 80
+      height: 31
+    spriteID: 136c2794d98d0f945870a6df57f5b6fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -242, y: 505}
+>>>>>>> origin/Geo-Progress
   - name: Left Eyelid Open
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -816,6 +841,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 323
       y: 1531
       width: 74
@@ -1235,6 +1261,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 86, y: 1041}
+=======
+      x: 642
+      y: 565
+      width: 74
+      height: 74
+    spriteID: 7917960e964526b409ac6584e35043e1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 405, y: 75}
+>>>>>>> origin/Geo-Progress
   - name: Left Eye
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -1242,6 +1285,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 323
       y: 1177
       width: 69
@@ -2682,6 +2726,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 160, y: 550}
+=======
+      x: 132
+      y: 883
+      width: 69
+      height: 93
+    spriteID: fc969b43ed0b3ba439ef376ba06764a4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -114, y: 429}
+>>>>>>> origin/Geo-Progress
   - name: Right Eyelid Closed
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -2689,6 +2750,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 407
       y: 1105
       width: 80
@@ -3107,6 +3169,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -12, y: 633}
+=======
+      x: 900
+      y: 587
+      width: 80
+      height: 31
+    spriteID: 9a408c7e2420a4d40867cb4c78be9875
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 481, y: 115}
+>>>>>>> origin/Geo-Progress
   - name: Right Eyelid Open
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3114,6 +3193,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 323
       y: 1613
       width: 74
@@ -3682,6 +3762,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -110, y: 1123}
+=======
+      x: 724
+      y: 565
+      width: 74
+      height: 74
+    spriteID: 8e6fadd41e4f11b4aab45dc769dd84fd
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 291, y: 75}
+>>>>>>> origin/Geo-Progress
   - name: Right Eye
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -3689,6 +3786,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 157
       y: 1885
       width: 70
@@ -5793,6 +5891,45 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 157, y: -411}
+=======
+      x: 271
+      y: 883
+      width: 70
+      height: 93
+    spriteID: 9d938afa7739a60428f8fddd6a395360
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -158, y: 429}
+  - name: Head
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 715
+      y: 4
+      width: 245
+      height: 168
+    spriteID: 3152ab9d4c0b6764b9eae9402f9ac290
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 465, y: -411}
+>>>>>>> origin/Geo-Progress
   - name: Right Antenna
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -5800,6 +5937,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 407
       y: 180
       width: 131
@@ -6569,6 +6707,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 0, y: -345}
+=======
+      x: 132
+      y: 655
+      width: 131
+      height: 220
+    spriteID: 2c368825e6631054b97c81e8c763af78
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -275, y: 130}
+>>>>>>> origin/Geo-Progress
   - name: Left Antenna
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -6576,6 +6731,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 407
       y: 408
       width: 130
@@ -7411,6 +7567,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 200, y: -117}
+=======
+      x: 271
+      y: 655
+      width: 130
+      height: 220
+    spriteID: 1e0e87d95682ab941aa307fe5be19daf
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 64, y: 130}
+>>>>>>> origin/Geo-Progress
   - name: Left Leg 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -7418,6 +7591,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 546
       y: 180
       width: 101
@@ -8521,6 +8695,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 300, y: -32}
+=======
+      x: 409
+      y: 813
+      width: 101
+      height: 194
+    spriteID: f5ede8ecda499a942892b3b95817fcd3
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 163, y: 601}
+>>>>>>> origin/Geo-Progress
   - name: Left Leg 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -8528,6 +8719,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 407
       y: 636
       width: 114
@@ -9590,6 +9782,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 173, y: 464}
+=======
+      x: 868
+      y: 180
+      width: 114
+      height: 190
+    spriteID: cbd5c607a897c5c4db9c45990295ea5c
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 634, y: 8}
+>>>>>>> origin/Geo-Progress
   - name: Left Leg 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -9597,6 +9806,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 660
       y: 4
       width: 144
@@ -10361,6 +10571,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 453, y: -130}
+=======
+      x: 409
+      y: 655
+      width: 144
+      height: 150
+    spriteID: 22f2d62aaec84b84f96c5cef00ad644f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 202, y: 521}
+>>>>>>> origin/Geo-Progress
   - name: Right Leg 1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -10368,6 +10595,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 545
       y: 408
       width: 100
@@ -11398,6 +11626,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 146, y: 196}
+=======
+      x: 518
+      y: 813
+      width: 100
+      height: 194
+    spriteID: 6f1225a98236b6d46a5cbc0ddf44e2a7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 119, y: 601}
+>>>>>>> origin/Geo-Progress
   - name: Right Leg 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -11405,6 +11650,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 407
       y: 834
       width: 114
@@ -12651,6 +12897,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 9, y: 662}
+=======
+      x: 900
+      y: 389
+      width: 114
+      height: 190
+    spriteID: 4007b59071c341f4cbef70f524275be2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 502, y: 217}
+>>>>>>> origin/Geo-Progress
   - name: Right Leg 3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -12658,6 +12921,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 4
       y: 1885
       width: 145
@@ -13506,6 +13770,23 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -390, y: 1751}
+=======
+      x: 715
+      y: 180
+      width: 145
+      height: 150
+    spriteID: bda86047696cd304582e0e0139b76d3b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 321, y: 46}
+>>>>>>> origin/Geo-Progress
   - name: Fur Body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -13513,6 +13794,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
+<<<<<<< HEAD
       x: 4
       y: 1709
       width: 250
@@ -14470,10 +14752,54 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.8445588, y: 0.26145956}
     alignment: 9
+=======
+      x: 642
+      y: 389
+      width: 250
+      height: 168
+    spriteID: 0b94018ea0287674fafe1c936bec82c4
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 395, y: 104}
+  - name: Abdomen
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
+      y: 655
+      width: 120
+      height: 314
+    spriteID: 434108da8a54abc45a28cbf9e6c7f6ee
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -308, y: 645}
+  - name: Top Left Wing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+>>>>>>> origin/Geo-Progress
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+<<<<<<< HEAD
       y: 407
       width: 348
       height: 377
@@ -14884,10 +15210,31 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.88924295, y: 0.87182236}
     alignment: 9
+=======
+      y: 4
+      width: 348
+      height: 377
+    spriteID: d6a0858d3692dbd4da42b2660d3ce8f5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: -270}
+  - name: Bottom Left Wing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+>>>>>>> origin/Geo-Progress
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
+<<<<<<< HEAD
       y: 1177
       width: 311
       height: 258
@@ -16045,6 +16392,66 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: -376, y: 1371}
+=======
+      y: 389
+      width: 311
+      height: 258
+    spriteID: 466edd504a76c5e4e9fa5893ee4faac5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -50, y: 317}
+  - name: Top Right Wing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 360
+      y: 4
+      width: 347
+      height: 377
+    spriteID: fd0d037c53eea21448f45ac3218ec7ed
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -37, y: -270}
+  - name: Bottom Right Wing
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 323
+      y: 389
+      width: 311
+      height: 258
+    spriteID: 8a1c6338dc99b5e4498dd42fb5ef6a72
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -57, y: 317}
+>>>>>>> origin/Geo-Progress
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -16073,19 +16480,28 @@ ScriptedImporter:
   documentAlignment: 7
   importHiddenLayers: 0
   importedTextureWidth: 1024
+<<<<<<< HEAD
   importedTextureHeight: 2048
+=======
+  importedTextureHeight: 1024
+>>>>>>> origin/Geo-Progress
   documentSize: {x: 744, y: 745}
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   spriteCategoryList:
     categories: []
   textureActualWidth: 1024
+<<<<<<< HEAD
   textureActualHeight: 2048
+=======
+  textureActualHeight: 1024
+>>>>>>> origin/Geo-Progress
   spritePackingTag: 
   resliceFromLayer: 0
   characterMode: 1
   mosaicPSDLayers: []
   rigPSDLayers:
+<<<<<<< HEAD
   - name: Pollen Aura
     spriteName: Pollen Aura
     isGroup: 0
@@ -16099,10 +16515,19 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 
     layerID: 278
+=======
+  - name: Left Eyelids
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 214
+>>>>>>> origin/Geo-Progress
     mosaicPosition: {x: 0, y: 0}
   - name: Left Eyelid Closed
     spriteName: Left Eyelid Closed
     isGroup: 0
+<<<<<<< HEAD
     parentIndex: 1
     spriteID: 53333f2ac46b4b44ba3bd039474cdeba
     layerID: 205
@@ -16135,10 +16560,45 @@ ScriptedImporter:
     spriteID: 75097ce9a4637a340b822e9e6eb29d71
     layerID: 203
     mosaicPosition: {x: 323, y: 1177}
+=======
+    parentIndex: 0
+    spriteID: 136c2794d98d0f945870a6df57f5b6fd
+    layerID: 205
+    mosaicPosition: {x: 4, y: 977}
+  - name: Left Eyelid Open
+    spriteName: Left Eyelid Open
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7917960e964526b409ac6584e35043e1
+    layerID: 204
+    mosaicPosition: {x: 642, y: 565}
+  - name: Left Eye
+    spriteName: Left Eye
+    isGroup: 0
+    parentIndex: -1
+    spriteID: fc969b43ed0b3ba439ef376ba06764a4
+    layerID: 203
+    mosaicPosition: {x: 132, y: 883}
+  - name: Right Eyelids
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 00000000000000000000000000000000
+    layerID: 216
+    mosaicPosition: {x: 0, y: 0}
+  - name: Right Eyelid Closed
+    spriteName: Right Eyelid Closed
+    isGroup: 0
+    parentIndex: 4
+    spriteID: 9a408c7e2420a4d40867cb4c78be9875
+    layerID: 195
+    mosaicPosition: {x: 900, y: 587}
+>>>>>>> origin/Geo-Progress
   - name: Right Eyelid Open
     spriteName: Right Eyelid Open
     isGroup: 0
     parentIndex: 4
+<<<<<<< HEAD
     spriteID: 16465ec8ccd618945b0529b2aedf26d9
     layerID: 191
     mosaicPosition: {x: 323, y: 1613}
@@ -16184,27 +16644,57 @@ ScriptedImporter:
     spriteID: 952a4ab24b46b6649a3e4d713feeb628
     layerID: 252
     mosaicPosition: {x: 323, y: 1366}
+=======
+    spriteID: 8e6fadd41e4f11b4aab45dc769dd84fd
+    layerID: 191
+    mosaicPosition: {x: 724, y: 565}
+  - name: Right Eye
+    spriteName: Right Eye
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9d938afa7739a60428f8fddd6a395360
+    layerID: 187
+    mosaicPosition: {x: 271, y: 883}
+>>>>>>> origin/Geo-Progress
   - name: Head
     spriteName: Head
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: 9bce9fc4b8ab8b34b91ab851483a42d4
     layerID: 179
     mosaicPosition: {x: 407, y: 4}
+=======
+    spriteID: 3152ab9d4c0b6764b9eae9402f9ac290
+    layerID: 179
+    mosaicPosition: {x: 715, y: 4}
+>>>>>>> origin/Geo-Progress
   - name: Right Antenna
     spriteName: Right Antenna
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: b5ffed567e946d647abe042c31117bed
     layerID: 170
     mosaicPosition: {x: 407, y: 180}
+=======
+    spriteID: 2c368825e6631054b97c81e8c763af78
+    layerID: 170
+    mosaicPosition: {x: 132, y: 655}
+>>>>>>> origin/Geo-Progress
   - name: Left Antenna
     spriteName: Left Antenna
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: 7cccab3048a17ff48bd5da985a543fd0
     layerID: 169
     mosaicPosition: {x: 407, y: 408}
+=======
+    spriteID: 1e0e87d95682ab941aa307fe5be19daf
+    layerID: 169
+    mosaicPosition: {x: 271, y: 655}
+>>>>>>> origin/Geo-Progress
   - name: Left Legs
     spriteName: 
     isGroup: 1
@@ -16215,6 +16705,7 @@ ScriptedImporter:
   - name: Left Leg 1
     spriteName: Left Leg 1
     isGroup: 0
+<<<<<<< HEAD
     parentIndex: 17
     spriteID: 91696f73e8867c24e8df690152da887a
     layerID: 167
@@ -16233,6 +16724,26 @@ ScriptedImporter:
     spriteID: 52a40ab143f46c640a688898aaa321cd
     layerID: 165
     mosaicPosition: {x: 660, y: 4}
+=======
+    parentIndex: 11
+    spriteID: f5ede8ecda499a942892b3b95817fcd3
+    layerID: 167
+    mosaicPosition: {x: 409, y: 813}
+  - name: Left Leg 2
+    spriteName: Left Leg 2
+    isGroup: 0
+    parentIndex: 11
+    spriteID: cbd5c607a897c5c4db9c45990295ea5c
+    layerID: 166
+    mosaicPosition: {x: 868, y: 180}
+  - name: Left Leg 3
+    spriteName: Left Leg 3
+    isGroup: 0
+    parentIndex: 11
+    spriteID: 22f2d62aaec84b84f96c5cef00ad644f
+    layerID: 165
+    mosaicPosition: {x: 409, y: 655}
+>>>>>>> origin/Geo-Progress
   - name: Right Legs
     spriteName: 
     isGroup: 1
@@ -16243,6 +16754,7 @@ ScriptedImporter:
   - name: Right Leg 1
     spriteName: Right Leg 1
     isGroup: 0
+<<<<<<< HEAD
     parentIndex: 21
     spriteID: 2466e3a10452e53449742287ac131fcd
     layerID: 164
@@ -16261,20 +16773,52 @@ ScriptedImporter:
     spriteID: d5741b1bec9373c448de476c2eaf3c1d
     layerID: 162
     mosaicPosition: {x: 4, y: 1885}
+=======
+    parentIndex: 15
+    spriteID: 6f1225a98236b6d46a5cbc0ddf44e2a7
+    layerID: 164
+    mosaicPosition: {x: 518, y: 813}
+  - name: Right Leg 2
+    spriteName: Right Leg 2
+    isGroup: 0
+    parentIndex: 15
+    spriteID: 4007b59071c341f4cbef70f524275be2
+    layerID: 163
+    mosaicPosition: {x: 900, y: 389}
+  - name: Right Leg 3
+    spriteName: Right Leg 3
+    isGroup: 0
+    parentIndex: 15
+    spriteID: bda86047696cd304582e0e0139b76d3b
+    layerID: 162
+    mosaicPosition: {x: 715, y: 180}
+>>>>>>> origin/Geo-Progress
   - name: Fur Body
     spriteName: Fur Body
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: b19575d67a2660d438ecd55a150a255b
     layerID: 161
     mosaicPosition: {x: 4, y: 1709}
+=======
+    spriteID: 0b94018ea0287674fafe1c936bec82c4
+    layerID: 161
+    mosaicPosition: {x: 642, y: 389}
+>>>>>>> origin/Geo-Progress
   - name: Abdomen
     spriteName: Abdomen
     isGroup: 0
     parentIndex: -1
+<<<<<<< HEAD
     spriteID: 7fd7530fdf5d3f445a756efb935b735c
     layerID: 153
     mosaicPosition: {x: 262, y: 1709}
+=======
+    spriteID: 434108da8a54abc45a28cbf9e6c7f6ee
+    layerID: 153
+    mosaicPosition: {x: 4, y: 655}
+>>>>>>> origin/Geo-Progress
   - name: Left Wings
     spriteName: 
     isGroup: 1
@@ -16285,6 +16829,7 @@ ScriptedImporter:
   - name: Top Left Wing
     spriteName: Top Left Wing
     isGroup: 0
+<<<<<<< HEAD
     parentIndex: 27
     spriteID: bf8c2e1e3c3647a488c746aa25418506
     layerID: 145
@@ -16296,6 +16841,19 @@ ScriptedImporter:
     spriteID: e718f0adf4cb249419e77277c6513daf
     layerID: 134
     mosaicPosition: {x: 4, y: 1177}
+=======
+    parentIndex: 21
+    spriteID: d6a0858d3692dbd4da42b2660d3ce8f5
+    layerID: 145
+    mosaicPosition: {x: 4, y: 4}
+  - name: Bottom Left Wing
+    spriteName: Bottom Left Wing
+    isGroup: 0
+    parentIndex: 21
+    spriteID: 466edd504a76c5e4e9fa5893ee4faac5
+    layerID: 134
+    mosaicPosition: {x: 4, y: 389}
+>>>>>>> origin/Geo-Progress
   - name: Right Wings
     spriteName: 
     isGroup: 1
@@ -16306,6 +16864,7 @@ ScriptedImporter:
   - name: Top Right Wing
     spriteName: Top Right Wing
     isGroup: 0
+<<<<<<< HEAD
     parentIndex: 30
     spriteID: 4ef7e82fe93cb7b4291518203f11cef3
     layerID: 124
@@ -16690,4 +17249,26 @@ ScriptedImporter:
   textureAssetName: Moth Sprite 1 Texture
   prefabAssetName: Moth Sprite 1 Prefab
   spriteLibAssetName: Moth Sprite 1 Sprite Lib
+=======
+    parentIndex: 24
+    spriteID: fd0d037c53eea21448f45ac3218ec7ed
+    layerID: 124
+    mosaicPosition: {x: 360, y: 4}
+  - name: Bottom Right Wing
+    spriteName: Bottom Right Wing
+    isGroup: 0
+    parentIndex: 24
+    spriteID: 8a1c6338dc99b5e4498dd42fb5ef6a72
+    layerID: 113
+    mosaicPosition: {x: 323, y: 389}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+  generateGOHierarchy: 1
+  textureAssetName: Moth Sprite Texture
+  prefabAssetName: Moth Sprite Prefab
+  spriteLibAssetName: Moth Sprite Sprite Lib
+>>>>>>> origin/Geo-Progress
   secondarySpriteTextures: []
