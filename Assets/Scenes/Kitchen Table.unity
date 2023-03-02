@@ -1341,7 +1341,7 @@ MonoBehaviour:
   - {fileID: 1827738945}
   - {fileID: 1045256062}
   healthBar: {fileID: 2135404099}
-  player: {fileID: 1258459254}
+  player: {fileID: 2135404102}
   itemHeal: 10
 --- !u!4 &623794419
 Transform:
@@ -2373,6 +2373,7 @@ PrefabInstance:
     - {fileID: 4990101389113689536, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
     - {fileID: 7744774378221890687, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
+<<<<<<< Updated upstream
 --- !u!114 &1258459254 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4388787454299547632, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
@@ -2395,6 +2396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b3a33aa1d76bf48a73ab0d64dc5890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1268818227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3196,6 +3199,7 @@ GameObject:
   - component: {fileID: 2135404100}
   - component: {fileID: 2135404101}
   - component: {fileID: 2135404099}
+  - component: {fileID: 2135404102}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -3319,6 +3323,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2135404102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135404098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f520e4feb56f4442eb8f8c73611c5eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 0
+  healthBar: {fileID: 2135404099}
+  maxHealth: 100
 --- !u!1001 &4518756672271335917
 PrefabInstance:
   m_ObjectHideFlags: 0

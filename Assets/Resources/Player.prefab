@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 5801998457686786637}
   - component: {fileID: 4549728280936135251}
   - component: {fileID: 549375065}
-  - component: {fileID: 7300622600690453391}
   - component: {fileID: 5801998457686786628}
   - component: {fileID: 5801998457686786629}
   - component: {fileID: 2786698553217850555}
@@ -252,21 +251,6 @@ MonoBehaviour:
   IsDead:
     m_ParameterValue: 0
     m_ParameterName: IsDead
---- !u!114 &7300622600690453391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801998457686786626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f520e4feb56f4442eb8f8c73611c5eab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: 0
-  healthBar: {fileID: 0}
-  maxHealth: 100
 --- !u!136 &5801998457686786628
 CapsuleCollider:
   m_ObjectHideFlags: 0
