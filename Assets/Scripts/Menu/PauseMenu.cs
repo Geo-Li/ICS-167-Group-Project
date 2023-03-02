@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pausemenu;
+    //Gets the object to turn off pause menu when we want it to be hidden
+    [SerializeField] private GameObject pausemenu;
     public static bool IsPaused;
-    // Start is called before the first frame update
+
+    // Start with the pause menu hidden
     void Start()
     {
         pausemenu.SetActive(false);
         Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
+    //Check to see if the game is paused when Esc is pressed
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -30,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Pause the game and show the menu
     public void PauseGame()
     {
         pausemenu.SetActive(true);
@@ -37,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         IsPaused = true;
     }
 
+    //Resume the game and hide the menu
     public void ResumeGame()
     {
         pausemenu.SetActive(false);
@@ -44,12 +48,14 @@ public class PauseMenu : MonoBehaviour
         IsPaused = false;
     }
 
+    //Go Back to Scene 0 (Main Menu)
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
+    //Closes application
     public void QuitGame()
     {
         Application.Quit();
