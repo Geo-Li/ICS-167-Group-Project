@@ -19,11 +19,13 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
     [SerializeField] private string whichKeyboardController;
 
     private const string HORIZONTAL_WASD = "Horizontal_WASD", VERTICAL_WASD = "Vertical_WASD", 
-                        HORIZONTAL_ARROWS = "Horizontal_Arrows", VERTICAL_ARROWS = "Vertical_Arrows";
+                        HORIZONTAL_ARROWS = "Horizontal_Arrows", VERTICAL_ARROWS = "Vertical_Arrows",
+                        ATTACK_WASD = "Attack_WASD", ATTACK_ARROWS = "Attack_Arrows";
 
-    // Names of the player attack input
-    [SerializeField]
-    private string m_AttackInput;
+    private const string WASD_NAME = "WASD", ARROWS_NAME = "Arrows";
+
+    // Names of the all player inputs
+    private string m_HorizontalInput, m_VerticalInput, m_AttackInput;
 
     private float m_CurrentSpeed;
 
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
         if (e != null)
             m_AttackConditions = e.GetAttackConditions();
+
+        UpdateInputs();
     }
 
     public float GetCurrentSpeed()
@@ -72,24 +76,27 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
         DoAttack();
     }
 
+    // Updates player inputs
+    public void UpdateInputs()
+    {
+        if (whichKeyboardController == ARROWS_NAME)
+        {
+            m_HorizontalInput = HORIZONTAL_ARROWS;
+            m_VerticalInput = VERTICAL_ARROWS;
+            m_AttackInput = ATTACK_ARROWS;
+        }
+        else if (whichKeyboardController == WASD_NAME)
+        {
+            m_HorizontalInput = HORIZONTAL_WASD;
+            m_VerticalInput = VERTICAL_WASD;
+            m_AttackInput = ATTACK_WASD;
+        }
+    }
+
     private void EnactMovement()
     {
-        string horizontalMovement = "";
-        string verticalMovement = "";
-
-        if (whichKeyboardController == "Arrows")
-        {
-            horizontalMovement = HORIZONTAL_ARROWS;
-            verticalMovement = VERTICAL_ARROWS;
-        }
-        else if (whichKeyboardController == "WASD")
-        {
-            horizontalMovement = HORIZONTAL_WASD;
-            verticalMovement = VERTICAL_WASD;
-        }
-
-        float inputX = Input.GetAxis(horizontalMovement);
-        float inputZ = Input.GetAxis(verticalMovement);
+        float inputX = Input.GetAxis(m_HorizontalInput);
+        float inputZ = Input.GetAxis(m_VerticalInput);
 
         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 

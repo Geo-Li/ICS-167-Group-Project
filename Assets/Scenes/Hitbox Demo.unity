@@ -1509,7 +1509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5801998457686786638, guid: 90ef45dbcd9bcfa4c8c2440438e8514f, type: 3}
       propertyPath: whichKeyboardController
-      value: WASD
+      value: Arrows
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90ef45dbcd9bcfa4c8c2440438e8514f, type: 3}
