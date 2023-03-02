@@ -582,8 +582,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15784654107e3ab46a84f2e8543bd244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichKeyboardController: 
-  playerSpeed: 500
+  m_PlayerSpeed: 10
+  whichKeyboardController: WASD
+  m_AttackInput: Attack
 --- !u!114 &5801998457686786637
 MonoBehaviour:
   m_ObjectHideFlags: 0

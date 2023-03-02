@@ -11,7 +11,8 @@ public class ShowPlayerSpeed : MonoBehaviour
 
     void Update() {
 
-        playerSpeedText.text = player.GetVelocity().ToString();
+        playerSpeedText.text = player.GetCurrentSpeed().ToString();
+        //playerSpeedText.text = player.GetVelocity().ToString();
 
     }
 

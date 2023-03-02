@@ -1,5 +1,5 @@
 
-/*
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,16 +8,22 @@ using UnityEngine;
 
 /*
  * The player controller movement
-
+ */ 
 public class PlayerMovement : MonoBehaviour, EntityMovement
 {
     // Player top speed
     [SerializeField]
     private float m_PlayerSpeed = 10f;
 
-    // Names of all the player inputs
+    // Determines if the player is guided by WASD or Arrow Keys
+    [SerializeField] private string whichKeyboardController;
+
+    private const string HORIZONTAL_WASD = "Horizontal_WASD", VERTICAL_WASD = "Vertical_WASD", 
+                        HORIZONTAL_ARROWS = "Horizontal_Arrows", VERTICAL_ARROWS = "Vertical_Arrows";
+
+    // Names of the player attack input
     [SerializeField]
-    private string m_HorizontalMovement, m_VerticalMovement, m_AttackInput;
+    private string m_AttackInput;
 
     private float m_CurrentSpeed;
 
@@ -68,8 +74,22 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
     private void EnactMovement()
     {
-        float inputX = Input.GetAxis(m_HorizontalMovement);
-        float inputZ = Input.GetAxis(m_VerticalMovement);
+        string horizontalMovement = "";
+        string verticalMovement = "";
+
+        if (whichKeyboardController == "Arrows")
+        {
+            horizontalMovement = HORIZONTAL_ARROWS;
+            verticalMovement = VERTICAL_ARROWS;
+        }
+        else if (whichKeyboardController == "WASD")
+        {
+            horizontalMovement = HORIZONTAL_WASD;
+            verticalMovement = VERTICAL_WASD;
+        }
+
+        float inputX = Input.GetAxis(horizontalMovement);
+        float inputZ = Input.GetAxis(verticalMovement);
 
         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 
@@ -103,4 +123,3 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
             StartCoroutine(e.StartAttack(1));
     }
 }
-*/
