@@ -82,7 +82,14 @@ public class DamageScript : ScriptableObject
 
         if (playerHealth != null)
         {
-            playerHealth.DecreasePlayerHealth((int)m_Damage);
+            int damage = (int)m_Damage;
+
+            playerHealth.DecreasePlayerHealth(damage);
+
+            HealthBarS healthBar = GameObject.FindObjectOfType<HealthBarS>();
+
+            if (healthBar != null)
+                healthBar.SetHealth(playerHealth.GetPlayerHealth() - damage);
         }
         else
         {
