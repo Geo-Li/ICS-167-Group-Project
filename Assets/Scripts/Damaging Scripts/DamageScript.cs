@@ -78,9 +78,18 @@ public class DamageScript : ScriptableObject
         if (otherEntity == null)
             return;
 
-        Health health = otherEntity.Health;
+        PlayerHealthS playerHealth = other.GetComponent<PlayerHealthS>();
 
-        health.CurrentHealth -= m_Damage;
+        if (playerHealth != null)
+        {
+            playerHealth.DecreasePlayerHealth((int)m_Damage);
+        }
+        else
+        {
+            Health health = otherEntity.Health;
+
+            health.CurrentHealth -= m_Damage;
+        }
 
         otherEntity.AddEntity(owner.gameObject, true);
         owner.AddEntity(otherEntity.gameObject, false);
