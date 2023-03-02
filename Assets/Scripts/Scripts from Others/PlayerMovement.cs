@@ -1,104 +1,106 @@
 
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
+/*
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-// // Geo Li
+// Geo Li
 
-// /*
-//  * The player controller movement
-//  */
-// public class PlayerMovement : MonoBehaviour, EntityMovement
-// {
-//     // Player top speed
-//     [SerializeField]
-//     private float m_PlayerSpeed = 10f;
+/*
+ * The player controller movement
 
-//     // Names of all the player inputs
-//     [SerializeField]
-//     private string m_HorizontalMovement, m_VerticalMovement, m_AttackInput;
+public class PlayerMovement : MonoBehaviour, EntityMovement
+{
+    // Player top speed
+    [SerializeField]
+    private float m_PlayerSpeed = 10f;
 
-//     private float m_CurrentSpeed;
+    // Names of all the player inputs
+    [SerializeField]
+    private string m_HorizontalMovement, m_VerticalMovement, m_AttackInput;
 
-//     private Vector3 startPosition;
+    private float m_CurrentSpeed;
 
-//     private AttackConditions[] m_AttackConditions = null;
+    private Vector3 startPosition;
 
-//     // Start is called before the first frame update
-//     void Start()
-//     {
-//         startPosition = transform.position;
+    private AttackConditions[] m_AttackConditions = null;
 
-//         Entity e = GetComponent<Entity>();
+    // Start is called before the first frame update
+    void Start()
+    {
+        startPosition = transform.position;
 
-//         if (e != null)
-//             m_AttackConditions = e.GetAttackConditions();
-//     }
+        Entity e = GetComponent<Entity>();
 
-//     public float GetCurrentSpeed()
-//     {
-//         return m_CurrentSpeed;
-//     }
+        if (e != null)
+            m_AttackConditions = e.GetAttackConditions();
+    }
 
-//     public void UpdateRotation(Vector3 lookingPosition)
-//     {
-//         if (Mathf.Abs(m_CurrentSpeed) > 0.001)
-//             transform.rotation = Quaternion.LookRotation(lookingPosition);
-//     }
+    public float GetCurrentSpeed()
+    {
+        return m_CurrentSpeed;
+    }
 
-//     // Update is called once per frame
-//     void Update()
-//     {
-//         RespawnFromVoidBorders();
-//     }
+    public void UpdateRotation(Vector3 lookingPosition)
+    {
+        if (Mathf.Abs(m_CurrentSpeed) > 0.001)
+            transform.rotation = Quaternion.LookRotation(lookingPosition);
+    }
 
-//     // Checks if user has fallen the table, if so make them go back to the start position
-//     private void RespawnFromVoidBorders()
-//     {
-//         if (transform.position.y < 0)
-//             transform.position = startPosition;
-//     }
+    // Update is called once per frame
+    void Update()
+    {
+        RespawnFromVoidBorders();
+    }
 
-//     void FixedUpdate()
-//     {
-//         EnactMovement();
-//         DoAttack();
-//     }
+    // Checks if user has fallen the table, if so make them go back to the start position
+    private void RespawnFromVoidBorders()
+    {
+        if (transform.position.y < 0)
+            transform.position = startPosition;
+    }
 
-//     private void EnactMovement()
-//     {
-//         float inputX = Input.GetAxis(m_HorizontalMovement);
-//         float inputZ = Input.GetAxis(m_VerticalMovement);
+    void FixedUpdate()
+    {
+        EnactMovement();
+        DoAttack();
+    }
 
-//         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
+    private void EnactMovement()
+    {
+        float inputX = Input.GetAxis(m_HorizontalMovement);
+        float inputZ = Input.GetAxis(m_VerticalMovement);
 
-//         if (movementVector.magnitude > 1)
-//             movementVector.Normalize();
+        Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 
-//         movementVector *= m_PlayerSpeed;
+        if (movementVector.magnitude > 1)
+            movementVector.Normalize();
 
-//         float newSpeed = movementVector.magnitude;
+        movementVector *= m_PlayerSpeed;
 
-//         movementVector *= Time.deltaTime;
+        float newSpeed = movementVector.magnitude;
 
-//         transform.position += movementVector;
+        movementVector *= Time.deltaTime;
 
-//         if (Mathf.Abs(m_CurrentSpeed - newSpeed) >= 0.001)
-//             m_CurrentSpeed = newSpeed;
+        transform.position += movementVector;
 
-//         UpdateRotation(movementVector);
-//     }
+        if (Mathf.Abs(m_CurrentSpeed - newSpeed) >= 0.001)
+            m_CurrentSpeed = newSpeed;
 
-//     private void DoAttack()
-//     {
-//         if (m_AttackConditions == null)
-//             return;
+        UpdateRotation(movementVector);
+    }
 
-//         float attackInput = Input.GetAxis(m_AttackInput);
-//         int attackNum = 1;
-//         Entity e = GetComponent<Entity>();
+    private void DoAttack()
+    {
+        if (m_AttackConditions == null)
+            return;
 
-//         if (e != null && attackInput >= 1 && m_AttackConditions.Length > 0 && m_AttackConditions[attackNum - 1].IsNotOnCooldown())
-//             StartCoroutine(e.StartAttack(1));
-//     }
-// }
+        float attackInput = Input.GetAxis(m_AttackInput);
+        int attackNum = 1;
+        Entity e = GetComponent<Entity>();
+
+        if (e != null && attackInput >= 1 && m_AttackConditions.Length > 0 && m_AttackConditions[attackNum - 1].IsNotOnCooldown())
+            StartCoroutine(e.StartAttack(1));
+    }
+}
+*/

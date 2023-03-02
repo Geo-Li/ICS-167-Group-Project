@@ -9,18 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/SCObjects/Damage Values/Moth Pollen Damage.asset
   m_Script: {fileID: 11500000, guid: d0b876c8dbea46744960b664f2457431, type: 3}
   m_Name: Moth Pollen Damage
   m_EditorClassIdentifier: 
   m_Damage: 4
   m_KForce: 6
   m_InvulSeconds: 1
-========
-  m_Script: {fileID: 11500000, guid: 40a0c3b2ddcd047a7869f91614d34811, type: 3}
-  m_Name: Chocolate
-  m_EditorClassIdentifier: 
-  stackable: 1
-  image: {fileID: 21300000, guid: faaee1899e4f203408bccaa448f4c708, type: 3}
-  name: Chocolate
->>>>>>>> origin/Geo-Progress:Assets/Scriptable Objects/Inventory Item Scriptable Objects/Chocolate.asset

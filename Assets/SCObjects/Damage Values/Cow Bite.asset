@@ -9,18 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<<< HEAD:Assets/SCObjects/Damage Values/Cow Bite.asset
   m_Script: {fileID: 11500000, guid: d0b876c8dbea46744960b664f2457431, type: 3}
   m_Name: Cow Bite
   m_EditorClassIdentifier: 
   m_Damage: 5
   m_KForce: 8
   m_InvulSeconds: 1.5
-========
-  m_Script: {fileID: 11500000, guid: 40a0c3b2ddcd047a7869f91614d34811, type: 3}
-  m_Name: Wheat
-  m_EditorClassIdentifier: 
-  stackable: 1
-  image: {fileID: 21300000, guid: 15461b816961d2142b980d0378ca7907, type: 3}
-  name: Wheat
->>>>>>>> origin/Geo-Progress:Assets/Scriptable Objects/Inventory Item Scriptable Objects/Wheat.asset
