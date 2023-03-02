@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c780db05f98b73b43986c0157e72f93d, type: 3}
+  m_Name: Test Table
+  m_EditorClassIdentifier: 
+  m_Items:
+  - m_ItemPrefab: {fileID: 5651615007885294031, guid: dbfd9258417d7eb489d9002bd34b46cf, type: 3}
+    m_MinCount: 2
+    m_MaxCount: 3
+    m_Probability: 0.75
+  - m_ItemPrefab: {fileID: 4069173196619248889, guid: eeaf8a7aa2af92e4084a90f73bd11cd6, type: 3}
+    m_MinCount: 1
+    m_MaxCount: 3
+    m_Probability: 0.5
+  - m_ItemPrefab: {fileID: 3766437300662275531, guid: 748a88ed96d89c84c842cc14d00b8ad1, type: 3}
+    m_MinCount: 1
+    m_MaxCount: 2
+    m_Probability: 0.25
+  m_LootDropDisplacement: {x: 0, y: 0.25, z: 0}
+  m_LootForce: 100

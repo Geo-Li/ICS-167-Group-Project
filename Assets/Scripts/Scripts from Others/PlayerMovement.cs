@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,16 +8,24 @@ using UnityEngine;
 
 /*
  * The player controller movement
- */
+ */ 
 public class PlayerMovement : MonoBehaviour, EntityMovement
 {
     // Player top speed
     [SerializeField]
     private float m_PlayerSpeed = 10f;
 
-    // Names of all the player inputs
-    [SerializeField]
-    private string m_HorizontalMovement, m_VerticalMovement, m_AttackInput;
+    // Determines if the player is guided by WASD or Arrow Keys
+    [SerializeField] private string whichKeyboardController;
+
+    private const string HORIZONTAL_WASD = "Horizontal_WASD", VERTICAL_WASD = "Vertical_WASD", 
+                        HORIZONTAL_ARROWS = "Horizontal_Arrows", VERTICAL_ARROWS = "Vertical_Arrows",
+                        ATTACK_WASD = "Attack_WASD", ATTACK_ARROWS = "Attack_Arrows";
+
+    private const string WASD_NAME = "WASD", ARROWS_NAME = "Arrows";
+
+    // Names of the all player inputs
+    private string m_HorizontalInput, m_VerticalInput, m_AttackInput;
 
     private float m_CurrentSpeed;
 
@@ -33,6 +42,8 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
         if (e != null)
             m_AttackConditions = e.GetAttackConditions();
+
+        UpdateInputs();
     }
 
     public float GetCurrentSpeed()
@@ -65,10 +76,27 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
         DoAttack();
     }
 
+    // Updates player inputs
+    public void UpdateInputs()
+    {
+        if (whichKeyboardController == ARROWS_NAME)
+        {
+            m_HorizontalInput = HORIZONTAL_ARROWS;
+            m_VerticalInput = VERTICAL_ARROWS;
+            m_AttackInput = ATTACK_ARROWS;
+        }
+        else if (whichKeyboardController == WASD_NAME)
+        {
+            m_HorizontalInput = HORIZONTAL_WASD;
+            m_VerticalInput = VERTICAL_WASD;
+            m_AttackInput = ATTACK_WASD;
+        }
+    }
+
     private void EnactMovement()
     {
-        float inputX = Input.GetAxis(m_HorizontalMovement);
-        float inputZ = Input.GetAxis(m_VerticalMovement);
+        float inputX = Input.GetAxis(m_HorizontalInput);
+        float inputZ = Input.GetAxis(m_VerticalInput);
 
         Vector3 movementVector = new Vector3(inputX, 0f, inputZ);
 

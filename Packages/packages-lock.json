@@ -2,8 +2,6 @@
   "dependencies": {
     "com.unity.2d.animation": {
       "version": "5.0.10",
-<<<<<<< HEAD
-=======
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -44,53 +42,16 @@
     },
     "com.unity.cinemachine": {
       "version": "2.6.17",
->>>>>>> origin/Geo-Progress
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "4.0.4",
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.common": {
-      "version": "4.0.4",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.psdimporter": {
-      "version": "4.1.3",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "4.0.4",
-        "com.unity.2d.animation": "5.0.10",
-        "com.unity.2d.sprite": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.sprite": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {}
     },
     "com.unity.collab-proxy": {
-      "version": "1.13.5",
+      "version": "1.9.0",
       "depth": 0,
       "source": "registry",
-      "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "2.0.0",
-        "com.unity.services.core": "1.0.1"
-      },
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
@@ -119,7 +80,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
-      "version": "1.2.4",
+      "version": "1.2.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -132,10 +93,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "2.0.0",
-=======
     "com.unity.probuilder": {
       "version": "4.5.2",
       "depth": 0,
@@ -147,24 +104,11 @@
     },
     "com.unity.settings-manager": {
       "version": "1.0.3",
->>>>>>> origin/Geo-Progress
       "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.services.core": {
-      "version": "1.0.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> origin/Geo-Progress
     "com.unity.test-framework": {
       "version": "1.1.29",
       "depth": 0,

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 8743088722428995517}
   - component: {fileID: 8093605557188547311}
   - component: {fileID: 8093605557188547308}
-  - component: {fileID: 8213088056774153458}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -111,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f295d0c343b349d1bef27e3f6d6c65a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerSpeed: 10
   whichKeyboardController: 
-  playerSpeed: 500
 --- !u!54 &8093605557188547311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144,21 +143,3 @@ MonoBehaviour:
   playerHealth: 0
   healthBar: {fileID: 0}
   maxHealth: 100
---- !u!143 &8213088056774153458
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8093605557188547301}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
