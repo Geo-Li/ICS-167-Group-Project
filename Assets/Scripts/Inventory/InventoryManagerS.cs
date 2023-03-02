@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Geo Li, Leyna Ho
+
 public class InventoryManagerS : MonoBehaviour
 {
     [SerializeField] private InventorySlotS[] inventorySlots;

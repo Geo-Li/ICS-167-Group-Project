@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Geo Li
+
 public class PlayerHealthS : MonoBehaviour
 {
     [SerializeField] private int playerHealth;

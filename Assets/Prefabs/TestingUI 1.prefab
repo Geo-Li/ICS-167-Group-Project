@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2183600796508861595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8482285843323217055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828826187778d4ab9935d29e826d2b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  maxTime: 300
+  player: {fileID: 0}
+  UIText: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!1001 &7564055288312988645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +25,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2112133514180592532, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2112133515537901434, guid: e177756978f0e464fadea7a015581269, type: 3}
       propertyPath: m_Name
       value: TestingUI 1
@@ -95,5 +117,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2112133515537901436, guid: e177756978f0e464fadea7a015581269, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e177756978f0e464fadea7a015581269, type: 3}
+--- !u!1 &8482285843323217055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2112133515537901434, guid: e177756978f0e464fadea7a015581269, type: 3}
+  m_PrefabInstance: {fileID: 7564055288312988645}
+  m_PrefabAsset: {fileID: 0}
