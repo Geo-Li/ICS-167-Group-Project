@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,11 +385,11 @@ PrefabInstance:
       objectReference: {fileID: 7550822194324777649, guid: 0afe095cac0a88048affd56def4394d2, type: 3}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MaxTimeRestart
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MinTimeRestart
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MaximumNumberofEntities
@@ -1679,9 +1679,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1006178032}
     - target: {fileID: 2183600796508861595, guid: 67a1dd2fd60287c49a46449c053ab131, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 2135404102}
+    - target: {fileID: 2183600796508861595, guid: 67a1dd2fd60287c49a46449c053ab131, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1258459255}
+      objectReference: {fileID: 0}
     - target: {fileID: 2183600796508861595, guid: 67a1dd2fd60287c49a46449c053ab131, type: 3}
       propertyPath: winScreen
       value: 
@@ -2373,31 +2377,6 @@ PrefabInstance:
     - {fileID: 4990101389113689536, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
     - {fileID: 7744774378221890687, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
-<<<<<<< Updated upstream
---- !u!114 &1258459254 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4388787454299547632, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
-  m_PrefabInstance: {fileID: 1258459253}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f520e4feb56f4442eb8f8c73611c5eab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1258459255 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5225343890752568800, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
-  m_PrefabInstance: {fileID: 1258459253}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b3a33aa1d76bf48a73ab0d64dc5890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
->>>>>>> Stashed changes
 --- !u!1 &1268818227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3517,11 +3496,11 @@ PrefabInstance:
       objectReference: {fileID: 896049813961305393, guid: c2a4dad8328146c44a316025c94f6444, type: 3}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MaxTimeRestart
-      value: 20
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MinTimeRestart
-      value: 15
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: 0b9775f40d946f4499407a9b89d641c7, type: 3}
       propertyPath: m_MaximumNumberofEntities

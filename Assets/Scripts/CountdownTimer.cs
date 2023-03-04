@@ -9,7 +9,8 @@ public class CountdownTimer : MonoBehaviour
 {
     [SerializeField] private float currentTime = 0f;
     [SerializeField] private float maxTime = 300f;
-    [SerializeField] private Entity player;
+    [SerializeField] private PlayerHealthS health;
+    //[SerializeField] private Entity player;
 
     [SerializeField] private TMP_Text UIText;
     [SerializeField] private GameObject winScreen;
@@ -29,13 +30,14 @@ public class CountdownTimer : MonoBehaviour
         {
             currentTime += 1 * Time.deltaTime;
             UIText.text = currentTime.ToString("0") + " / " + maxTime.ToString("0");
-        } else
+        } 
+        else
         {
             Time.timeScale = 0;
             winScreen.SetActive(true);
         }
 
-        if (player.IsDead)
+        if (health.GetPlayerHealth() <= 0)
         {
             Time.timeScale = 0;
             loseScreen.SetActive(true);

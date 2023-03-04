@@ -26,6 +26,11 @@ public class EntitySpawner : MonoBehaviour
 
     private List<GameObject> entities = new List<GameObject>();
 
+    private void Start()
+    {
+        ResetTimer();
+    }
+
     // Spawns the entity prefab
     public GameObject SpawnEntity()
     {
@@ -66,6 +71,11 @@ public class EntitySpawner : MonoBehaviour
 
         SpawnEntity();
 
+        ResetTimer();
+    }
+
+    private void ResetTimer()
+    {
         m_SpawnerTimer = Random.Range(m_MinTimeRestart, m_MaxTimeRestart);
     }
 
