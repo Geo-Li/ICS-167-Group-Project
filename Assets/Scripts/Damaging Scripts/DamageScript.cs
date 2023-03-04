@@ -78,9 +78,9 @@ public class DamageScript : ScriptableObject
         if (otherEntity == null)
             return;
 
-        PlayerMovement p = other.GetComponent<PlayerMovement>();
+        PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
 
-        if (p != null)
+        if (playerMovement != null)
         {
             int damage = (int)m_Damage;
 

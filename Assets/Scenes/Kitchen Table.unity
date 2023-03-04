@@ -806,7 +806,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-51304
+  m_Name: pb_Mesh-69664
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1907,7 +1907,7 @@ PrefabInstance:
     - target: {fileID: 1366493676732714044, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 2135404099}
+      objectReference: {fileID: 0}
     - target: {fileID: 2820117076568851850, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2035,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 4388787454299547632, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 2135404099}
+      objectReference: {fileID: 0}
     - target: {fileID: 4388787454299547641, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2216,7 +2216,7 @@ PrefabInstance:
     - target: {fileID: 1366493676732714044, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 2135404099}
+      objectReference: {fileID: 0}
     - target: {fileID: 2820117076568851850, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2344,7 +2344,7 @@ PrefabInstance:
     - target: {fileID: 4388787454299547632, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 2135404099}
+      objectReference: {fileID: 0}
     - target: {fileID: 4388787454299547641, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2391,11 +2391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6077836095255135664, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_Size.x
-      value: 13
+      value: 13.8
       objectReference: {fileID: 0}
     - target: {fileID: 6077836095255135664, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_Size.y
-      value: 13
+      value: 13.9
       objectReference: {fileID: 0}
     - target: {fileID: 6077836095255135664, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: m_Size.z
@@ -2905,9 +2905,9 @@ MonoBehaviour:
   slider: {fileID: 2135404101}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.93725497, g: 0.058823533, b: 0.121568635, a: 1}
-    key1: {r: 1, g: 0.9783485, b: 0.0141509175, a: 1}
-    key2: {r: 0.06474723, g: 0.9150943, b: 0.18173285, a: 0}
+    key0: {r: 1, g: 0, b: 0.007795334, a: 1}
+    key1: {r: 1, g: 0.87076914, b: 0, a: 1}
+    key2: {r: 0, g: 1, b: 0.013520956, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -2922,8 +2922,8 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 19468
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -2931,7 +2931,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_NumColorKeys: 3
-    m_NumAlphaKeys: 2
+    m_NumAlphaKeys: 3
   fill: {fileID: 122677971}
 --- !u!224 &2135404100
 RectTransform:

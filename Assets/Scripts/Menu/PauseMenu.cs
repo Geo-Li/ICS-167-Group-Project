@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Ali Hassan
+
 public class PauseMenu : MonoBehaviour
 {
     //Gets the object to turn off pause menu when we want it to be hidden

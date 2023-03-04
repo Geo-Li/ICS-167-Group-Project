@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+// Ali Hassan
+
 public class SettingsMenu : MonoBehaviour
 {
 

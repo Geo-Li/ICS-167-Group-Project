@@ -12,6 +12,7 @@ public class CameraSize : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // split the camera if there are two players, and resize the camera accordingly
         if (playerId == 1) {
             if (MainMenu.isMultiplayer) {
                 cam.rect = new Rect(0f, 0f, 0.5f, 1f);
