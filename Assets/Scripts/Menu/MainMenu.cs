@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Ali Hassan
+
 public class MainMenu : MonoBehaviour
 {
+
+    public static bool isMultiplayer;
     //Loads Next Scene in Game (main level)
     public void PlayGame()
     {
+        isMultiplayer = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void MultiplayerScene()
     {
-        SceneManager.LoadScene(2);
+        isMultiplayer = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //Closes Game

@@ -9,21 +9,16 @@ public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject player1Prefab;
     [SerializeField] private GameObject player2Prefab;
-    [SerializeField] private bool isMultiplayer = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (isMultiplayer) {
+        if (MainMenu.isMultiplayer) {
             player1Prefab.SetActive(true);
             player2Prefab.SetActive(true);
         } else {
             player1Prefab.SetActive(true);
             player2Prefab.SetActive(false);
         }
-    }
-
-    public bool IsMultiPlayer() {
-        return isMultiplayer;
     }
 }

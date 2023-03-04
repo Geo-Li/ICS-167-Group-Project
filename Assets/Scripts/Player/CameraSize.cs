@@ -14,13 +14,13 @@ public class CameraSize : MonoBehaviour
     void Start()
     {
         if (playerNumber == 1) {
-            if (playerSpawner.IsMultiPlayer()) {
+            if (MainMenu.isMultiplayer) {
                 cam.rect = new Rect(0f, 0f, 0.5f, 1f);
             } else {
                 cam.rect = new Rect(0f, 0f, 1f, 1f);
             }
         } else if (playerNumber == 2) {
-            if (playerSpawner.IsMultiPlayer()) {
+            if (MainMenu.isMultiplayer) {
                 cam.rect = new Rect(0.5f, 0f, 0.5f, 1f);
             } else {
                 cam.rect = new Rect(0f, 0f, 1f, 1f);
