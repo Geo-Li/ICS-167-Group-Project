@@ -16097,7 +16097,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 278
     mosaicPosition: {x: 0, y: 0}
   - name: Left Eyelid Closed
@@ -16118,7 +16118,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 280
     mosaicPosition: {x: 0, y: 0}
   - name: Left Eyelid Open
@@ -16153,7 +16153,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 282
     mosaicPosition: {x: 0, y: 0}
   - name: Left Eyelid Happy
