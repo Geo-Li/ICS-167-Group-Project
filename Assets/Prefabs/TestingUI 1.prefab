@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &2183600796508861595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8482285843323217055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 828826187778d4ab9935d29e826d2b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTime: 0
-  maxTime: 300
-  player: {fileID: 0}
-  UIText: {fileID: 0}
-  winScreen: {fileID: 0}
-  loseScreen: {fileID: 0}
 --- !u!1001 &7564055288312988645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,9 +7,81 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2483551944159920953, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514177606198, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2112133514180592532, guid: e177756978f0e464fadea7a015581269, type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514230646918, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514469622846, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_text
+      value: You Remain Tasteless...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514469622846, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514469622847, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514469622847, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514502434150, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514578147792, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514624942359, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514725302424, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_margin.z
+      value: 1.0975035
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514725302425, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514725302425, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514809438891, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514832102740, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_text
+      value: You're Scrumptious!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514832102740, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514832102741, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 357.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112133514832102741, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2112133515537901434, guid: e177756978f0e464fadea7a015581269, type: 3}
       propertyPath: m_Name
@@ -117,6 +171,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2112133515809740686, guid: e177756978f0e464fadea7a015581269, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2112133515537901436, guid: e177756978f0e464fadea7a015581269, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e177756978f0e464fadea7a015581269, type: 3}
@@ -125,3 +183,42 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2112133515537901434, guid: e177756978f0e464fadea7a015581269, type: 3}
   m_PrefabInstance: {fileID: 7564055288312988645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6844892565133581974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3892550098024947059, guid: e177756978f0e464fadea7a015581269, type: 3}
+  m_PrefabInstance: {fileID: 7564055288312988645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8482285844500281132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2112133514828510409, guid: e177756978f0e464fadea7a015581269, type: 3}
+  m_PrefabInstance: {fileID: 7564055288312988645}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8482285845219442803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2112133514180592534, guid: e177756978f0e464fadea7a015581269, type: 3}
+  m_PrefabInstance: {fileID: 7564055288312988645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2183600796508861595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8482285843323217055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828826187778d4ab9935d29e826d2b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  maxTime: 300
+  health: {fileID: 0}
+  UIText: {fileID: 8482285845219442803}
+  winScreen: {fileID: 6844892565133581974}
+  loseScreen: {fileID: 8482285844500281132}

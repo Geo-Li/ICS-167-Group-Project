@@ -16,7 +16,7 @@ public class SpriteBillboardScript : MonoBehaviour
 
     // Camera used for image display
     [SerializeField]
-    protected Camera m_Camera;
+    protected Camera m_Camera = null;
 
     // Public version of m_Camera
     public Camera DisplayCamera
