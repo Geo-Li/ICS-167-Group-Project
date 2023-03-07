@@ -22,14 +22,14 @@ public class FlippingSpriteScript : SpriteBillboardScript
     // Makes sure that the sprite is generally facing towards the camera
     protected override void AdjustRotation()
     {
-        float flippedY = m_Camera.transform.rotation.eulerAngles.y;
-        float flippedX = m_Camera.transform.rotation.eulerAngles.x;
+        float flippedY = Camera.main.transform.rotation.eulerAngles.y;
+        float flippedX = Camera.main.transform.rotation.eulerAngles.x;
 
         if (m_RotationOwner != null)
         {
             Vector3 m_MyCenterVector = m_RotationOwner.transform.position;
             Vector3 m_MyFirstVector = m_RotationOwner.transform.forward + m_MyCenterVector;
-            Vector3 m_MySecondVector = -m_Camera.transform.forward + m_MyCenterVector;
+            Vector3 m_MySecondVector = -Camera.main.transform.forward + m_MyCenterVector;
 
             renderLines(m_MyFirstVector, m_MySecondVector, m_MyCenterVector);
 
