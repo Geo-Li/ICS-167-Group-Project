@@ -23,31 +23,41 @@ public class Ant : Enemy
         DisplayGameObjectNullErrorMessage(m_AngryFace);
         DisplayGameObjectNullErrorMessage(m_WorriedFace);
         DisplayGameObjectNullErrorMessage(m_Wheat);
+        DisplayGameObjectNullErrorMessage(m_AttackHitbox);
 
         base.Start();
     }
 
     protected override void EntityController()
     {
-        if (m_MovementManager.Target == null)
+        GameObject target = m_MovementManager.Target;
+        NavMeshAgent agent = m_MovementManager.Agent;
+
+        if (target == null)
         {
-            SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
-            SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, true, m_PlayerTag, m_DetectionDistance));
+            m_MovementManager.Wander();
+
+            m_MovementManager.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
+
+            agent.speed = m_WanderingSpeed;
+
+            m_AttackHitbox.SetActive(false);
         }
         else
         {
             if (IsHoldingWheat())
-                SetEnemyStrategy(new EnemyEvade(m_MovementManager, m_ActiveSpeed));
+                m_MovementManager.Evade();
             else
             {
-                SetEnemyStrategy(new EnemyPursue(m_MovementManager, m_ActiveSpeed));
-                if (m_AttackHitbox != null)
-                    m_AttackHitbox.SetActive(true);
+                m_MovementManager.Pursue();
+                m_AttackHitbox.SetActive(true);
             }
-            SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, false, m_PlayerTag, m_DetectionDistance));
-        }
 
-        base.EntityController();
+            if (m_MovementManager.DistanceFromObject(target) >= m_DetectionDistance)
+                m_MovementManager.Target = null;
+
+            agent.speed = m_ActiveSpeed;
+        }
     }
 
     // Checks if the ant has a wheat loot table

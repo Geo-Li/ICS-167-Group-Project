@@ -12,17 +12,25 @@ public class Cow : Enemy
 {
     protected override void EntityController()
     {
-        if(m_MovementManager.Target == null)
+        GameObject target = m_MovementManager.Target;
+        NavMeshAgent agent = m_MovementManager.Agent;
+
+        if (target == null)
         {
-            SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
-            SetEnemyDetector(new EnemyTargetHit(m_MovementManager, true, this, true));
+            m_MovementManager.Wander();
+
+            GameObject obj = m_MovementManager.GetLatestOffensiveEntity();
+
+            if (obj != null && (target == null || target != obj))
+                m_MovementManager.Target = obj;
+
+            agent.speed = m_WanderingSpeed;
         }
         else
         {
-            SetEnemyStrategy(new EnemySeek(m_MovementManager, m_ActiveSpeed));
-            SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, false, m_PlayerTag, m_DetectionDistance));
-        }
+            m_MovementManager.SeekTarget();
 
-        base.EntityController();
+            agent.speed = m_ActiveSpeed;
+        }
     }
 }

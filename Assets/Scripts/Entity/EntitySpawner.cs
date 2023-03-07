@@ -48,13 +48,14 @@ public class EntitySpawner : MonoBehaviour
 
     private GameObject SpawnEntityOnRandomPosition()
     {
-        Vector3 pos = transform.position;
+        Vector3 pos = Vector3.zero;
         bool hasFoundPoint = false;
-        NavMeshHit hit;
         int i = 0;
 
         while (!hasFoundPoint && i < 30)
         {
+            pos = transform.position;
+
             float halfLength = m_SpawnAreaLength / 2;
             float x = Random.Range(-halfLength, halfLength);
 
@@ -63,13 +64,19 @@ public class EntitySpawner : MonoBehaviour
 
             pos += new Vector3(x, 0, y);
 
-            hasFoundPoint = NavMesh.SamplePosition(pos, out hit, 20f, NavMesh.AllAreas);
-            pos = hit.position;
+            Debug.Log(pos);
 
+            hasFoundPoint = PointOnMavMesh(pos);
             i++;
         }
 
         return SpawnEntity(pos);
+    }
+
+    private bool PointOnMavMesh(Vector3 vector)
+    {
+        NavMeshHit hit;
+        return NavMesh.SamplePosition(vector, out hit, 1.0f, NavMesh.AllAreas);
     }
 
     // Test spawning on button
