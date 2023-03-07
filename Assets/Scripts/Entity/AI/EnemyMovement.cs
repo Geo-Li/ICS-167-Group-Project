@@ -89,6 +89,8 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
 
         if (agentV.sqrMagnitude > Mathf.Epsilon)
             UpdateRotation(agentV.normalized);
+        else if (m_Target != null)
+            UpdateRotation(m_Target.transform.position - transform.position);
     }
 
     public void UpdateRotation(Vector3 lookingPosition)
