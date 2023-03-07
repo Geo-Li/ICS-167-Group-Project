@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FreezeXZAxis: 0
+  m_Camera: {fileID: 0}
   m_RotationOwner: {fileID: 324720405115089090}
 --- !u!1 &324720405115089090
 GameObject:
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthGenerator: {fileID: 11400000, guid: 9d7afbf5195da1f4e8f9d0cdd0b96655, type: 2}
   m_AttackConditions: []
+  m_Projectiles: []
   m_Dead: 0
   m_HasSetFace: 0
   m_Loot: {fileID: 0}
@@ -847,6 +849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FreezeXZAxis: 0
+  m_Camera: {fileID: 0}
 --- !u!1 &1599159326359662580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2959468987300964860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.04, z: 0}
   m_LocalScale: {x: 2.4730537, y: 0.3198327, z: 2.441946}
   m_Children: []
   m_Father: {fileID: 2439600061217524963}
@@ -1324,7 +1327,7 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 11.64
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3117138430215710713
@@ -1445,7 +1448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2439600061217524963
 Transform:
   m_ObjectHideFlags: 0

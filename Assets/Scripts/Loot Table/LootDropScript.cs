@@ -29,17 +29,20 @@ public struct LootDropScript : LootInterface
     {
         List<GameObject> result = null;
 
-        bool willDrop = WillDrop();
-
-        if (willDrop)
+        if (m_ItemPrefab != null)
         {
-            result = new List<GameObject>();
-            int count = getRandomCount();
+            bool willDrop = WillDrop();
 
-            for (int i = 0; i < count; i++)
+            if (willDrop)
             {
-                GameObject temp = GameObject.Instantiate(m_ItemPrefab);
-                result.Add(temp);
+                result = new List<GameObject>();
+                int count = getRandomCount();
+
+                for (int i = 0; i < count; i++)
+                {
+                    GameObject temp = GameObject.Instantiate(m_ItemPrefab);
+                    result.Add(temp);
+                }
             }
         }
 
