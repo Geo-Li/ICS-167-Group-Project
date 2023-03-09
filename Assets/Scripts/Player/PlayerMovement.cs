@@ -16,10 +16,26 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
     private float m_PlayerSpeed = 10f;
 
     // Determines if the player is guided by WASD or Arrow Keys
-    [SerializeField] private string whichKeyboardController;
+    [SerializeField] 
+    private string m_WhichKeyboardController;
+
+    // Checks if the player is summoned on local multiplayer
+    [SerializeField]
+    private bool m_IsOnLocalMultiplayer;
+
+    // List of attacks of the player
+    [SerializeField]
+    private GameObject[] m_AttackObjects;
+
+    // Camera used by the player
+    [SerializeField]
+    private Camera m_PlayerCamera;
+
+    private Quaternion mouseWorldRotation;
 
     private const string HORIZONTAL_WASD = "Horizontal_WASD", VERTICAL_WASD = "Vertical_WASD", 
                         HORIZONTAL_ARROWS = "Horizontal_Arrows", VERTICAL_ARROWS = "Vertical_Arrows",
+                        ATTACK_GENERAL = "Attack",
                         ATTACK_WASD = "Attack_WASD", ATTACK_ARROWS = "Attack_Arrows";
 
     private const string WASD_NAME = "WASD", ARROWS_NAME = "Arrows";
@@ -44,6 +60,9 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
             m_AttackConditions = e.GetAttackConditions();
 
         UpdateInputs();
+
+        if (m_PlayerCamera == null)
+            m_PlayerCamera = Camera.main;
     }
 
     public float GetCurrentSpeed()
@@ -79,18 +98,27 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
     // Updates player inputs
     public void UpdateInputs()
     {
-        if (whichKeyboardController == ARROWS_NAME)
+        if (m_IsOnLocalMultiplayer)
         {
-            m_HorizontalInput = HORIZONTAL_ARROWS;
-            m_VerticalInput = VERTICAL_ARROWS;
-            m_AttackInput = ATTACK_ARROWS;
+            if (m_WhichKeyboardController == ARROWS_NAME)
+            {
+                m_HorizontalInput = HORIZONTAL_ARROWS;
+                m_VerticalInput = VERTICAL_ARROWS;
+                m_AttackInput = ATTACK_ARROWS;
+            }
+            else if (m_WhichKeyboardController == WASD_NAME)
+            {
+                m_HorizontalInput = HORIZONTAL_WASD;
+                m_VerticalInput = VERTICAL_WASD;
+                m_AttackInput = ATTACK_WASD;
+            }
         }
-        else if (whichKeyboardController == WASD_NAME)
+        else
         {
             m_HorizontalInput = HORIZONTAL_WASD;
             m_VerticalInput = VERTICAL_WASD;
-            m_AttackInput = ATTACK_WASD;
-        }
+            m_AttackInput = ATTACK_GENERAL;
+        }  
     }
 
     private void EnactMovement()
@@ -124,9 +152,42 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
         float attackInput = Input.GetAxis(m_AttackInput);
         int attackNum = 1;
+        int attackNumIndex = attackNum - 1;
         Entity e = GetComponent<Entity>();
+        bool IsNotOnCooldown = m_AttackConditions[attackNumIndex].IsNotOnCooldown();
 
-        if (e != null && attackInput >= 1 && m_AttackConditions.Length > 0 && m_AttackConditions[attackNum - 1].IsNotOnCooldown())
-            StartCoroutine(e.StartAttack(1));
+        if (e != null && attackInput >= 1 && m_AttackConditions.Length > 0 && IsNotOnCooldown)
+        {
+            if (!m_IsOnLocalMultiplayer)
+            {
+                Vector3 mouseWorldPosition = Vector3.zero;
+
+                Vector3 mousePosition = Input.mousePosition;
+                var ray = m_PlayerCamera.ScreenPointToRay(mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                    mouseWorldPosition = hit.point;
+                mouseWorldPosition.y = transform.position.y;
+
+                mouseWorldRotation = Quaternion.LookRotation(mouseWorldPosition - transform.position);
+            }
+            
+            e.StartAttack(attackNum);
+        }
+
+        if (!m_IsOnLocalMultiplayer && mouseWorldRotation != null && !IsNotOnCooldown)
+        {
+            m_AttackObjects[attackNumIndex].transform.rotation = RotationWorldToLocal(mouseWorldRotation, m_AttackObjects[attackNumIndex]);
+        }
+    }
+
+    private Quaternion RotationWorldToLocal(Quaternion worldRotation, GameObject target)
+    {
+        Transform targetTransform = target.transform;
+
+        Quaternion rotOffset = targetTransform.rotation * Quaternion.Inverse(targetTransform.localRotation);
+        Quaternion rotWorld = mouseWorldRotation * rotOffset;
+        return Quaternion.Inverse(rotOffset) * rotWorld;
     }
 }

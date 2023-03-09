@@ -162,13 +162,9 @@ public class Entity : MonoBehaviour
     }
 
     // Make the entity perform an attack if available
-    public IEnumerator StartAttack(int attackNumber)
+    public void StartAttack(int attackNumber)
     {
         m_AnimationManager.ActionState.ParameterValue = attackNumber;
-
-        yield return new WaitForSeconds(0.01f);
-
-        //m_AttackConditions[attackNumber - 1].UseAttack();
     }
 
     private void UpdateProjectileList()

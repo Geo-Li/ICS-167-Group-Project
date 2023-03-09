@@ -109,7 +109,7 @@ public class Enemy : Entity
 
                 if (ac.IsNotOnCooldown() && ac.IsWithinDistance(m_MovementManager.DistanceFromObject(m_MovementManager.Target)))
                 {
-                    StartCoroutine(StartAttack(i + 1));
+                    StartAttack(i + 1);
                     hasMadeMove = true;
                 }
 
