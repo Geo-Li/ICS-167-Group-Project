@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 // William Min
 
@@ -13,6 +14,23 @@ public class Enemy : Entity
 
     // The enemyy movement manager
     protected new EnemyMovement m_MovementManager;
+
+    // Returns the target of the enemy AI
+    public GameObject Target
+    {
+        get
+        {
+            if (m_MovementManager != null)
+                return m_MovementManager.Target;
+            else
+                return null;
+        }
+        set
+        {
+            if (m_MovementManager != null)
+                m_MovementManager.Target = value;
+        }
+    }
 
     // Detection range for players to target
     [SerializeField]
@@ -104,7 +122,9 @@ public class Enemy : Entity
 
     protected override void EntityController()
     {
-        if (m_MovementManager.Agent.isActiveAndEnabled)
+        NavMeshAgent agent = m_MovementManager.Agent;
+
+        if (agent != null && agent.isActiveAndEnabled)
             ExecuteEnemyStrategy();
 
         ExecuteEnemyDetector();
@@ -113,7 +133,7 @@ public class Enemy : Entity
     // Launches a projectile towards the enemy's target
     public void DoProjectileAttack(int index)
     {
-        GameObject target = m_MovementManager.Target;
+        GameObject target = Target;
 
         if (target != null)
             base.DoProjectileAttack(index, target.transform.position);

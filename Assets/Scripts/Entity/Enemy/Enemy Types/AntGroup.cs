@@ -11,14 +11,17 @@ public class AntGroup : MonoBehaviour
 {
     private List<Ant> m_Ants = new List<Ant>();
 
+    // Prefab objects for the ant troop and ant carrier
     [SerializeField]
     private GameObject m_AntTroopPrefab, m_AntCarrierPrefab;
 
     private GameObject m_Target;
 
+    // The range of the possible count of ant troops and carriers that can spawn per group
     [SerializeField]
     private int m_AntTroopCountMin = 4, m_AntTroopCountMax = 6, m_AntCarrierCountMin = 2, m_AntCarrierCountMax = 3;
 
+    // The radius that makes the circle area that an ant can spawn in the group
     [SerializeField]
     private float m_GroupRadius = 5;
 
