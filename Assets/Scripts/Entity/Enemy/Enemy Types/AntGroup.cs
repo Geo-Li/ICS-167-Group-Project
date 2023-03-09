@@ -9,13 +9,9 @@ using UnityEngine;
  */
 public class AntGroup : MonoBehaviour
 {
-    private List<Ant> m_Ants = new List<Ant>();
-
     // Prefab objects for the ant troop and ant carrier
     [SerializeField]
     private GameObject m_AntTroopPrefab, m_AntCarrierPrefab;
-
-    private GameObject m_Target;
 
     // The range of the possible count of ant troops and carriers that can spawn per group
     [SerializeField]
@@ -48,45 +44,37 @@ public class AntGroup : MonoBehaviour
 
         Ant ant = GameObject.Instantiate(antPrefab, randomPoint, Quaternion.identity).GetComponent<Ant>();
         ant.transform.parent = this.transform;
-        m_Ants.Add(ant);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        UpdateAntList();
+        DestroyOnEmpty();
         UpdateTarget();
     }
 
-    private void UpdateAntList()
+    private void DestroyOnEmpty()
     {
-        for (int i = m_Ants.Count - 1; i >= 0; i--)
-        {
-            Ant temp = m_Ants[i];
-
-            if (temp == null)
-                m_Ants.RemoveAt(i);
-        }
-
-        if (m_Ants.Count <= 0)
+        if (GetComponentsInChildren<Ant>().Length <= 0)
             Destroy(gameObject);
     }
 
     private void UpdateTarget()
     {
+        Ant[] ants = GetComponentsInChildren<Ant>();
         int i = 0;
         GameObject target = null;
 
-        while (target == null && i < m_Ants.Count)
+        while (target == null && i < ants.Length)
         {
-            GameObject temp = m_Ants[i].Target;
+            GameObject temp = ants[i].Target;
             if (temp != null)
                 target = temp;
 
             i++;
         }
 
-        foreach (Ant ant in m_Ants)
+        foreach (Ant ant in ants)
             ant.Target = target;
     }
 }

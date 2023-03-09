@@ -73,7 +73,7 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
     // Makes sure that the entity faces toward the direction of movement
     private void UpdateEntityRotation()
     {
-        if (!m_Agent.isActiveAndEnabled)
+        if (!AgentIsActive())
             return;
 
         Vector3 agentV = m_Agent.velocity;
@@ -92,7 +92,7 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
     // Returns the current speed of m_Agent
     public float GetCurrentSpeed()
     {
-        if (m_Agent != null && m_Agent.isActiveAndEnabled)
+        if (AgentIsActive())
             return m_Agent.velocity.magnitude;
         else
             return 0;
@@ -101,7 +101,7 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
     // Allows the toggle of the activation of the agent
     public void ToggleAgentActivity(bool isActive)
     {
-        if (m_Agent.isActiveAndEnabled)
+        if (AgentIsActive())
             m_Agent.isStopped = !isActive;
     }
 
@@ -126,7 +126,7 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
     // Have the enemy agent seek a certain location
     public void Seek(Vector3 location)
     {
-        if (m_Agent.isActiveAndEnabled)
+        if (AgentIsActive())
             m_Agent.SetDestination(location);
     }
 
@@ -157,5 +157,11 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
             return -1;
         else
             return Vector3.Distance(transform.position, target.transform.position);
+    }
+
+    // Returns if the agent of the enemy movement is active or not
+    public bool AgentIsActive()
+    {
+        return m_Agent != null && m_Agent.isActiveAndEnabled;
     }
 }

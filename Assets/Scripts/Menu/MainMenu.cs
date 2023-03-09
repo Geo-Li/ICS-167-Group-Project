@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     public void MultiplayerScene()
     {
         isMultiplayer = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     //Closes Game

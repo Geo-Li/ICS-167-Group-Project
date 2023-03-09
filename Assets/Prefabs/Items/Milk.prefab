@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 878397652217950502}
   - component: {fileID: 6498861345909443189}
   - component: {fileID: 5351665466090341322}
+  - component: {fileID: 2426229807056514839}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Collectible
@@ -96,3 +97,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20.48, y: 19.924992, z: 0.2}
   m_Center: {x: 0, y: 0.2775052, z: 0}
+--- !u!114 &2426229807056514839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7309745787455904294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b53d7222b4c446e3a329d8491d27e0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
+  item: {fileID: 11400000, guid: 45024a690be60460a9d38d937d7c47f3, type: 2}

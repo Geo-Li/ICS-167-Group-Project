@@ -93,10 +93,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 218444589690126652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6ad9d149e7041044832a4b62a11c97a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b53d7222b4c446e3a329d8491d27e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dataOfItem: {fileID: 11400000, guid: 9269888c59974b347927bc168998cbde, type: 2}
+  inventoryManager: {fileID: 0}
+  item: {fileID: 11400000, guid: d34c6e5dbc76d40258e477e4020cd486, type: 2}
 --- !u!65 &-9045547254185952201
 BoxCollider:
   m_ObjectHideFlags: 0

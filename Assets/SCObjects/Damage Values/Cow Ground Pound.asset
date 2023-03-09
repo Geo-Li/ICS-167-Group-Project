@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Damage: 20
   m_KForce: 10
-  m_InvulSeconds: 4
+  m_InvulSeconds: 2
