@@ -26,6 +26,35 @@ public class Enemy : Entity
     [SerializeField]
     protected string m_PlayerTag;
 
+    private EnemyStrategy m_EnemyStrategy = null;
+    private EnemyDetector m_EnemyDetector = null;
+
+    // Set the Concrete Enemy Detector 
+    public void SetEnemyDetector(EnemyDetector detector)
+    {
+        if (m_EnemyDetector == null || m_EnemyDetector.GetType() != detector.GetType())
+            m_EnemyDetector = detector;
+    }
+
+    // Executes the Concrete Enemy Detector 
+    public void ExecuteEnemyDetector()
+    {
+        m_EnemyDetector.DoDetection();
+    }
+
+    // Set the Concrete Enemy Strategy 
+    public void SetEnemyStrategy(EnemyStrategy strategy)
+    {
+        if (m_EnemyStrategy == null || m_EnemyStrategy.GetType() != strategy.GetType())
+            m_EnemyStrategy = strategy;
+    }
+
+    // Executes the Concrete Enemy Strategy
+    public void ExecuteEnemyStrategy()
+    {
+        m_EnemyStrategy.SetCourse();
+    }
+
     // Initializes all references
     protected override void Start()
     {
@@ -75,12 +104,13 @@ public class Enemy : Entity
 
     protected override void EntityController()
     {
-        GameObject target = m_MovementManager.Target;
+        if (m_MovementManager.Agent.isActiveAndEnabled)
+            ExecuteEnemyStrategy();
 
-        if (target != null)
-            m_MovementManager.Seek(target.transform.position);
+        ExecuteEnemyDetector();
     }
 
+    // Launches a projectile towards the enemy's target
     public void DoProjectileAttack(int index)
     {
         GameObject target = m_MovementManager.Target;

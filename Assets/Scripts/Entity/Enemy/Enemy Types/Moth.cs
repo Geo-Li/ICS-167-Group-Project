@@ -24,26 +24,18 @@ public class Moth : Enemy
 
     protected override void EntityController()
     {
-        GameObject target = m_MovementManager.Target;
-        NavMeshAgent agent = m_MovementManager.Agent;
-
-        if (target == null)
+        if (m_MovementManager.Target == null)
         {
-            m_MovementManager.Wander();
-
-            m_MovementManager.FindTargetByDistance(m_PlayerTag, m_DetectionDistance);
-
-            agent.speed = m_WanderingSpeed;
+            SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
+            SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, true, m_PlayerTag, m_DetectionDistance));
         }
         else
         {
-            m_MovementManager.SeekTarget();
-
-            if (m_MovementManager.DistanceFromObject(target) >= m_DetectionDistance)
-                m_MovementManager.Target = null;
-
-            agent.speed = m_ActiveSpeed;
+            SetEnemyStrategy(new EnemySeek(m_MovementManager, m_ActiveSpeed));
+            SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, false, m_PlayerTag, m_DetectionDistance));
         }
+
+        base.EntityController();
     }
 
     protected override void ExpressionMaker()
