@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheat Drop
   m_EditorClassIdentifier: 
   m_Items:
-  - m_ItemPrefab: {fileID: 0}
+  - m_ItemPrefab: {fileID: 1482097036233139284, guid: 94c66f1081c5b41ffbdb90019f132e23, type: 3}
     m_MinCount: 1
     m_MaxCount: 3
     m_Probability: 1

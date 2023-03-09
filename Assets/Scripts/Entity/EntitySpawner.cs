@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 // William Min
 
 /*
@@ -82,7 +83,6 @@ public class EntitySpawner : MonoBehaviour
     {
         DrawSpawnArea();
     }
-
     private void FixedUpdate()
     {
         UpdateTimer();

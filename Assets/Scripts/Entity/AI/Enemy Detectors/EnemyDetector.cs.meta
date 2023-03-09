@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Menu/CountdownTimer.cs.meta
+guid: 74278159a913260479b930fb2d923365
+========
 guid: 625541d86279b444096ef9d0a010a6c0
+>>>>>>>> Will-Branch:Assets/Scripts/Entity/AI/Enemy Detectors/EnemyDetector.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
