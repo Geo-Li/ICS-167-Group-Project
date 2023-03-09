@@ -990,7 +990,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1506
+  m_Name: pb_Mesh-14506
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3546,3 +3546,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb453ade0a3f044ffa9098ea560e0aac, type: 3}
+--- !u!1 &7896042840126021143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5965554353750305889, guid: eb453ade0a3f044ffa9098ea560e0aac, type: 3}
+  m_PrefabInstance: {fileID: 7896042840126021142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &7896042840126021144
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896042840126021143}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.83, y: 0.5, z: 0.405}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.05, z: -0.39}
+  m_TimeToStationary: 0.5

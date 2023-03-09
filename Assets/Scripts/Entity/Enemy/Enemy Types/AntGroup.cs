@@ -47,6 +47,7 @@ public class AntGroup : MonoBehaviour
         randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, m_GroupRadius);
 
         Ant ant = GameObject.Instantiate(antPrefab, randomPoint, Quaternion.identity).GetComponent<Ant>();
+        ant.transform.parent = this.transform;
         m_Ants.Add(ant);
     }
 

@@ -769,8 +769,8 @@ MonoBehaviour:
   m_MaxOffensiveObjectCount: 5
   m_MaxVictimObjectCount: 5
   m_DetectionDistance: 30
-  m_WanderingSpeed: 0.2
-  m_ActiveSpeed: 0.7
+  m_WanderingSpeed: 1
+  m_ActiveSpeed: 3
   m_PlayerTag: Player
 --- !u!136 &525098660026447715
 CapsuleCollider:
@@ -1168,13 +1168,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6824724560470611236}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: -1.15, z: 2.86}
   m_LocalScale: {x: 2.5, y: 2.356499, z: 2.5}
   m_Children: []
   m_Father: {fileID: 8034065212941063920}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!33 &6824724560470611233
 MeshFilter:
   m_ObjectHideFlags: 0
