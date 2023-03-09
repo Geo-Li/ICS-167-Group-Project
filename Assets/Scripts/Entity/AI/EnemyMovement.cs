@@ -120,13 +120,13 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
         if (NavMesh.SamplePosition(position, out hit, distance, NavMesh.AllAreas))
             return hit.position;
         else
-            return Vector3.zero;
+            return position;
     }
 
     // Have the enemy agent seek a certain location
     public void Seek(Vector3 location)
     {
-        if (m_Agent.isActiveAndEnabled && GetClosestPointOnNavMesh(location, 1f) != Vector3.zero)
+        if (m_Agent.isActiveAndEnabled)
             m_Agent.SetDestination(location);
     }
 

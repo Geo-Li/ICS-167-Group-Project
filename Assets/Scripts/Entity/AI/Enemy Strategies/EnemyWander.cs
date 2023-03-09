@@ -30,11 +30,7 @@ public class EnemyWander : EnemyStrategy
         Vector3 randomPoint = m_EnemyAI.transform.position + Random.insideUnitSphere * WANDER_RANGE;
         randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, WANDER_RANGE);
 
-        if (randomPoint != Vector3.zero)
-        {
-            m_EnemyAI.Seek(randomPoint);
-            m_Timer = MAX_TIME_FOR_WANDER;
-            return;
-        }
+        m_EnemyAI.Seek(randomPoint);
+        m_Timer = MAX_TIME_FOR_WANDER;
     }
 }

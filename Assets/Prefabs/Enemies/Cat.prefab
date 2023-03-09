@@ -200,7 +200,7 @@ MonoBehaviour:
   m_MaxVictimObjectCount: 5
   m_DetectionDistance: 14
   m_WanderingSpeed: 4
-  m_ActiveSpeed: 7.5
+  m_ActiveSpeed: 8
   m_PlayerTag: Player
   m_NeutralFace: {fileID: 5974355217659592137}
   m_AngryFace: {fileID: 5489529362586279500}
@@ -217,9 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Target: {fileID: 0}
-  m_WanderRadius: 2
-  m_WanderDistance: 10
-  m_WanderJitter: 1
 --- !u!114 &-3722577186544841974
 MonoBehaviour:
   m_ObjectHideFlags: 0
