@@ -17,7 +17,10 @@ public abstract class EnemyStrategy
     public EnemyStrategy(EnemyMovement enemyAI, float speed)
     {
         m_EnemyAI = enemyAI;
-        m_EnemyAI.Agent.speed = speed;
+
+        NavMeshAgent agent = m_EnemyAI.Agent;
+        if (agent != null)
+            agent.speed = speed;
     }
 
     public abstract void SetCourse();

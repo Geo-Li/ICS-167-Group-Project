@@ -92,7 +92,7 @@ public class EntitySpawner : MonoBehaviour
 
     private void UpdateTimer()
     {
-        if (m_SpawnerTimer > 0)
+        if (m_SpawnerTimer > 0 && entities.Count < m_MaximumNumberofEntities)
             m_SpawnerTimer -= Time.deltaTime;
     }
 

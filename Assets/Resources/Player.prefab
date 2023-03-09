@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FreezeXZAxis: 0
+  m_Camera: {fileID: 0}
 --- !u!1 &5771048159660002461
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FreezeXZAxis: 0
+  m_Camera: {fileID: 0}
   m_RotationOwner: {fileID: 5801998457686786626}
 --- !u!1 &5801998456091585960
 GameObject:
@@ -586,9 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PlayerSpeed: 10
-  m_HorizontalMovement: Horizontal
-  m_VerticalMovement: Vertical
-  m_AttackInput: Attack
+  whichKeyboardController: WASD
 --- !u!114 &5801998457686786637
 MonoBehaviour:
   m_ObjectHideFlags: 0
