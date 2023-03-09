@@ -838,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_MaximumNumberofEntities
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792197, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_Name
@@ -1318,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_MaximumNumberofEntities
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792197, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_Name
@@ -1673,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_MinTimeRestart
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_SpawnAreaWidth
@@ -1685,7 +1685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792196, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_MaximumNumberofEntities
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6603352987508792197, guid: aa077c07f1542fb4eb5804a0150267cc, type: 3}
       propertyPath: m_Name
