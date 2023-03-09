@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Milk Drop
   m_EditorClassIdentifier: 
   m_Items:
-<<<<<<< HEAD
   - m_ItemPrefab: {fileID: 7309745787455904294, guid: 958ae08b6f6914b9b8da2c2f64f37c9e, type: 3}
-=======
-  - m_ItemPrefab: {fileID: 0}
->>>>>>> Will-Branch
     m_MinCount: 1
     m_MaxCount: 1
     m_Probability: 1

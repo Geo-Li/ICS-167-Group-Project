@@ -16,11 +16,7 @@ public class SpriteBillboardScript : MonoBehaviour
 
     // Camera used for image display
     [SerializeField]
-<<<<<<< HEAD
-    protected Camera m_Camera = null;
-=======
     protected Camera m_Camera;
->>>>>>> Will-Branch
 
     // Public version of m_Camera
     public Camera DisplayCamera
