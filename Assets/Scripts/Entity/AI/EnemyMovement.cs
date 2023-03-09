@@ -92,7 +92,7 @@ public class EnemyMovement : MonoBehaviour, EntityMovement
     // Returns the current speed of m_Agent
     public float GetCurrentSpeed()
     {
-        if (m_Agent.isActiveAndEnabled)
+        if (m_Agent != null && m_Agent.isActiveAndEnabled)
             return m_Agent.velocity.magnitude;
         else
             return 0;
