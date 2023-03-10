@@ -12,7 +12,7 @@ public class EnemyWander : EnemyStrategy
 {
     private float m_Timer;
 
-    private const float MAX_TIME_FOR_WANDER = 3, WANDER_RANGE = 20;
+    private const float MIN_TIME_FOR_WANDER = 2, MAX_TIME_FOR_WANDER = 4, WANDER_RANGE = 25;
 
     public EnemyWander(EnemyMovement enemyAI, float speed) : base(enemyAI, speed)
     {
@@ -31,6 +31,6 @@ public class EnemyWander : EnemyStrategy
         randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, WANDER_RANGE);
 
         m_EnemyAI.Seek(randomPoint);
-        m_Timer = MAX_TIME_FOR_WANDER;
+        m_Timer = Random.Range(MIN_TIME_FOR_WANDER, MAX_TIME_FOR_WANDER);
     }
 }
