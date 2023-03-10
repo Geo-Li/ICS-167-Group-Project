@@ -1122,7 +1122,7 @@ PrefabInstance:
     - target: {fileID: 1549635454036933880, guid: 376d665324430944a8c43afbcefab25e, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 1016298280}
+      objectReference: {fileID: 1016298284}
     - target: {fileID: 9114158020665388280, guid: 376d665324430944a8c43afbcefab25e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1217,6 +1217,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9114158020665388280, guid: 376d665324430944a8c43afbcefab25e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114158020665388281, guid: 376d665324430944a8c43afbcefab25e, type: 3}
+      propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9114158020665388284, guid: 376d665324430944a8c43afbcefab25e, type: 3}
@@ -1349,7 +1353,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-56990
+  m_Name: pb_Mesh-1306
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1507,6 +1511,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &519611641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5225343890752568800, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
+  m_PrefabInstance: {fileID: 1847320414}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b3a33aa1d76bf48a73ab0d64dc5890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &554110097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2231,6 +2246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016298283}
   - component: {fileID: 1016298282}
+  - component: {fileID: 1016298284}
   - component: {fileID: 1016298281}
   - component: {fileID: 1016298280}
   m_Layer: 5
@@ -2247,13 +2263,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016298279}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f520e4feb56f4442eb8f8c73611c5eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 50
-  healthBar: {fileID: 1016298281}
+  healthBar: {fileID: 0}
   maxHealth: 100
 --- !u!114 &1016298281
 MonoBehaviour:
@@ -2264,16 +2280,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1016298279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04bbd2b5bcd5b4cce9169b24b6000915, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d60771f5625704db762ff9f78d27ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1016298282}
+  m_Slider: {fileID: 1016298282}
+  m_FillImage: {fileID: 141793231}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0.007795334, a: 1}
-    key1: {r: 1, g: 0.87076914, b: 0, a: 1}
-    key2: {r: 0, g: 1, b: 0.013520956, a: 1}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 0.93859005, g: 1, b: 0, a: 1}
+    key2: {r: 0.148332, g: 1, b: 0, a: 0}
+    key3: {r: 0.148332, g: 1, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -2281,14 +2298,14 @@ MonoBehaviour:
     ctime0: 21627
     ctime1: 43253
     ctime2: 65535
-    ctime3: 0
+    ctime3: 65535
     ctime4: 0
     ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 19468
-    atime2: 65535
+    atime1: 65535
+    atime2: 0
     atime3: 0
     atime4: 0
     atime5: 0
@@ -2296,8 +2313,7 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 1
     m_NumColorKeys: 3
-    m_NumAlphaKeys: 3
-  fill: {fileID: 141793231}
+    m_NumAlphaKeys: 2
 --- !u!114 &1016298282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2371,6 +2387,21 @@ RectTransform:
   m_AnchoredPosition: {x: 16, y: 260}
   m_SizeDelta: {x: 1075.4517, y: 48.2863}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1016298284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016298279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cf8a880f2dcff4ba13a3bf0eeddccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthGenerator: {fileID: 11400000, guid: b0fff6ae7d130ba44974d292927f7fd5, type: 2}
+  m_SharingEntities:
+  - {fileID: 519611641}
 --- !u!1001 &1139530737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2658,8 +2689,7 @@ MonoBehaviour:
   - {fileID: 37394004}
   - {fileID: 845491726}
   - {fileID: 61474850}
-  healthBar: {fileID: 1016298281}
-  player: {fileID: 1016298280}
+  player: {fileID: 1016298284}
   itemHeal: 10
 --- !u!4 &1326593537
 Transform:

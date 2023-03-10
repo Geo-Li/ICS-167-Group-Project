@@ -46,8 +46,6 @@ public class ProjectileSummoner : ScriptableObject
     [SerializeField]
     private bool m_HasConstantForce;
 
-    private static GameObject m_ProjectileContainer;
-
     // Main projectile summon method that accounts for the summon state
     public Projectile ProjectileAttack(GameObject owner, Vector3 targetPosition)
     {
@@ -73,14 +71,6 @@ public class ProjectileSummoner : ScriptableObject
                 result = SummonProjectile(m_ProjectilePrefab, m_SummonPosition, rotation, owner, m_LifeTime, m_PushForce, m_HasConstantForce);
                 break;
         }
-
-        if (m_ProjectileContainer == null)
-        {
-            m_ProjectileContainer = new GameObject("Projectile Container");
-            m_ProjectileContainer.transform.position = new Vector3(0, 0, 0);
-        }
-
-        result.transform.parent = m_ProjectileContainer.transform;
 
         return result;
     }

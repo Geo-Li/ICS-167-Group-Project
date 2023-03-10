@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Moth Health
   m_EditorClassIdentifier: 
   m_MaxHealth: 8
+  m_CurrentHealth: 0
+  m_WillGenereateWithFullHealth: 1

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Cow Health
   m_EditorClassIdentifier: 
   m_MaxHealth: 40
+  m_CurrentHealth: 0
+  m_WillGenereateWithFullHealth: 1

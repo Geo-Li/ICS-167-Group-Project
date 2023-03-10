@@ -1,3 +1,6 @@
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -78,27 +81,7 @@ public class DamageScript : ScriptableObject
         if (otherEntity == null)
             return;
 
-        PlayerMovement playerMovement = other.GetComponent<PlayerMovement>();
-
-        if (playerMovement != null)
-        {
-            int damage = (int)m_Damage;
-
-            PlayerHealthS playerHealth = GameObject.FindObjectOfType<PlayerHealthS>();
-            HealthBarS healthBar = GameObject.FindObjectOfType<HealthBarS>();
-
-            if (healthBar != null)
-            {
-                playerHealth.DecreasePlayerHealth(damage);
-                healthBar.SetHealth(playerHealth.GetPlayerHealth() - damage);
-            }
-        }
-        else
-        {
-            Health health = otherEntity.Health;
-
-            health.CurrentHealth -= m_Damage;
-        }
+        otherEntity.Health.CurrentHealth -= m_Damage;
 
         otherEntity.AddEntity(owner.gameObject, true);
         owner.AddEntity(otherEntity.gameObject, false);
@@ -112,6 +95,7 @@ public class DamageScript : ScriptableObject
         if (rb == null)
             return;
 
+        rb.velocity = Vector3.zero;
         angle.y = 0;
 
         Vector3 kVector = m_KForce * angle.normalized * FORCE_MULTIPLIER;

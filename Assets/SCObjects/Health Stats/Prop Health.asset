@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Prop Health
   m_EditorClassIdentifier: 
   m_MaxHealth: 10
+  m_CurrentHealth: 0
+  m_WillGenereateWithFullHealth: 1

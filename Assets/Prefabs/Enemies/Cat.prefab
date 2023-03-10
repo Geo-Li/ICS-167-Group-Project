@@ -147,11 +147,11 @@ GameObject:
   - component: {fileID: 3462464327092407000}
   - component: {fileID: -3722577186544841974}
   - component: {fileID: 7035958526462397780}
+  - component: {fileID: -5299560426419001430}
   - component: {fileID: 896049813961305399}
   - component: {fileID: 896049813961305398}
   - component: {fileID: 5632007352574399401}
   - component: {fileID: 8811268225596388296}
-  - component: {fileID: -5299560426419001430}
   m_Layer: 6
   m_Name: Cat
   m_TagString: Enemy
@@ -252,8 +252,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Slider: {fileID: 2191006689203526549}
   m_FillImage: {fileID: 3221594502573118728}
-  m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 0.93859005, g: 1, b: 0, a: 1}
+    key2: {r: 0.148332, g: 1, b: 0, a: 0}
+    key3: {r: 0.148332, g: 1, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 21627
+    ctime1: 43253
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+--- !u!114 &-5299560426419001430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896049813961305393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c13463fc417415d498f80c9c0d6cbc17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 627604849182239665}
+  m_MakeHitStunInvincible: 0
 --- !u!136 &896049813961305399
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -325,20 +366,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-5299560426419001430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896049813961305393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c13463fc417415d498f80c9c0d6cbc17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 627604849182239665}
-  m_MakeHitStunInvincible: 0
 --- !u!1 &1637024275277916430
 GameObject:
   m_ObjectHideFlags: 0

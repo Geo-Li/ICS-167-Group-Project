@@ -53,16 +53,33 @@ public class Health
         }
     }
 
-    // Constructor of Health
-    public Health(float maxHealth)
+    // Constructors of Health
+    public Health(float maxHealth, float currentHealth)
     {
         m_MaxHealth = maxHealth;
-        m_CurrentHealth = m_MaxHealth;
+        CurrentHealth = currentHealth;
     }
 
-    // Reveals if there is no health left and the object is dying
+    public Health(float maxHealth) : this(maxHealth, maxHealth)
+    {
+
+    }
+
+    // Returns if there is no health left and the object is dying
     public bool IsDying()
     {
         return m_CurrentHealth <= 0f;
+    }
+
+    // Returns if the object is at full health
+    public bool IsAtFullHealth()
+    {
+        return m_CurrentHealth >= m_MaxHealth;
+    }
+
+    // Returns the ratio of the health stats as a decimal float from 0f to 1f
+    public float GetHealthRatio()
+    {
+        return m_CurrentHealth / m_MaxHealth;
     }
 }

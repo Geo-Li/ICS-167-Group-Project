@@ -16,18 +16,13 @@ public class HealthBar : MonoBehaviour
     private Slider m_Slider;
     [SerializeField]
     private Image m_FillImage;
-    [SerializeField]
-    private Color m_FullHealthColor = Color.green;
-    [SerializeField]
-    private Color m_ZeroHealthColor = Color.red;
+    [SerializeField] 
+    private Gradient gradient;
 
     // The health class of an entity
     private Health m_Health;
 
-    private void Start()
-    {
-        StartCoroutine(InitiateHealthBar());
-    }
+    private float m_CurrentHealthRatio = 0;
 
     // Updates the health bar
     private void Update()
@@ -41,24 +36,22 @@ public class HealthBar : MonoBehaviour
         if (m_Health == null)
             return;
 
-        float StartingHealth = m_Health.MaxHealth;
-        float CurrentHealth = m_Health.CurrentHealth;
-        float healthFraction = CurrentHealth / StartingHealth;
+        float newHealthRatio = m_Health.GetHealthRatio();
+        if (Mathf.Abs(m_CurrentHealthRatio - newHealthRatio) < 0.001f)
+            return;
+        else
+            m_CurrentHealthRatio = newHealthRatio;
 
-        m_Slider.value = healthFraction * m_Slider.maxValue;
-        m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, healthFraction);
+        m_Slider.value = m_CurrentHealthRatio * m_Slider.maxValue;
+        m_FillImage.color = gradient.Evaluate(m_Slider.normalizedValue);
     }
 
-    // Intiates the health bar with a health class
-    public IEnumerator InitiateHealthBar()
+    // Sets the health bar with a health object reference
+    public void SetHealthReference(Health reference)
     {
-        yield return new WaitForSeconds(0.01f);
-
-        Entity entity = GetComponent<Entity>();
-
-        if (entity == null)
-            Debug.LogErrorFormat("This health bar is not associated with an entity.");
+        if (reference == null)
+            Debug.LogErrorFormat("This health bar is not associated with a component holding a health object.");
         else
-            m_Health = entity.Health;
+            m_Health = reference;
     }
 }

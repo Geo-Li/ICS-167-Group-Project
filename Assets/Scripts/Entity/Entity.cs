@@ -40,7 +40,7 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private ProjectileSummoner[] m_Projectiles;
 
-    private List<Projectile> m_CurrentProjectiles = new List<Projectile>();
+    private GameObject m_ProjectileContainer;
 
     // The entity movement manager
     protected EntityMovement m_MovementManager;
@@ -88,7 +88,12 @@ public class Entity : MonoBehaviour
         DisplayGameObjectNullErrorMessage(m_AnimationManager);
         DisplayGameObjectNullErrorMessage(HealthGenerator);
 
-        m_Health = HealthGenerator.CreateHealthStats();
+        if (m_Health == null)
+            m_Health = HealthGenerator.CreateHealthStats();
+
+        HealthBar bar = GetComponent<HealthBar>();
+        if (bar != null)
+            bar.SetHealthReference(m_Health);
 
         m_VictimObjects = new List<GameObject>();
         m_OffensiveObjects = new List<GameObject>();
@@ -105,7 +110,6 @@ public class Entity : MonoBehaviour
     {
         AnimationUpdater();
         EntityController();
-        UpdateProjectileList();
     }
 
     private void LateUpdate()
@@ -167,17 +171,6 @@ public class Entity : MonoBehaviour
         m_AnimationManager.ActionState.ParameterValue = attackNumber;
     }
 
-    private void UpdateProjectileList()
-    {
-        for (int i = m_CurrentProjectiles.Count - 1; i >= 0; i--)
-        {
-            Projectile temp = m_CurrentProjectiles[i];
-
-            if (temp == null)
-                m_CurrentProjectiles.RemoveAt(i);
-        }
-    }
-
     // Summons a projectile on the index in the projectile list towards the targeted position
     public void DoProjectileAttack(int index, Vector3 targetPosition)
     {
@@ -187,7 +180,13 @@ public class Entity : MonoBehaviour
             return;
         }
 
-        m_CurrentProjectiles.Add(m_Projectiles[index].ProjectileAttack(this.gameObject, targetPosition));
+        if (m_ProjectileContainer == null)
+        {
+            m_ProjectileContainer = new GameObject("Projectile Container");
+            m_ProjectileContainer.transform.position = new Vector3(0, 0, 0);
+        }
+
+        m_Projectiles[index].ProjectileAttack(this.gameObject, targetPosition).transform.parent = m_ProjectileContainer.transform;
     }
 
     // Summons projectiles from the minIndex to the maxIndex in the projectile list towards the targeted position
@@ -228,9 +227,8 @@ public class Entity : MonoBehaviour
             m_Loot.GenerateLootDrops();
         }
 
-        foreach (Projectile p in m_CurrentProjectiles)
-            if (p != null)
-                Destroy(p.gameObject);
+        if (m_ProjectileContainer != null)
+            Destroy(m_ProjectileContainer);
 
         Destroy(this.gameObject);
     }
