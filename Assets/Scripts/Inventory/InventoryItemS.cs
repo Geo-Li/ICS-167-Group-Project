@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+
+// Geo Li, Leyna Ho
 public class InventoryItemS : MonoBehaviour
 {
     [HideInInspector] private InventoryItemSO item;

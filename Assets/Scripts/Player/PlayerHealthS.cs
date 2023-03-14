@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Geo Li
+
 public class PlayerHealthS : MonoBehaviour
 {
     [SerializeField] private int playerHealth;
@@ -12,9 +14,9 @@ public class PlayerHealthS : MonoBehaviour
     void Start()
     {
         // for the test purpose, make it initialize with half the max health
-        playerHealth = maxHealth/2;
+        playerHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetHealth(maxHealth/2);
+        healthBar.SetHealth(maxHealth);
     }
 
     public int GetPlayerMaxHealth() {

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SCObjects/Damage Values/Moth Pollen Damage.asset.meta
+guid: 23829aa35cfde49aeb7968e46f877b27
+========
 guid: 1ce35457d4ed80049ad1ea9c985528d7
+>>>>>>>> origin/Geo-Progress:Assets/Graphics/Platform tile pack/ArtWork/Tiles/Tileset_100.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

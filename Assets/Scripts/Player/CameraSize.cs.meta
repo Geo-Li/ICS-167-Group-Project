@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/CameraSize.cs.meta
 guid: e20f17bd7f9314b63ba42374b8acf989
+=======
+guid: 8051008d3685049b7aaf696d2149fc62
+>>>>>>> Stashed changes:Assets/Scripts/Damaging Scripts/HitInvulScript.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

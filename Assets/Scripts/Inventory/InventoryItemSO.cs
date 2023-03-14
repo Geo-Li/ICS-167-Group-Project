@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
+// Geo Li, Leyna Ho
 [CreateAssetMenu(menuName = "Scriptable Objects/Inventory Item")]
 public class InventoryItemSO : ScriptableObject
 {

@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Geo Li, Leyna Ho
+
 public class InventoryManagerS : MonoBehaviour
 {
     [SerializeField] private InventorySlotS[] inventorySlots;
-    [SerializeField] private HealthBarS healthBar;
-    [SerializeField] private PlayerHealthS player;
+    //[SerializeField] private HealthBarS healthBar;
+    //[SerializeField] private PlayerHealthS player;
+    [SerializeField] private SharedHealth player;
     [SerializeField] private int itemHeal = 10;
 
     // add the collected item to the specific slot
@@ -33,6 +36,25 @@ public class InventoryManagerS : MonoBehaviour
     // add the collected item to the specific slot
     public void UseItem(InventorySlotS slot)
     {
+        float playerCurrHealth = player.Health.CurrentHealth;
+        float playerMaxHealth = player.Health.MaxHealth;
+
+        InventoryItemS itemInSlot = slot.GetComponentInChildren<InventoryItemS>();
+        bool LacksHealth = !player.Health.IsAtFullHealth();
+
+        // add new condition to prevent player using item if they have full HP
+        if (itemInSlot.GetCount() > 1 && LacksHealth)
+        {
+            itemInSlot.DecreaseCount();
+            player.Health.CurrentHealth += itemHeal;
+            itemInSlot.RefreshCount();
+        }
+        else if (itemInSlot.GetCount() == 1 && LacksHealth)
+        {
+            player.Health.CurrentHealth += itemHeal;
+            itemInSlot.ResetAlphaWhenZero();
+        }
+        /*
         int playerCurrHealth = player.GetPlayerHealth();
         InventoryItemS itemInSlot = slot.GetComponentInChildren<InventoryItemS>();
         // add new condition to prevent player using item if they have full HP
@@ -46,6 +68,7 @@ public class InventoryManagerS : MonoBehaviour
             healthBar.SetHealth(playerCurrHealth + itemHeal);
             itemInSlot.ResetAlphaWhenZero();
         }
+        */
     }
 
     // show the item to the slot
