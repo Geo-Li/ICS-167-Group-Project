@@ -57,7 +57,8 @@ public class Enemy : Entity
     // Executes the Concrete Enemy Detector 
     public void ExecuteEnemyDetector()
     {
-        m_EnemyDetector.DoDetection();
+        if (m_EnemyDetector != null)
+            m_EnemyDetector.DoDetection();
     }
 
     // Set the Concrete Enemy Strategy 
@@ -70,7 +71,8 @@ public class Enemy : Entity
     // Executes the Concrete Enemy Strategy
     public void ExecuteEnemyStrategy()
     {
-        m_EnemyStrategy.SetCourse();
+        if (m_EnemyStrategy != null)
+            m_EnemyStrategy.SetCourse();
     }
 
     // Initializes all references

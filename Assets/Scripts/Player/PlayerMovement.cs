@@ -3,12 +3,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // Geo Li
 
 /*
  * The player controller movement
- */ 
+ */
 public class PlayerMovement : MonoBehaviour, EntityMovement
 {
     // Player top speed
@@ -49,6 +50,8 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
     private AttackConditions[] m_AttackConditions = null;
 
+    private PhotonView view;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +66,8 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
         if (m_PlayerCamera == null)
             m_PlayerCamera = Camera.main;
+
+        view = GetComponent<PhotonView>();
     }
 
     public float GetCurrentSpeed()
@@ -91,8 +96,20 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
     void FixedUpdate()
     {
+        if (!CanAct())
+            return;
+
         EnactMovement();
         DoAttack();
+    }
+
+    // Checks if the player can act
+    public bool CanAct()
+    {
+        if (view == null)
+            return true;
+        else
+            return view.IsMine;
     }
 
     // Updates player inputs

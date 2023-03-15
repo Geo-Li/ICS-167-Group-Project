@@ -50,28 +50,33 @@ public class EntitySpawner : MonoBehaviour
 
     private GameObject SpawnEntityOnRandomPosition()
     {
-        Vector3 pos = transform.position;
-        bool hasFoundPoint = false;
-        NavMeshHit hit;
-        int i = 0;
-
-        while (!hasFoundPoint && i < 30)
+        if (PhotonNetwork.IsMasterClient)
         {
-            float halfLength = m_SpawnAreaLength / 2;
-            float x = Random.Range(-halfLength, halfLength);
+            Vector3 pos = transform.position;
+            bool hasFoundPoint = false;
+            NavMeshHit hit;
+            int i = 0;
 
-            float halfWidth = m_SpawnAreaWidth / 2;
-            float y = Random.Range(-halfWidth, halfWidth);
+            while (!hasFoundPoint && i < 30)
+            {
+                float halfLength = m_SpawnAreaLength / 2;
+                float x = Random.Range(-halfLength, halfLength);
 
-            pos += new Vector3(x, 0, y);
+                float halfWidth = m_SpawnAreaWidth / 2;
+                float y = Random.Range(-halfWidth, halfWidth);
 
-            hasFoundPoint = NavMesh.SamplePosition(pos, out hit, 20f, NavMesh.AllAreas);
-            pos = hit.position;
+                pos += new Vector3(x, 0, y);
 
-            i++;
+                hasFoundPoint = NavMesh.SamplePosition(pos, out hit, 20f, NavMesh.AllAreas);
+                pos = hit.position;
+
+                i++;
+            }
+
+            return SpawnEntity(pos);
         }
-
-        return SpawnEntity(pos);
+        else
+            return null;
     }
 
     // Test spawning on button

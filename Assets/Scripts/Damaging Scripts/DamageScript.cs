@@ -4,7 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using Photon.Pun;
 
 // William Min
 
@@ -24,6 +24,8 @@ public class DamageScript : ScriptableObject
 
     // The knockback force mulitplier to make m_KForce make a more noticeable force
     private const float FORCE_MULTIPLIER = 100;
+
+    private const byte HEALTH_CHANGE_EVENT = 0;
 
     // Public version of the damage float value
     public float Damage

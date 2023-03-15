@@ -80,7 +80,7 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private int m_MaxOffensiveObjectCount = 5, m_MaxVictimObjectCount = 5;
 
-    private PhotonView view;
+    //private PhotonView view;
 
     // Initializes all references
     protected virtual void Start()
@@ -101,7 +101,7 @@ public class Entity : MonoBehaviour
         m_VictimObjects = new List<GameObject>();
         m_OffensiveObjects = new List<GameObject>();
 
-        view = GetComponent<PhotonView>();
+        //view = GetComponent<PhotonView>();
     }
 
     // Displays when the object being checked is missing
@@ -113,8 +113,8 @@ public class Entity : MonoBehaviour
 
     private void Update()
     {
-        if (!CanAct())
-            return;
+        //if (!CanAct())
+            //return;
 
         AnimationUpdater();
         EntityController();
@@ -122,8 +122,8 @@ public class Entity : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!CanAct())
-            return;
+        //if (!CanAct())
+            //return;
 
         if (!m_HasSetFace)
             ExpressionMaker();
@@ -131,16 +131,18 @@ public class Entity : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!CanAct())
-            return;
+        //if (!CanAct())
+            //return;
 
         UpdateTimers();
     }
 
+    /*
     private bool CanAct()
     {
         return view != null && view.IsMine;
     }
+    */
 
     // Updates all attack condition timers
     private void UpdateTimers()
