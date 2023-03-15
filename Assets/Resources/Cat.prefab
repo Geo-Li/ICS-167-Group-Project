@@ -458,8 +458,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 3
+    SynchronizeType: 1
+    Name: ActionState
+  - Type: 1
+    SynchronizeType: 2
+    Name: MoveSpeed
+  - Type: 9
+    SynchronizeType: 1
+    Name: IsDead
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &1637024275277916430
 GameObject:
   m_ObjectHideFlags: 0
