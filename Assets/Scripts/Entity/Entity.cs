@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
@@ -79,6 +80,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private int m_MaxOffensiveObjectCount = 5, m_MaxVictimObjectCount = 5;
 
+    private PhotonView view;
+
     // Initializes all references
     protected virtual void Start()
     {
@@ -97,6 +100,8 @@ public class Entity : MonoBehaviour
 
         m_VictimObjects = new List<GameObject>();
         m_OffensiveObjects = new List<GameObject>();
+
+        view = GetComponent<PhotonView>();
     }
 
     // Displays when the object being checked is missing
@@ -108,19 +113,33 @@ public class Entity : MonoBehaviour
 
     private void Update()
     {
+        if (!CanAct())
+            return;
+
         AnimationUpdater();
         EntityController();
     }
 
     private void LateUpdate()
     {
+        if (!CanAct())
+            return;
+
         if (!m_HasSetFace)
             ExpressionMaker();
     }
 
     private void FixedUpdate()
     {
+        if (!CanAct())
+            return;
+
         UpdateTimers();
+    }
+
+    private bool CanAct()
+    {
+        return view != null && view.IsMine;
     }
 
     // Updates all attack condition timers

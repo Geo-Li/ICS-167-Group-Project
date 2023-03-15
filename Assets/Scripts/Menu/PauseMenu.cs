@@ -11,6 +11,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pausemenu;
     public static bool IsPaused;
 
+    [SerializeField]
+    private string m_MainMenuName;
+
     // Start with the pause menu hidden
     void Start()
     {
@@ -54,7 +57,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(m_MainMenuName);
     }
 
     //Closes application

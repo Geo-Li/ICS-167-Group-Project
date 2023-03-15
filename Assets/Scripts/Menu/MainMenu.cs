@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public static bool isMultiplayer;
+
     //Loads Next Scene in Game (main level)
     public void PlayGame()
     {

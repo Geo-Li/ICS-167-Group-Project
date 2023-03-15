@@ -12,6 +12,20 @@ public class ConnectToServer : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(StartLoading());
+    }
+
+    private IEnumerator StartLoading()
+    {
+        Debug.Log(PhotonNetwork.IsConnected);
+
+        if (PhotonNetwork.IsConnected)
+            PhotonNetwork.Disconnect();
+
+        yield return new WaitForSeconds(.1f);
+
+        Debug.Log(PhotonNetwork.IsConnected);
+
         PhotonNetwork.ConnectUsingSettings();
     }
 

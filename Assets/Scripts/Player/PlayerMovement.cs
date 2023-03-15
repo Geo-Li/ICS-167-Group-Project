@@ -3,7 +3,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 // Geo Li
 
@@ -50,8 +49,6 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
     private AttackConditions[] m_AttackConditions = null;
 
-    private PhotonView view;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -66,8 +63,6 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
         if (m_PlayerCamera == null)
             m_PlayerCamera = Camera.main;
-
-        view = GetComponent<PhotonView>();
     }
 
     public float GetCurrentSpeed()
@@ -84,9 +79,6 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
     // Update is called once per frame
     void Update()
     {
-        if (!view.IsMine)
-            return;
-
         RespawnFromVoidBorders();
     }
 
@@ -99,9 +91,6 @@ public class PlayerMovement : MonoBehaviour, EntityMovement
 
     void FixedUpdate()
     {
-        if (!view.IsMine)
-            return;
-
         EnactMovement();
         DoAttack();
     }

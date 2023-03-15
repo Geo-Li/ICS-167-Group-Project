@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using Photon.Pun;
 
 // William Min
 
@@ -40,7 +40,8 @@ public class EntitySpawner : MonoBehaviour
     // Spawns the entity prefab
     public GameObject SpawnEntity(Vector3 position)
     {
-        GameObject spawnedEntity = GameObject.Instantiate(m_EntityPrefab, position, Quaternion.identity);
+        //GameObject spawnedEntity = GameObject.Instantiate(m_EntityPrefab, position, Quaternion.identity);
+        GameObject spawnedEntity = PhotonNetwork.Instantiate(m_EntityPrefab.name, position, Quaternion.identity);
 
         entities.Add(spawnedEntity);
 

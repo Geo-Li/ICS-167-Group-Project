@@ -37,8 +37,9 @@ public class SharedHealth : MonoBehaviour
         if (bar != null)
             bar.SetHealthReference(m_Health);
 
-        foreach (Entity e in m_SharingEntities)
-            UpdateHealthforEntity(e);
+        if (m_SharingEntities.Count > 0)
+            foreach (Entity e in m_SharingEntities)
+                UpdateHealthforEntity(e);
     }
 
     // Adds an entity to this list of shared entities
