@@ -1737,6 +1737,10 @@ PrefabInstance:
       propertyPath: m_WhichKeyboardController
       value: WASD
       objectReference: {fileID: 0}
+    - target: {fileID: 3638185388361627152, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3886581663181066913, guid: 531629c46329e4e6dbee5c358428d435, type: 3}
       propertyPath: playerSpeed
       value: 500
