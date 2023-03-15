@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 #if UNITY_EDITOR
-//Game will not build if it tries to run code for the unity engine which stops existing
 using UnityEditor;
 #endif
 
