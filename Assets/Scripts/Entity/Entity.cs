@@ -138,6 +138,20 @@ public class Entity : MonoBehaviour
     }
 
     /*
+    public virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(m_Health);
+        }
+        else if (stream.IsReading)
+        {
+            m_Health = (Health)stream.ReceiveNext();
+        }
+    }
+    */
+
+    /*
     private bool CanAct()
     {
         return view != null && view.IsMine;

@@ -4,8 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 
+// Will Min
+
+/*
+ * Script to connect client to the main menu lobby
+ */
 public class ConnectToServer : MonoBehaviourPunCallbacks
 {
+    // Name of the Main Menu Scene
     [SerializeField]
     private string m_LobbySceneName;
 

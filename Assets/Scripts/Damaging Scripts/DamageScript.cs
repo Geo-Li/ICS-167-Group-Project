@@ -4,7 +4,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Photon.Pun;
 
 // William Min
 
@@ -76,45 +75,39 @@ public class DamageScript : ScriptableObject
     }
 
     // Applies the gameObject of other with the damage
-    public void ApplyDamage(Collider other, Entity owner)
+    public void ApplyDamage(Entity other, Entity owner)
     {
-        Entity otherEntity = other.GetComponent<Entity>();
-
-        if (otherEntity == null)
+        if (other == null || owner == null)
             return;
 
-        otherEntity.Health.CurrentHealth -= m_Damage;
+        other.Health.CurrentHealth -= m_Damage;
 
-        otherEntity.AddEntity(owner.gameObject, true);
-        owner.AddEntity(otherEntity.gameObject, false);
+        other.AddEntity(owner.gameObject, true);
+        owner.AddEntity(other.gameObject, false);
     }
 
     // Applies the gameObject of other with the knockback force by a certain angle
-    public void ApplyKnockback(Collider other, Vector3 angle)
+    public void ApplyKnockback(Rigidbody otherRB, Vector3 angle)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-
-        if (rb == null)
+        if (otherRB == null)
             return;
 
-        rb.velocity = Vector3.zero;
+        otherRB.velocity = Vector3.zero;
         angle.y = 0;
 
         Vector3 kVector = m_KForce * angle.normalized * FORCE_MULTIPLIER;
         kVector.y = 0f;
 
-        rb.AddForce(kVector);
+        otherRB.AddForce(kVector);
     }
 
     // Applies the gameObject of other with the invulnerability time
-    public void ApplyInvulFrames(Collider other)
+    public void ApplyInvulFrames(HitStunScript otherHitStun)
     {
-        HitStunScript hitInvul = other.GetComponent<HitStunScript>();
-
-        if (hitInvul == null)
+        if (otherHitStun == null)
             return;
 
-        hitInvul.HitStunTime = m_InvulSeconds;
+        otherHitStun.HitStunTime = m_InvulSeconds;
     }
 
     // Displays the damage stats
