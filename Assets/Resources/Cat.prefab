@@ -389,6 +389,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 1907965718440100005}
   - {fileID: 1780488841658523494}
   - {fileID: -8870163155387016348}
   - {fileID: -8806801729234258921}
@@ -410,7 +411,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 10
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -460,7 +461,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: ActionState
   - Type: 1
     SynchronizeType: 2
@@ -609,13 +610,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2449094733572125711}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.323, z: 0.756}
-  m_LocalScale: {x: 1.2207059, y: 0.26086, z: 1.282726}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: -0.2, z: 0.805}
+  m_LocalScale: {x: 0.7, y: 0.53, z: 0.7}
   m_Children: []
   m_Father: {fileID: 2969552923365150992}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &2449094733572125706
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -690,8 +691,8 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.54
-  m_Height: 1.02
-  m_Direction: 2
+  m_Height: 2.16
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2691622792890310120
 GameObject:
@@ -1276,6 +1277,10 @@ PrefabInstance:
       value: -0.00083476305
       objectReference: {fileID: 0}
     - target: {fileID: 6784765462621213035, guid: 32dbb0006a080f941842e4c928329aea, type: 3}
+      propertyPath: m_Bounds.m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784765462621213035, guid: 32dbb0006a080f941842e4c928329aea, type: 3}
       propertyPath: m_Bounds.m_Extent.x
       value: 0.95973
       objectReference: {fileID: 0}
@@ -1298,6 +1303,10 @@ PrefabInstance:
     - target: {fileID: 7065249673457420115, guid: 32dbb0006a080f941842e4c928329aea, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 7065249673457420115, guid: 32dbb0006a080f941842e4c928329aea, type: 3}
+      propertyPath: m_Bounds.m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7065249673457420115, guid: 32dbb0006a080f941842e4c928329aea, type: 3}
       propertyPath: m_Bounds.m_Extent.x

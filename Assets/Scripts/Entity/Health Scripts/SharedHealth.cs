@@ -45,6 +45,9 @@ public class SharedHealth : MonoBehaviour
     // Adds an entity to this list of shared entities
     public void AddSharingEntity(Entity newEntity)
     {
+        if (m_SharingEntities.Contains(newEntity))
+            return;
+
         m_SharingEntities.Add(newEntity);
         UpdateHealthforEntity(newEntity);
     }

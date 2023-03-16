@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 
 // William Min
 
 /*
  * Represents the health of an entity
  */
-public class Health
+public class Health : IPunObservable
 {
     // Maximum health of entity
     private float m_MaxHealth = 3f;
@@ -80,5 +81,19 @@ public class Health
     public float GetHealthRatio()
     {
         return m_CurrentHealth / m_MaxHealth;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(m_CurrentHealth);
+            stream.SendNext(m_MaxHealth);
+        }
+        else if (stream.IsReading)
+        {
+            CurrentHealth = (float)stream.ReceiveNext();
+            MaxHealth = (float)stream.ReceiveNext();
+        }
     }
 }

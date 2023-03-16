@@ -8,7 +8,7 @@ using Photon.Pun;
 /*
  * Represents an entity
  */
-public class Entity : MonoBehaviour
+public class Entity : MonoBehaviour, IPunObservable
 {
     // Starting stats of the health of an entity
     [SerializeField]
@@ -80,8 +80,6 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private int m_MaxOffensiveObjectCount = 5, m_MaxVictimObjectCount = 5;
 
-    //private PhotonView view;
-
     // Initializes all references
     protected virtual void Start()
     {
@@ -100,8 +98,6 @@ public class Entity : MonoBehaviour
 
         m_VictimObjects = new List<GameObject>();
         m_OffensiveObjects = new List<GameObject>();
-
-        //view = GetComponent<PhotonView>();
     }
 
     // Displays when the object being checked is missing
@@ -113,50 +109,25 @@ public class Entity : MonoBehaviour
 
     private void Update()
     {
-        //if (!CanAct())
-            //return;
-
         AnimationUpdater();
         EntityController();
     }
 
     private void LateUpdate()
     {
-        //if (!CanAct())
-            //return;
-
         if (!m_HasSetFace)
             ExpressionMaker();
     }
 
     private void FixedUpdate()
     {
-        //if (!CanAct())
-            //return;
-
         UpdateTimers();
     }
 
-    /*
-    public virtual void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(m_Health);
-        }
-        else if (stream.IsReading)
-        {
-            m_Health = (Health)stream.ReceiveNext();
-        }
+        m_Health.OnPhotonSerializeView(stream, info);
     }
-    */
-
-    /*
-    private bool CanAct()
-    {
-        return view != null && view.IsMine;
-    }
-    */
 
     // Updates all attack condition timers
     private void UpdateTimers()

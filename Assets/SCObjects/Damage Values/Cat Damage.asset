@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cat Damage
   m_EditorClassIdentifier: 
   m_Damage: 6
-  m_KForce: 4
+  m_KForce: 6
   m_InvulSeconds: 1
