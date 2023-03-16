@@ -1105,7 +1105,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0ac3907377b2bcc4cbfd8099603f34d9, type: 2}
   m_Dead: 0
   m_HasSetFace: 0
-  m_Loot: {fileID: 0}
+  m_Loot: {fileID: 11400000, guid: 8314a4e756ce94f4a93cf70ab319068e, type: 2}
   m_MaxOffensiveObjectCount: 5
   m_MaxVictimObjectCount: 5
   m_DetectionDistance: 25

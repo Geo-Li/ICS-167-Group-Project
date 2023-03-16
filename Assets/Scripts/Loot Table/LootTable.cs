@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
@@ -43,6 +44,9 @@ public class LootTable : ScriptableObject, LootInterface
     // Generates a list of the randomly generated loot for each roll
     public List<GameObject> GenerateLootDrops()
     {
+        if (!PhotonNetwork.IsMasterClient)
+            return null;
+
         List<GameObject> result = new List<GameObject>();
 
         foreach (LootDropScript item in m_Items)

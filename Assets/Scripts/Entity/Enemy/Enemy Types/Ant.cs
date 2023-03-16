@@ -29,8 +29,6 @@ public class Ant : Enemy
 
     protected override void EntityController()
     {
-        base.EntityController();
-
         if (m_MovementManager.Target == null)
         {
             SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
@@ -48,6 +46,8 @@ public class Ant : Enemy
             }
             SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, false, m_PlayerTag, m_DetectionDistance));
         }
+
+        base.EntityController();
     }
 
     // Checks if the ant has a wheat loot table

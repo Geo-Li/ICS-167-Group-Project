@@ -152,12 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4138d971449ae38419d4b3258cfebe42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 5801998457686786626, guid: 90ef45dbcd9bcfa4c8c2440438e8514f, type: 3}
+  m_PlayerPrefab: {fileID: 0}
   minX: -3.5
   maxX: 3.5
   posY: 1.7
   minZ: -2.8
   maxZ: 2.8
+  m_MainHealth: {fileID: 0}
 --- !u!4 &102510235
 Transform:
   m_ObjectHideFlags: 0

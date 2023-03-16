@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
 /*
  * Ant Group with a Hive mindset
  */
-public class AntGroup : MonoBehaviour
+public class AntGroup : MonoBehaviourPun
 {
     // Prefab objects for the ant troop and ant carrier
     [SerializeField]
@@ -24,17 +25,20 @@ public class AntGroup : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        int troopCount = (int)Random.Range(m_AntTroopCountMin, m_AntTroopCountMax + 1);
-        int carrierCount = (int)Random.Range(m_AntCarrierCountMin, m_AntCarrierCountMax + 1);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            int troopCount = (int)Random.Range(m_AntTroopCountMin, m_AntTroopCountMax + 1);
+            int carrierCount = (int)Random.Range(m_AntCarrierCountMin, m_AntCarrierCountMax + 1);
 
-        Vector3 randomPoint = transform.position + Random.insideUnitSphere * m_GroupRadius;
-        randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, m_GroupRadius);
+            Vector3 randomPoint = transform.position + Random.insideUnitSphere * m_GroupRadius;
+            randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, m_GroupRadius);
 
-        for (int i = 0; i < troopCount; i++)
-            AddAnt(m_AntTroopPrefab);
+            for (int i = 0; i < troopCount; i++)
+                AddAnt(m_AntTroopPrefab);
 
-        for (int i = 0; i < carrierCount; i++)
-            AddAnt(m_AntCarrierPrefab);
+            for (int i = 0; i < carrierCount; i++)
+                AddAnt(m_AntCarrierPrefab);
+        }
     }
 
     private void AddAnt(GameObject antPrefab)
@@ -42,7 +46,7 @@ public class AntGroup : MonoBehaviour
         Vector3 randomPoint = transform.position + Random.insideUnitSphere * m_GroupRadius;
         randomPoint = EnemyMovement.GetClosestPointOnNavMesh(randomPoint, m_GroupRadius);
 
-        Ant ant = GameObject.Instantiate(antPrefab, randomPoint, Quaternion.identity).GetComponent<Ant>();
+        Ant ant = PhotonNetwork.Instantiate(antPrefab.name, randomPoint, Quaternion.identity).GetComponent<Ant>();
         ant.transform.parent = this.transform;
     }
 
