@@ -225,7 +225,7 @@ public class Entity : MonoBehaviour, IPunObservable
     }
 
     // Make the entity start dying
-    public void StartDyingAnimation()
+    public virtual void StartDyingAnimation()
     {
         if (m_IsDying)
             return;

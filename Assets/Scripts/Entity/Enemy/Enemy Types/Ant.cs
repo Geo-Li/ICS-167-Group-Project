@@ -29,6 +29,9 @@ public class Ant : Enemy
 
     protected override void EntityController()
     {
+        if (m_IsDying)
+            return;
+
         if (m_MovementManager.Target == null)
         {
             SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
@@ -41,7 +44,7 @@ public class Ant : Enemy
             else
             {
                 SetEnemyStrategy(new EnemyPursue(m_MovementManager, m_ActiveSpeed));
-                if (m_AttackHitbox != null)
+                if (m_AttackHitbox != null && !m_AttackHitbox.activeInHierarchy)
                     m_AttackHitbox.SetActive(true);
             }
             SetEnemyDetector(new EnemyDistanceDetector(m_MovementManager, false, m_PlayerTag, m_DetectionDistance));
@@ -83,5 +86,16 @@ public class Ant : Enemy
         m_Wheat.SetActive(activeW);
 
         base.ExpressionMaker();
+    }
+
+    public override void StartDyingAnimation()
+    {
+        if (m_IsDying)
+            return;
+
+        if (m_AttackHitbox != null && m_AttackHitbox.activeInHierarchy)
+            m_AttackHitbox.SetActive(false);
+
+        base.StartDyingAnimation();
     }
 }

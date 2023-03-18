@@ -12,6 +12,9 @@ public class Cow : Enemy
 {
     protected override void EntityController()
     {
+        if (m_IsDying)
+            return;
+
         base.EntityController();
 
         if (m_MovementManager.Target == null)

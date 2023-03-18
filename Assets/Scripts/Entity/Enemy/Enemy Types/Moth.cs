@@ -24,6 +24,9 @@ public class Moth : Enemy
 
     protected override void EntityController()
     {
+        if (m_IsDying)
+            return;
+
         if (m_MovementManager.Target == null)
         {
             SetEnemyStrategy(new EnemyWander(m_MovementManager, m_WanderingSpeed));
@@ -40,6 +43,9 @@ public class Moth : Enemy
 
     protected override void ExpressionMaker()
     {
+        if (m_IsDying)
+            return;
+
         bool IsChasing = m_MovementManager.Target != null;
 
         m_NeutralFace.SetActive(!IsChasing);

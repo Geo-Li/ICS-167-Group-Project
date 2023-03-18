@@ -24,6 +24,9 @@ public class Cat : Enemy
 
     protected override void EntityController()
     {
+        if (m_IsDying)
+            return;
+
         base.EntityController();
 
         if (m_MovementManager.Target == null)
@@ -39,6 +42,9 @@ public class Cat : Enemy
     }
     protected override void ExpressionMaker()
     {
+        if (m_IsDying)
+            return;
+
         bool IsChasing = m_MovementManager.Target != null;
 
         m_NeutralFace.SetActive(!IsChasing);
