@@ -2226,12 +2226,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6472234516848380393}
-  - {fileID: 0}
   - {fileID: -3124069000043159633}
   - {fileID: -1996028804077409747}
   sceneViewId: 0

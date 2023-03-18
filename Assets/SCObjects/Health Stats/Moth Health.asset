@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22572706de7dac54cbfa2f03710db9ab, type: 3}
   m_Name: Moth Health
   m_EditorClassIdentifier: 
-  m_MaxHealth: 8
+  m_MaxHealth: 12
   m_CurrentHealth: 0
   m_WillGenereateWithFullHealth: 1

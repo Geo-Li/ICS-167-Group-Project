@@ -15,7 +15,8 @@ public class ItemS : MonoBehaviour
     }
 
     // When collide with player, destory the item and store into the inventory
-    public void OnCollisionEnter(Collision collision) {
+    public void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.tag == "Player")
         {
             inventoryManager.AddItem(item);

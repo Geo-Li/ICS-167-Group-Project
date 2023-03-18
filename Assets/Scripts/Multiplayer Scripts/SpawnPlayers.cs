@@ -48,9 +48,12 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
         if (m_PlayerList != null && m_PlayerList.Length > 0 && m_MainHealth != null)
             foreach (GameObject p in m_PlayerList)
             {
-                Entity e = p.GetComponent<Entity>();
-                if (e != null)
-                    m_MainHealth.AddSharingEntity(e);
+                if (p != null)
+                {
+                    Entity e = p.GetComponent<Entity>();
+                    if (e != null)
+                        m_MainHealth.AddSharingEntity(e);
+                }
             }
     }
 

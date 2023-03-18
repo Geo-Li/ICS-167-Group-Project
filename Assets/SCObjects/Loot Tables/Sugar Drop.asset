@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Items:
   - m_ItemPrefab: {fileID: 4133781994668346963, guid: e5fc2a7bdfbb1440c81e26f6b893e8e7, type: 3}
     m_MinCount: 1
-    m_MaxCount: 2
-    m_Probability: 0.3
+    m_MaxCount: 1
+    m_Probability: 0.15
   m_LootDropDisplacement: {x: 0, y: 0.25, z: 0}
   m_LootForce: 100

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
@@ -29,7 +30,7 @@ public struct LootDropScript : LootInterface
     {
         List<GameObject> result = null;
 
-        if (m_ItemPrefab != null)
+        if (PhotonNetwork.IsMasterClient && m_ItemPrefab != null)
         {
             bool willDrop = WillDrop();
 
@@ -40,7 +41,7 @@ public struct LootDropScript : LootInterface
 
                 for (int i = 0; i < count; i++)
                 {
-                    GameObject temp = GameObject.Instantiate(m_ItemPrefab);
+                    GameObject temp = PhotonNetwork.Instantiate(m_ItemPrefab.name, Vector3.zero, Quaternion.identity);
                     result.Add(temp);
                 }
             }

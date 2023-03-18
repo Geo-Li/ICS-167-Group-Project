@@ -3,68 +3,115 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
 
 // Geo Li, Leyna Ho
-public class InventoryItemS : MonoBehaviour
+public class InventoryItemS : MonoBehaviourPun, IPunObservable
 {
-    [HideInInspector] private InventoryItemSO item;
-    [HideInInspector] private int count;
-    [HideInInspector] private float fullAlpha = 255f;
-    [HideInInspector] private float initAlpha;
+    private int count;
+    private const float FULL_ALPHA = 255f;
+    private float initAlpha;
+    private Image image;
 
     [Header("UI")]
-    [SerializeField] private Image image;
-    [SerializeField] private string name;
     [SerializeField] private Text countText;
 
-
-    public void Start() {
+    private void Start() 
+    {
         count = 0;
+        image = GetComponent<Image>();
         initAlpha = image.color.a;
+
+        photonView.ObservedComponents.Add(this);
+    }
+
+    private void Update()
+    {
+        float currentAlpha = image.color.a;
+
+        if (count <= 0 && currentAlpha != initAlpha)
+            ChangeImageAlpha(initAlpha);
+        else if (count > 0 && currentAlpha != FULL_ALPHA)
+            ChangeImageAlpha(FULL_ALPHA);
     }
 
     // Set the alpha of the image to be initAlpha
     // and set the conut to be zero
-    public void ResetAlphaWhenZero() {
+    public void ResetAlphaWhenZero() 
+    {
         count = 0;
-        var tempColor = image.color;
-        tempColor.a = initAlpha;
-        image.color = tempColor;
         RefreshCount();
     }
 
+    /*
     // Initialize the item when player collects it
     public void InitializeItem(InventoryItemSO newItem)
     {
-        item = newItem;
-        count = 1;
+        IncreaseCount();
         // make the item show full alpha value when stored into inventory
-        var tempColor = image.color;
-        tempColor.a = fullAlpha;
-        image.color = tempColor;
-        image.sprite = newItem.GetInventoryItemSOImage();
         RefreshCount();
+    }
+    */
+
+    // Returns the sprite of the inventory item
+    public Sprite GetItemSprite()
+    {
+        return image.sprite;
     }
 
     // update the count text when new item is collected
-    public void RefreshCount() {
+    public void RefreshCount() 
+    {
         countText.text = count.ToString();
     }
 
-    public string GetInventoryItemName() {
-        return name;
-    }
-
-    public int GetCount() {
+    // Returns the count of the inventory item
+    public int GetCount() 
+    {
         return count;
     }
-    
-    public void IncreaseCount() {
+
+    // Increments the count of the inventory item
+    public void IncreaseCount() 
+    {
         count++;
+        RefreshCount();
     }
 
-    public void DecreaseCount() {
-        count--;
+    // Decrements the count of the inventory item
+    public void DecreaseCount() 
+    {
+        if (count > 0)
+        {
+            count--;
+            RefreshCount();
+        }
+    }
+
+    private void ChangeImageAlpha(float newAlpha)
+    {
+        var tempColor = image.color;
+        tempColor.a = newAlpha;
+        image.color = tempColor;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        Debug.Log("called");
+
+        if (stream.IsWriting)
+        {
+            stream.SendNext(count);
+        }
+        else if (stream.IsReading)
+        {
+            Debug.Log(count);
+
+            count = (int)stream.ReceiveNext();
+
+            Debug.Log(count);
+            RefreshCount();
+        }
     }
 }
