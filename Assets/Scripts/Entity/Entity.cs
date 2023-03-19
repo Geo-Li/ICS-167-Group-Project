@@ -126,20 +126,8 @@ public class Entity : MonoBehaviour, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        m_Health.OnPhotonSerializeView(stream, info);
-
-        Rigidbody rb = GetComponent<Rigidbody>();
-
-        if (stream.IsWriting)
-        {
-            stream.SendNext(rb.velocity);
-            stream.SendNext(m_IsDying);
-        }
-        else if (stream.IsReading)
-        {
-            rb.velocity = (Vector3)stream.ReceiveNext();
-            m_IsDying = (bool)stream.ReceiveNext(); ;
-        }
+        if (m_Health != null)
+            m_Health.OnPhotonSerializeView(stream, info);
     }
 
     // Updates all attack condition timers

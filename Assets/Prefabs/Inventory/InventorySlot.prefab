@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6968194866269541831}
   - component: {fileID: 4555850788761979090}
   - component: {fileID: 2346513984859364263}
+  - component: {fileID: -1443653091690680609}
   m_Layer: 5
   m_Name: InventorySlot
   m_TagString: Untagged
@@ -31,7 +32,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 512538804601462089}
+  - {fileID: 2080811549148114058}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +132,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1001 &760795925861356056
+--- !u!114 &-1443653091690680609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968194866269541829}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc16cad782d0fc4aa893d9202d0a4b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScriptableObject: {fileID: 0}
+  m_ItemPrefab: {fileID: 977849080755015504, guid: 35ca342fa791841a292825cb47016d62, type: 3}
+--- !u!1001 &1257211945884885979
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -196,15 +211,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 977849080755015505, guid: 35ca342fa791841a292825cb47016d62, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 977849080755015505, guid: 35ca342fa791841a292825cb47016d62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 977849080755015505, guid: 35ca342fa791841a292825cb47016d62, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 977849080755015505, guid: 35ca342fa791841a292825cb47016d62, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -226,34 +241,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 977849080755015506, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 119171805671c1f41a7817a2b01a8ad6, type: 3}
-    - target: {fileID: 977849080755015506, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: m_Color.a
-      value: 0.5882353
-      objectReference: {fileID: 0}
-    - target: {fileID: 977849080755015506, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 977849080755015506, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 977849080755015506, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5361965643237426155, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-      propertyPath: name
-      value: Milk
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35ca342fa791841a292825cb47016d62, type: 3}
---- !u!224 &512538804601462089 stripped
+--- !u!224 &2080811549148114058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 977849080755015505, guid: 35ca342fa791841a292825cb47016d62, type: 3}
-  m_PrefabInstance: {fileID: 760795925861356056}
+  m_PrefabInstance: {fileID: 1257211945884885979}
   m_PrefabAsset: {fileID: 0}

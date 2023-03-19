@@ -29,7 +29,7 @@ public class SpawnPlayers : MonoBehaviourPunCallbacks
     private void Start()
     {
         Vector3 randomPosition = new Vector3(Random.Range(minX, maxX), posY, Random.Range(minZ, maxZ));
-        Entity playerObject = PhotonNetwork.Instantiate(m_PlayerPrefab.name, randomPosition, Quaternion.identity).GetComponent<Entity>();
+        PhotonNetwork.Instantiate(m_PlayerPrefab.name, randomPosition, Quaternion.identity);
 
         m_PlayerList = GameObject.FindGameObjectsWithTag(m_PlayerPrefab.tag);
         m_SavedPlayerCount = 0;

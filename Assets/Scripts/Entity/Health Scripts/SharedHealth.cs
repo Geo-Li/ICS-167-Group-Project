@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class SharedHealth : MonoBehaviour
+public class SharedHealth : MonoBehaviour, IPunObservable
 {
     // Starting stats of the health of an entity
     [SerializeField]
@@ -61,5 +62,11 @@ public class SharedHealth : MonoBehaviour
     public void RemoveSharingEntity(Entity leavingEntity)
     {
         m_SharingEntities.Remove(leavingEntity);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (m_Health != null)
+            m_Health.OnPhotonSerializeView(stream, info);
     }
 }

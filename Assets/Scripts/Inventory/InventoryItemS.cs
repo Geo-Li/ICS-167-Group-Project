@@ -10,19 +10,22 @@ using Photon.Pun;
 public class InventoryItemS : MonoBehaviourPun, IPunObservable
 {
     private int count;
-    private const float FULL_ALPHA = 255f;
-    private float initAlpha;
+    private const float FULL_ALPHA = 1f;
+    private const float INIT_ALPHA = .5f;
     private Image image;
 
+    private bool IsRemoteObject;
+
     [Header("UI")]
+    // Text that tracks count of items in inventory
     [SerializeField] private Text countText;
 
-    private void Start() 
+    private void Start()
     {
-        count = 0;
-        image = GetComponent<Image>();
-        initAlpha = image.color.a;
+        if (IsRemoteObject)
 
+        RefreshCount();
+        image = GetComponent<Image>();
         photonView.ObservedComponents.Add(this);
     }
 
@@ -30,34 +33,39 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
     {
         float currentAlpha = image.color.a;
 
-        if (count <= 0 && currentAlpha != initAlpha)
-            ChangeImageAlpha(initAlpha);
+        if (count <= 0 && currentAlpha != INIT_ALPHA)
+            ChangeImageAlpha(INIT_ALPHA);
         else if (count > 0 && currentAlpha != FULL_ALPHA)
             ChangeImageAlpha(FULL_ALPHA);
+
+        RefreshCount();
     }
 
     // Set the alpha of the image to be initAlpha
     // and set the conut to be zero
-    public void ResetAlphaWhenZero() 
+    public void ResetAlphaWhenZero()
     {
         count = 0;
-        RefreshCount();
     }
-
-    /*
-    // Initialize the item when player collects it
-    public void InitializeItem(InventoryItemSO newItem)
-    {
-        IncreaseCount();
-        // make the item show full alpha value when stored into inventory
-        RefreshCount();
-    }
-    */
 
     // Returns the sprite of the inventory item
     public Sprite GetItemSprite()
     {
         return image.sprite;
+    }
+
+    // Sets the sprite of the inventory item
+    public void SetItemSprite(Sprite newSprite)
+    {
+        image.sprite = newSprite;
+    }
+
+    // Initializes InventoryItem with image
+    public void Initialize(Sprite newSprite)
+    {
+        RefreshCount();
+        image = GetComponent<Image>();
+        SetItemSprite(newSprite);
     }
 
     // update the count text when new item is collected
@@ -76,17 +84,13 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
     public void IncreaseCount() 
     {
         count++;
-        RefreshCount();
     }
 
     // Decrements the count of the inventory item
     public void DecreaseCount() 
     {
         if (count > 0)
-        {
             count--;
-            RefreshCount();
-        }
     }
 
     private void ChangeImageAlpha(float newAlpha)
@@ -98,20 +102,15 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        Debug.Log("called");
-
         if (stream.IsWriting)
         {
             stream.SendNext(count);
+            //Debug.Log("I am on the local client named " + GetComponent<PhotonView>().ViewID);
         }
-        else if (stream.IsReading)
+        else
         {
-            Debug.Log(count);
-
             count = (int)stream.ReceiveNext();
-
-            Debug.Log(count);
-            RefreshCount();
+            //Debug.Log("I am on the remote client named " + GetComponent<PhotonView>().ViewID);
         }
     }
 }

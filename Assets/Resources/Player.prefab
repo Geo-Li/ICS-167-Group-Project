@@ -324,9 +324,9 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 1
+  Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 4549728280936135251}
   - {fileID: 5718597396809619334}
@@ -400,7 +400,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 3
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: ActionState
   - Type: 9
     SynchronizeType: 1
