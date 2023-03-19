@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
@@ -29,28 +30,33 @@ public struct LootDropScript : LootInterface
     {
         List<GameObject> result = null;
 
-        bool willDrop = WillDrop();
-
-        if (willDrop)
+        if (PhotonNetwork.IsMasterClient && m_ItemPrefab != null)
         {
-            result = new List<GameObject>();
-            int count = getRandomCount();
+            bool willDrop = WillDrop();
 
-            for (int i = 0; i < count; i++)
+            if (willDrop)
             {
-                GameObject temp = GameObject.Instantiate(m_ItemPrefab);
-                result.Add(temp);
+                result = new List<GameObject>();
+                int count = getRandomCount();
+
+                for (int i = 0; i < count; i++)
+                {
+                    GameObject temp = PhotonNetwork.Instantiate(m_ItemPrefab.name, Vector3.zero, Quaternion.identity);
+                    result.Add(temp);
+                }
             }
         }
 
         return result;
     }
 
+    // Gets a random count of collectibles from m_MinCount to m_MaxCount
     private int getRandomCount()
     {
         return Random.Range(m_MinCount, m_MaxCount + 1);
     }
 
+    // Rolls to see if this loot will drop at all
     private bool WillDrop()
     {
         return Random.Range(0f, 1f) <= m_Probability;

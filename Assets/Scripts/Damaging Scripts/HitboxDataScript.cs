@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
 
 // William Min
 
@@ -37,44 +37,67 @@ public class HitboxDataScript : MonoBehaviour
     // Sets the original owner to this object when instantiated
     void Start()
     {
-        if (m_CurrentOwner == null)
-            Debug.LogErrorFormat("This hitbox is not assigned to an owner.");
-
         m_OriginalOwner = m_CurrentOwner;
     }
 
     // Applies effects listed in the damage unit to the gameObject of other
     void OnTriggerEnter(Collider other)
     {
-        if (other != m_CurrentOwner 
+        if (m_CurrentOwner == null || other != m_CurrentOwner 
             && !other.GetComponent<HitboxDataScript>() 
-            && m_CurrentOwner.layer != other.gameObject.layer)
+            && m_CurrentOwner.tag != other.gameObject.tag)
         {
             bool canBeHit = true;
-            HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
+            HitStunScript hitInvul = other.GetComponent<HitStunScript>();
 
-            if (hitInvul != null && hitInvul.HasInvulFrames())
+            if (hitInvul != null && hitInvul.IsInvincible())
                 canBeHit = false;
 
             if (canBeHit)
-            {
-                float damage = m_DamageUnit.Damage;
-                float kForce = m_DamageUnit.KnockbackForce;
-                float InvulSeconds = m_DamageUnit.InvulnerabilityInSeconds;
-                
+            {   
                 Vector3 vector = other.transform.position - transform.position;
 
-                m_DamageUnit.ApplyDamage(other);
-                m_DamageUnit.ApplyKnockback(other, vector);
-                m_DamageUnit.ApplyInvulFrames(other);
+                Entity owner = null;
+                if (m_CurrentOwner != null)
+                    owner = m_CurrentOwner.GetComponent<Entity>();
+
+                m_DamageUnit.ApplyDamage(other.GetComponent<Entity>(), owner.GetComponent<Entity>());
+                m_DamageUnit.ApplyKnockback(other.GetComponent<Rigidbody>(), vector);
+                m_DamageUnit.ApplyInvulFrames(other.GetComponent<HitStunScript>());
 
                 /*
-                Debug.Log("Punched " + other.gameObject.name + " and applied " +
-                       damage + " damage, " +
-                       kForce + " knockback units, and " +
-                       InvulSeconds + " seconds of invulnerability.");
+                PhotonView view = m_CurrentOwner.GetComponent<PhotonView>();
+                if (view.IsMine)
+                    view.RPC("DamageOther", RpcTarget.All, other.GetInstanceID(), owner.GetInstanceID(), vector, m_DamageUnit.GetInstanceID());
                 */
             }
         }
+    }
+
+    /*
+    [PunRPC]
+    private void DamageOther(int otherID, int ownerID, Vector3 vector, int damageUnitID)
+    {
+        GameObject other = (GameObject)FindObjectFromInstanceID(otherID);
+        GameObject owner = (GameObject)FindObjectFromInstanceID(ownerID);
+        DamageScript damageUnit = ((GameObject)FindObjectFromInstanceID(damageUnitID)).GetComponent<DamageScript>();
+
+        damageUnit.ApplyDamage(other.GetComponent<Entity>(), owner.GetComponent<Entity>());
+        damageUnit.ApplyKnockback(other.GetComponent<Rigidbody>(), vector);
+        damageUnit.ApplyInvulFrames(other.GetComponent<HitStunScript>());
+    }
+
+    public static UnityEngine.Object FindObjectFromInstanceID(int iid)
+    {
+        return (UnityEngine.Object)typeof(UnityEngine.Object)
+                .GetMethod("FindObjectFromInstanceID", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
+                .Invoke(null, new object[] { iid });
+    }
+    */
+
+    // Returns the original owner of the hitbox
+    public GameObject GetOriginalOwner()
+    {
+        return m_OriginalOwner;
     }
 }

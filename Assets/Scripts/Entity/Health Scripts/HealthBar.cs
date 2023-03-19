@@ -1,44 +1,57 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
+
+// William Min
+
+/*
+ * The visuals of a health bar
+ */
 
 public class HealthBar : MonoBehaviour
 {          
     // Components for health bar display
-    public Slider m_Slider;                        
-    public Image m_FillImage;                      
-    public Color m_FullHealthColor = Color.green;  
-    public Color m_ZeroHealthColor = Color.red;
+    [SerializeField]
+    private Slider m_Slider;
+    [SerializeField]
+    private Image m_FillImage;
+    [SerializeField] 
+    private Gradient gradient;
 
-    // Entity that holds the health script
-    private Entity entity;
-
+    // The health class of an entity
     private Health m_Health;
 
-    // Makes sure that this component is associated with an entity
-    private void Start()
-    {
-        entity = GetComponent<Entity>();
-
-        if (entity == null)
-            Debug.LogErrorFormat("This health bar is not associated with an entity.");
-    }
+    private float m_CurrentHealthRatio = 0;
 
     // Updates the health bar
-    void Update()
+    private void Update()
     {
         SetHealthUI();
     }
 
+    // Updates the health bar
     private void SetHealthUI()
     {
         if (m_Health == null)
-            m_Health = entity.Health;
+            return;
 
-        float StartingHealth = m_Health.MaxHealth;
-        float CurrentHealth = m_Health.CurrentHealth;
-        float healthFraction = CurrentHealth / StartingHealth;
+        float newHealthRatio = m_Health.GetHealthRatio();
+        if (Mathf.Abs(m_CurrentHealthRatio - newHealthRatio) < 0.001f)
+            return;
+        else
+            m_CurrentHealthRatio = newHealthRatio;
 
-        m_Slider.value = healthFraction * m_Slider.maxValue;
-        m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, healthFraction);
+        m_Slider.value = m_CurrentHealthRatio * m_Slider.maxValue;
+        m_FillImage.color = gradient.Evaluate(m_Slider.normalizedValue);
+    }
+
+    // Sets the health bar with a health object reference
+    public void SetHealthReference(Health reference)
+    {
+        if (reference == null)
+            Debug.LogErrorFormat("This health bar is not associated with a component holding a health object.");
+        else
+            m_Health = reference;
     }
 }

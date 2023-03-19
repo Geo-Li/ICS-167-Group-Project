@@ -1,3 +1,6 @@
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +22,9 @@ public class DamageScript : ScriptableObject
     private float m_Damage, m_KForce, m_InvulSeconds;
 
     // The knockback force mulitplier to make m_KForce make a more noticeable force
-    private static float m_ForceMultiplier = 100;
+    private const float FORCE_MULTIPLIER = 100;
+
+    private const byte HEALTH_CHANGE_EVENT = 0;
 
     // Public version of the damage float value
     public float Damage
@@ -70,40 +75,47 @@ public class DamageScript : ScriptableObject
     }
 
     // Applies the gameObject of other with the damage
-    public void ApplyDamage(Collider other)
+    public void ApplyDamage(Entity other, Entity owner)
     {
-        Entity otherEntity = other.GetComponent<Entity>();
-
-        if (otherEntity == null)
+        if (other == null || owner == null)
             return;
 
-        Health health = otherEntity.Health;
+        other.Health.CurrentHealth -= m_Damage;
 
-        health.CurrentHealth -= m_Damage;
+        other.AddEntity(owner.gameObject, true);
+        owner.AddEntity(other.gameObject, false);
     }
 
     // Applies the gameObject of other with the knockback force by a certain angle
-    public void ApplyKnockback(Collider other, Vector3 angle)
+    public void ApplyKnockback(Rigidbody otherRB, Vector3 angle)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-
-        if (rb == null)
+        if (otherRB == null)
             return;
 
+        otherRB.velocity = Vector3.zero;
         angle.y = 0;
 
-        Vector3 kVector = m_KForce * angle.normalized * m_ForceMultiplier;
-        rb.AddForce(kVector);
+        Vector3 kVector = m_KForce * angle.normalized * FORCE_MULTIPLIER;
+        kVector.y = 0f;
+
+        otherRB.AddForce(kVector);
     }
 
     // Applies the gameObject of other with the invulnerability time
-    public void ApplyInvulFrames(Collider other)
+    public void ApplyInvulFrames(HitStunScript otherHitStun)
     {
-        HitInvulScript hitInvul = other.GetComponent<HitInvulScript>();
-
-        if (hitInvul == null)
+        if (otherHitStun == null)
             return;
 
-        hitInvul.HitInvulnerabilityTime = m_InvulSeconds;
+        otherHitStun.HitStunTime = m_InvulSeconds;
+    }
+
+    // Displays the damage stats
+    public void DisplayDamageStats()
+    {
+        Debug.Log("This damage set deals " +
+                       m_Damage + " damage, " +
+                       m_KForce + " knockback units, and " +
+                       m_InvulSeconds + " seconds of invulnerability.");
     }
 }

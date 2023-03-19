@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Test Table
   m_EditorClassIdentifier: 
   m_Items:
-  - m_ItemPrefab: {fileID: 5651615007885294031, guid: dbfd9258417d7eb489d9002bd34b46cf, type: 3}
+  - m_ItemPrefab: {fileID: 1482097036233139284, guid: 94c66f1081c5b41ffbdb90019f132e23, type: 3}
     m_MinCount: 2
     m_MaxCount: 3
     m_Probability: 0.75
-  - m_ItemPrefab: {fileID: 4069173196619248889, guid: eeaf8a7aa2af92e4084a90f73bd11cd6, type: 3}
+  - m_ItemPrefab: {fileID: 7309745787455904294, guid: 958ae08b6f6914b9b8da2c2f64f37c9e, type: 3}
     m_MinCount: 1
     m_MaxCount: 3
     m_Probability: 0.5

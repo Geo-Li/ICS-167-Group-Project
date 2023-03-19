@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Photon.Pun;
 
 // William Min
 
 /*
  * Represents the health of an entity
  */
-public class Health
+public class Health : IPunObservable
 {
     // Maximum health of entity
     private float m_MaxHealth = 3f;
@@ -53,15 +53,47 @@ public class Health
         }
     }
 
-    public Health(float maxHealth)
+    // Constructors of Health
+    public Health(float maxHealth, float currentHealth)
     {
         m_MaxHealth = maxHealth;
-        m_CurrentHealth = m_MaxHealth;
+        CurrentHealth = currentHealth;
     }
 
-    // Reveals if there is no health left and the object is dying
+    public Health(float maxHealth) : this(maxHealth, maxHealth)
+    {
+
+    }
+
+    // Returns if there is no health left and the object is dying
     public bool IsDying()
     {
         return m_CurrentHealth <= 0f;
+    }
+
+    // Returns if the object is at full health
+    public bool IsAtFullHealth()
+    {
+        return m_CurrentHealth >= m_MaxHealth;
+    }
+
+    // Returns the ratio of the health stats as a decimal float from 0f to 1f
+    public float GetHealthRatio()
+    {
+        return m_CurrentHealth / m_MaxHealth;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(m_CurrentHealth);
+            stream.SendNext(m_MaxHealth);
+        }
+        else if (stream.IsReading)
+        {
+            CurrentHealth = (float)stream.ReceiveNext();
+            MaxHealth = (float)stream.ReceiveNext();
+        }
     }
 }

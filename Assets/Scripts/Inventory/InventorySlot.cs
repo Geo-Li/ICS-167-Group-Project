@@ -1,45 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
+using Photon.Pun;
 
+// Will Min
+
+/*
+ * 
+ */
 public class InventorySlot : MonoBehaviour
 {
-    public Image icon;
-    public TextMeshProUGUI labelText;
-    public TextMeshProUGUI stackSizeText;
+    [SerializeField]
+    private InventoryItemSO m_ScriptableObject;
 
-    //disables the images and texts on the slot
-    public void ClearSlot()
-    {
-        icon.enabled = false;
-        labelText.enabled = false;
-        stackSizeText.enabled = false;
-    }
-    
-    //enables images and texts on the slot
-    public void EnableSlot()
-    {
-        icon.enabled = true;
-        labelText.enabled = true;
-        stackSizeText.enabled = true;
-    }
+    [SerializeField]
+    private GameObject m_ItemPrefab;
 
-    //takes in and displays inventory item data
-    public void DrawSlot(InventoryItem item)
+    private void Start()
     {
-        if (item == null)
-        {
-            ClearSlot();
+        if (!PhotonNetwork.IsMasterClient)
             return;
-        }
 
-        EnableSlot();
+        InventoryItemS obj = PhotonNetwork.Instantiate(m_ItemPrefab.name, Vector3.zero, Quaternion.identity).GetComponent<InventoryItemS>();
+        obj.Initialize(m_ScriptableObject.GetInventoryItemSOImage());
 
-        icon.sprite = item.itemData.icon;
-        labelText.text = item.itemData.displayName;
-        stackSizeText.text = item.stackSize.ToString();
+        obj.transform.parent = this.transform;
+
+        obj.transform.localScale = Vector3.one * 1.2f;
     }
-
 }
