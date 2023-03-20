@@ -19,6 +19,7 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
     [Header("UI")]
     // Text that tracks count of items in inventory
     [SerializeField] private Text countText;
+    [SerializeField] private PhotonView photonView;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
 
         RefreshCount();
         image = GetComponent<Image>();
-        photonView.ObservedComponents.Add(this);
+        //photonView.ObservedComponents.Add(this);
     }
 
     private void Update()
