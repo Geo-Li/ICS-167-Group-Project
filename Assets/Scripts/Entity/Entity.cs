@@ -127,7 +127,7 @@ public class Entity : MonoBehaviour, IPunObservable
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (m_Health != null)
-            m_Health.OnPhotonSerializeView(stream, info);
+            m_Health.OnPhotonSerializeView(stream, info, GetComponent<PhotonView>().ViewID);
     }
 
     // Updates all attack condition timers

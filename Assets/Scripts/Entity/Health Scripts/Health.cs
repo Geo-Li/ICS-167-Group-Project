@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using Photon.Pun;
 
 // William Min
@@ -7,7 +8,7 @@ using Photon.Pun;
 /*
  * Represents the health of an entity
  */
-public class Health : IPunObservable
+public class Health
 {
     // Maximum health of entity
     private float m_MaxHealth = 3f;
@@ -83,17 +84,19 @@ public class Health : IPunObservable
         return m_CurrentHealth / m_MaxHealth;
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info, int viewID)
     {
         if (stream.IsWriting)
         {
             stream.SendNext(m_CurrentHealth);
             stream.SendNext(m_MaxHealth);
+            //Debug.Log("I am on the local client named " + viewID);
         }
         else if (stream.IsReading)
         {
             CurrentHealth = (float)stream.ReceiveNext();
             MaxHealth = (float)stream.ReceiveNext();
+            //Debug.Log("I am on the remote client named " + viewID);
         }
     }
 }
