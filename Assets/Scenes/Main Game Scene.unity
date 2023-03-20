@@ -654,7 +654,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1250
+  m_Name: pb_Mesh121480
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1276,6 +1276,30 @@ PrefabInstance:
     - target: {fileID: 5071107652256975695, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
       propertyPath: ObservedComponents.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568993847920372635, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: name
+      value: Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568993847920372635, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: photonView
+      value: 
+      objectReference: {fileID: 1285728090}
+    - target: {fileID: 5568993848428336528, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: name
+      value: Yeast
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568993848778820724, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: name
+      value: Wheat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568993848939031468, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: name
+      value: Sugar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568993849190406101, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+      propertyPath: name
+      value: Chocolate
       objectReference: {fileID: 0}
     - target: {fileID: 6952350937622948920, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2108,6 +2132,17 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.18}
   m_TimeToStationary: 0.5
+--- !u!114 &1285728090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4603637140685846085, guid: 84f85a83e4a3a3b41b9261142435706e, type: 3}
+  m_PrefabInstance: {fileID: 683058702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1349802688
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,14 +7,17 @@ using Photon.Pun;
 
 
 // Geo Li, Leyna Ho
-public class InventoryItemS : MonoBehaviourPun, IPunObservable
+public class InventoryItemS : MonoBehaviourPun
 {
     private int count;
     private const float FULL_ALPHA = 1f;
     private const float INIT_ALPHA = .5f;
+    [SerializeField] private string name;
     private Image image;
 
     private bool IsRemoteObject;
+    ExitGames.Client.Photon.Hashtable CustomeValue;
+
 
     [Header("UI")]
     // Text that tracks count of items in inventory
@@ -23,11 +26,10 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
 
     private void Start()
     {
-        if (IsRemoteObject)
+        // if (IsRemoteObject)
 
         RefreshCount();
         image = GetComponent<Image>();
-        //photonView.ObservedComponents.Add(this);
     }
 
     private void Update()
@@ -39,6 +41,7 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
         else if (count > 0 && currentAlpha != FULL_ALPHA)
             ChangeImageAlpha(FULL_ALPHA);
 
+        count = int.Parse(PhotonNetwork.CurrentRoom.CustomProperties[name].ToString());
         RefreshCount();
     }
 
@@ -85,6 +88,9 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
     public void IncreaseCount() 
     {
         count++;
+        CustomeValue = new ExitGames.Client.Photon.Hashtable();
+        CustomeValue.Add(name, count);
+        PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
     }
 
     // Decrements the count of the inventory item
@@ -92,6 +98,9 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
     {
         if (count > 0)
             count--;
+            CustomeValue = new ExitGames.Client.Photon.Hashtable();
+            CustomeValue.Add(name, count);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
     }
 
     private void ChangeImageAlpha(float newAlpha)
@@ -99,19 +108,5 @@ public class InventoryItemS : MonoBehaviourPun, IPunObservable
         var tempColor = image.color;
         tempColor.a = newAlpha;
         image.color = tempColor;
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(count);
-            //Debug.Log("I am on the local client named " + GetComponent<PhotonView>().ViewID);
-        }
-        else
-        {
-            count = (int)stream.ReceiveNext();
-            //Debug.Log("I am on the remote client named " + GetComponent<PhotonView>().ViewID);
-        }
     }
 }

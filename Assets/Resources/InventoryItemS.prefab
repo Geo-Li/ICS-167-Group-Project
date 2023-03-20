@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countText: {fileID: 1023419050957847223}
+  photonView: {fileID: 4090370891575909941}
 --- !u!114 &4090370891575909941
 MonoBehaviour:
   m_ObjectHideFlags: 0
