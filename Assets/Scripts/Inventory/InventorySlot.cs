@@ -6,7 +6,7 @@ using Photon.Pun;
 // Will Min
 
 /*
- * 
+ * Representation of inventory slot gameobject
  */
 public class InventorySlot : MonoBehaviour
 {

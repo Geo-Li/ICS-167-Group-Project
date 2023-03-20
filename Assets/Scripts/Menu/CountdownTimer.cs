@@ -15,32 +15,34 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] private TMP_Text UIText;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
+
+    private bool GameHasEnded;
     
     void Start()
     {
         winScreen.SetActive(false);
         loseScreen.SetActive(false);
         Time.timeScale = 1;
+
+        GameHasEnded = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentTime < maxTime)
+        if (GameHasEnded)
+            return;
+
+        if (!health.Health.IsDying() && currentTime < maxTime)
         {
             currentTime += 1 * Time.deltaTime;
             UIText.text = currentTime.ToString("0") + " / " + maxTime.ToString("0");
         } 
         else
         {
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
             winScreen.SetActive(true);
-        }
-
-        if (health.Health.IsDying())
-        {
-            Time.timeScale = 0;
-            loseScreen.SetActive(true);
+            GameHasEnded = true;
         }
     }
 }
