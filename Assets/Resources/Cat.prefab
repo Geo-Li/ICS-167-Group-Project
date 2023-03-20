@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Projectiles: []
   m_Dead: 0
   m_HasSetFace: 0
-  m_Loot: {fileID: 0}
+  m_Loot: {fileID: 11400000, guid: 6ad7e1f2bdf80c14293859ca4edc604b, type: 2}
   m_MaxOffensiveObjectCount: 5
   m_MaxVictimObjectCount: 5
   m_DetectionDistance: 14

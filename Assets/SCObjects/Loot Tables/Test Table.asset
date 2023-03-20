@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Test Table
   m_EditorClassIdentifier: 
   m_Items:
+  - m_ItemPrefab: {fileID: 253077957280424970, guid: 9ec8d7f2f264143b49d7e9e3197bea3f, type: 3}
+    m_MinCount: 1
+    m_MaxCount: 1
+    m_Probability: 0.2
   - m_ItemPrefab: {fileID: 1482097036233139284, guid: 94c66f1081c5b41ffbdb90019f132e23, type: 3}
-    m_MinCount: 2
-    m_MaxCount: 3
-    m_Probability: 0.75
-  - m_ItemPrefab: {fileID: 7309745787455904294, guid: 958ae08b6f6914b9b8da2c2f64f37c9e, type: 3}
     m_MinCount: 1
-    m_MaxCount: 3
-    m_Probability: 0.5
-  - m_ItemPrefab: {fileID: 3766437300662275531, guid: 748a88ed96d89c84c842cc14d00b8ad1, type: 3}
+    m_MaxCount: 1
+    m_Probability: 0.2
+  - m_ItemPrefab: {fileID: 218444589690126652, guid: 2f323f28cc81047d5a950c4a0189add3, type: 3}
     m_MinCount: 1
-    m_MaxCount: 2
-    m_Probability: 0.25
+    m_MaxCount: 1
+    m_Probability: 0.2
   m_LootDropDisplacement: {x: 0, y: 0.25, z: 0}
   m_LootForce: 100

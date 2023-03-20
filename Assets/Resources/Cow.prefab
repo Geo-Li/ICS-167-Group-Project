@@ -1177,6 +1177,33 @@ Transform:
   m_Father: {fileID: 2391371292233039196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 961.95}
+--- !u!114 &1981900096852406993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5549902963319251340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Solvers:
+  - {fileID: 2516292655896307856}
+  - {fileID: 6536852043529175834}
+  - {fileID: 6028358289222731248}
+  - {fileID: 7642777642961557128}
+  m_Weight: 1
+  m_SolverEditorData:
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    showGizmo: 1
 --- !u!1 &6267561367735822868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2077,11 +2104,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 1670379807178854720, guid: 8d3073ad4d938f1479db4eba67576d07, type: 3}
---- !u!1 &5549902963319251340 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2890617338838721789, guid: 8d3073ad4d938f1479db4eba67576d07, type: 3}
-  m_PrefabInstance: {fileID: 7284781788295660913}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1379331953342501135 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8519932441128490110, guid: 8d3073ad4d938f1479db4eba67576d07, type: 3}
@@ -2127,30 +2149,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3909899322594596553, guid: 8d3073ad4d938f1479db4eba67576d07, type: 3}
   m_PrefabInstance: {fileID: 7284781788295660913}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1981900096852406993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!1 &5549902963319251340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2890617338838721789, guid: 8d3073ad4d938f1479db4eba67576d07, type: 3}
+  m_PrefabInstance: {fileID: 7284781788295660913}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5549902963319251340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 097b551f2844b054290f18a39bf892e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Solvers:
-  - {fileID: 2516292655896307856}
-  - {fileID: 6536852043529175834}
-  - {fileID: 6028358289222731248}
-  - {fileID: 7642777642961557128}
-  m_Weight: 1
-  m_SolverEditorData:
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    showGizmo: 1
